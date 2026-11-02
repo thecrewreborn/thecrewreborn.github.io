@@ -484,6 +484,14 @@ h2::before {
 .checks.ahead li { color: var(--steel); }
 .checks.ahead li::before { background: transparent; box-shadow: inset 0 0 0 2px #4b586a; clip-path: none; border-radius: 3px; }
 
+.later { margin-top: clamp(40px, 6vw, 64px); }
+.later h3 { margin: 0 0 .8em; font-size: 1.45rem; font-weight: 800; font-style: italic; }
+.later-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.later-grid li { padding: 24px 24px 22px; }
+.later-grid li::before { background: var(--siren); }
+.later-grid strong { display: block; font: 800 italic 1.35rem/1.15 "Barlow Condensed", sans-serif; margin-bottom: .4em; }
+.later-grid span { color: var(--steel); font-size: .98rem; }
+
 /* gallery */
 
 .gallery {
@@ -622,6 +630,7 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
   .map { position: relative; top: 0; }
   .lists { grid-template-columns: 1fr; }
   .needs { grid-template-columns: 1fr; }
+  .later-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 34vw; }
 }
 
