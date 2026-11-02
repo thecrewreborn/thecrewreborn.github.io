@@ -9,6 +9,7 @@ Live: https://thecrewreborn.github.io/
 - Videos and screenshots: `assets/content.js`. The first video shows large; more videos appear as a list below it.
 - Screenshots go in `assets/shots/`, then get an entry in `assets/content.js`.
 - Page text: English in `index.html`, German in `assets/site.js`. Both use the same `data-i18n` keys.
+- After changing CSS or JS, bump the `?v=` number on the three asset links in `index.html`, so browsers skip their cached copy.
 - Preview locally: `python3 -m http.server` in this folder.
 
 The YouTube player loads only after a click, so the page sets no third-party cookies before that.
