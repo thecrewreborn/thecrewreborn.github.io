@@ -1,21 +1,20 @@
 (function () {
   const DE = {
-    exit: "Ausfahrt 2014",
-    tagline: "The Crew (2014) läuft wieder auf der PS4, offline auf deinem eigenen Server.",
-    laneVideo: "Video ansehen",
-    laneStatus: "Stand der Fahrt",
+    tagline: "The Crew (2014) läuft wieder auf PS4 und PS5. Ohne offizielle Server, ohne PS Plus. Nur du, deine Konsole und ein Server in deinem Heimnetz.",
+    ctaVideo: "Video ansehen",
+    ctaStatus: "Zum Fortschritt",
     fan: "Fanprojekt. Keine Verbindung zu Ubisoft, nicht von Ubisoft unterstützt.",
     videoTitle: "So läuft es",
-    videoText: "Aufgenommen auf meiner eigenen PS4: Das Spiel startet, findet meinen Server im Heimnetz und setzt mich zurück in die Welt.",
+    videoText: "Aufgenommen auf meiner eigenen PS4: Das Spiel startet, findet meinen Server im Heimnetz und setzt mich zurück nach Detroit.",
     videoNote: "Wird erst nach dem Klick von YouTube geladen.",
     statusTitle: "Wo die Fahrt steht",
-    statusText: "Das Spiel startet, die Welt lädt und dein Fortschritt bleibt erhalten. Die restlichen Serverfunktionen baue ich eine nach der anderen nach.",
+    statusText: "Das Spiel startet, die Story läuft und dein Fortschritt bleibt erhalten. Die restlichen Serverfunktionen baue ich eine nach der anderen nach.",
     m1: "Wieder auf der Straße",
     m1t: "Das Spiel startet und spricht mit meinem Server statt mit dem abgeschalteten offiziellen.",
     m2: "Rein in die Welt",
-    m2t: "Anmeldung, freies Fahren und der Story-Einstieg funktionieren. Nach jedem Event wird gespeichert.",
-    m3: "Missionen und Belohnungen",
-    m3t: "Missionen zahlen aus, du steigst auf und schaltest Perks frei.",
+    m2t: "Anmeldung, freies Fahren über die ganze Karte, gespeichert nach jedem Event.",
+    m3: "Die Story",
+    m3t: "Die Story-Kampagne lässt sich durchspielen. Missionen zahlen aus, du steigst auf und schaltest Perks frei.",
     m4: "Autos und Tuning",
     m4t: "Autokauf beim Händler und Straßen-Specs funktionieren. Als Nächstes kommen Performance-Teile.",
     here: "Du bist hier",
@@ -24,12 +23,12 @@
     m6: "Open-Source-Release",
     m6t: "Server, Konsolen-Patch und eine Schritt-für-Schritt-Anleitung, kostenlos zum Download.",
     m7: "Server auf der Konsole",
-    m7t: "Später: alles läuft auf der PS4 selbst, ohne zweites Gerät.",
+    m7t: "Später: Alles läuft auf der PS4 selbst, ohne zweites Gerät.",
     worksTitle: "Läuft heute, getestet auf meiner PS4",
     w1: "Startet ohne die offiziellen Server",
-    w2: "Story-Einstieg und freies Fahren",
+    w2: "Die Story-Kampagne und freies Fahren",
     w3: "Missionen, Belohnungen, Level-ups und Perks",
-    w4: "Dein erstes Auto beim Händler kaufen",
+    w4: "Autos beim Händler kaufen",
     w5: "Eine Garage, die deine Autos behält",
     w6: "Straßen-Specs beim Tuner",
     w7: "Fortschritt auf dem Server, ein Spielstand pro PS4-Profil",
@@ -46,11 +45,11 @@
     b4: "Fraktionen",
     b5: "Die übrigen Missionsarten",
     shotsTitle: "Von unterwegs",
-    shotsEmpty: "Screenshots von meiner PS4 kommen bald hierher. Bis dahin zeigt das Video das Spiel in Bewegung.",
+    shotsText: "Standbilder von meiner PS4. Screenshots aus dem späteren Verlauf der Story folgen.",
     needTitle: "Was du brauchst",
     n1: "Dein eigenes The Crew für die PS4",
-    n1t: "Getestet mit der europäischen Version 1.21 (CUSA00161). Andere Regionen sind geplant.",
-    n2: "Eine PS4, die Homebrew-Spielpatches lädt",
+    n1t: "Disc oder Download, europäische Version 1.21 (CUSA00161). Andere Regionen sind geplant.",
+    n2: "Eine PS4 oder PS5, die Homebrew-Spielpatches lädt",
     n2t: "Der Patch schickt das Spiel zu deinem Server.",
     n3: "Einen Computer im selben Netzwerk",
     n3t: "Windows, macOS oder Linux mit Python. Er betreibt den Server, während du spielst.",
@@ -58,12 +57,14 @@
     faqTitle: "Fragen",
     q1: "Brauche ich PS Plus?",
     a1: "Nein. Das Spiel spricht nur mit deinem eigenen Server.",
+    q5: "Läuft es auf der PS5?",
+    a5: "Ja. Die PS5 spielt die PS4-Version über die Abwärtskompatibilität, mit demselben Patch und demselben Server.",
     q2: "Wo wird mein Fortschritt gespeichert?",
     a2: "Auf deinem Server, ein Spielstand pro PS4-Profil. Deine Spieleinstellungen bleiben auf der Konsole.",
     q3: "Kann ich mit Freunden spielen?",
     a3: "Mehrere Konsolen in einem Haushalt können sich einen Server teilen; dieser Teil wartet noch auf seinen ersten Test. Online-Spiel über das Internet ist noch nicht geplant.",
     q4: "Wann kann ich es herunterladen?",
-    a4: "Sobald das Spiel komplett spielbar ist und die Anleitung steht. Ein Datum gibt es noch nicht. Neue Videos auf dem YouTube-Kanal zeigen jeden Schritt.",
+    a4: "Sobald alle Aktivitäten laufen und die Anleitung steht. Ein Datum gibt es noch nicht. Neue Videos auf dem YouTube-Kanal zeigen jeden Schritt.",
     channel: "YouTube-Kanal",
     legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment. PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony und wird von ihnen nicht unterstützt.",
   };
@@ -88,9 +89,8 @@
     try { localStorage.setItem("lang", lang); } catch (e) { /* private mode */ }
   }
 
-  function showVideo(v, autoplay) {
-    const player = document.getElementById("player");
-    if (!autoplay) {
+  function showVideo(v, play) {
+    if (!play) {
       document.getElementById("facadeTitle").textContent = v.title;
       document.getElementById("facade").onclick = () => showVideo(v, true);
       return;
@@ -100,7 +100,7 @@
     f.title = v.title;
     f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
     f.allowFullscreen = true;
-    player.replaceChildren(f);
+    document.getElementById("player").replaceChildren(f);
   }
 
   function renderPlaylist() {
@@ -123,20 +123,35 @@
     list.hidden = false;
   }
 
+  const lb = document.getElementById("lightbox");
+  function openShot(s) {
+    document.getElementById("lbImg").src = s.src;
+    document.getElementById("lbImg").alt = s[lang] || s.en;
+    document.getElementById("lbCap").textContent = s[lang] || s.en;
+    lb.hidden = false;
+    document.getElementById("lbClose").focus();
+  }
+  function closeShot() { lb.hidden = true; }
+  lb.addEventListener("click", (e) => { if (e.target === lb || e.target.id === "lbClose") closeShot(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) closeShot(); });
+
   function renderGallery() {
     const g = document.getElementById("gallery");
     g.replaceChildren();
-    document.getElementById("galleryEmpty").hidden = C.screenshots.length > 0;
+    document.getElementById("shots").hidden = C.screenshots.length === 0;
     C.screenshots.forEach((s) => {
-      const fig = document.createElement("figure");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "shot";
       const img = document.createElement("img");
       img.src = s.src;
       img.alt = s[lang] || s.en || "";
       img.loading = "lazy";
-      const cap = document.createElement("figcaption");
+      const cap = document.createElement("span");
       cap.textContent = s[lang] || s.en || "";
-      fig.append(img, cap);
-      g.append(fig);
+      b.append(img, cap);
+      b.onclick = () => openShot(s);
+      g.append(b);
     });
   }
 
