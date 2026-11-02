@@ -45,7 +45,7 @@
     b4: "Fraktionen",
     b5: "Die übrigen Missionsarten",
     shotsTitle: "Von unterwegs",
-    shotsText: "Standbilder von meiner PS4. Screenshots aus dem späteren Verlauf der Story folgen.",
+    shotsText: "Szenen von überall auf der Karte. Jeder dieser Orte wartet auf deinem eigenen Server.",
     needTitle: "Was du brauchst",
     n1: "Dein eigenes The Crew für die PS4",
     n1t: "Disc oder Download, europäische Version 1.21 (CUSA00161). Andere Regionen sind geplant.",
@@ -66,7 +66,7 @@
     q4: "Wann kann ich es herunterladen?",
     a4: "Sobald alle Aktivitäten laufen und die Anleitung steht. Ein Datum gibt es noch nicht. Neue Videos auf dem YouTube-Kanal zeigen jeden Schritt.",
     channel: "YouTube-Kanal",
-    legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment. PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony und wird von ihnen nicht unterstützt.",
+    legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment. PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Spiel-Screenshots © Ubisoft Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony und wird von ihnen nicht unterstützt.",
   };
 
   const nodes = Array.from(document.querySelectorAll("[data-i18n]"));

@@ -73,7 +73,7 @@ h1, h2, h3, .btn, .mark, .lang, summary {
   background:
     linear-gradient(90deg, rgba(7, 11, 18, .96) 0%, rgba(7, 11, 18, .78) 38%, rgba(7, 11, 18, .25) 70%, rgba(7, 11, 18, .55) 100%),
     linear-gradient(180deg, rgba(7, 11, 18, .4) 0%, transparent 30%, transparent 62%, var(--night) 100%),
-    url("shots/raptor.jpg") 72% 50% / cover no-repeat;
+    url("shots/chase.jpg") 75% 50% / cover no-repeat;
   filter: saturate(.8) contrast(1.08);
   animation: drift 24s ease-in-out infinite alternate;
 }
@@ -328,7 +328,7 @@ h2::before {
   cursor: pointer;
   background:
     linear-gradient(180deg, rgba(7, 11, 18, .35), rgba(7, 11, 18, .85)),
-    url("shots/detroit.jpg") center / cover;
+    url("shots/detroit-night.jpg") center / cover;
 }
 .facade::after {
   content: "";
@@ -509,7 +509,7 @@ h2::before {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: saturate(.85) contrast(1.06) brightness(.82);
+  filter: saturate(.9) contrast(1.05) brightness(.88);
   transition: transform .6s cubic-bezier(.2, .7, .2, 1), filter .4s;
 }
 .shot::after {
@@ -629,7 +629,7 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
   .hero-bg {
     background:
       linear-gradient(180deg, rgba(7, 11, 18, .55) 0%, rgba(7, 11, 18, .35) 30%, rgba(7, 11, 18, .85) 62%, var(--night) 100%),
-      url("shots/raptor.jpg") 30% 30% / cover no-repeat;
+      url("shots/chase.jpg") 72% 40% / cover no-repeat;
   }
   .h1-b { padding-left: .2em; }
   .gallery { grid-template-columns: 1fr; grid-auto-rows: 56vw; }
