@@ -2,7 +2,7 @@
 
 Project site for a fan project that brings The Crew (2014) back to life on PS4, offline on your own home server.
 
-Live: https://knutwurst.github.io/the-crew-reborn/
+Live: https://thecrewreborn.github.io/
 
 ## Editing
 
