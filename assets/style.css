@@ -599,6 +599,17 @@ summary::after {
 }
 details[open] summary::after { transform: rotate(225deg); top: 32px; }
 details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
+.kofi {
+  display: table;
+  margin-top: 14px;
+  padding: 7px 18px 6px;
+  font: 800 italic 1.05rem "Barlow Condensed", sans-serif;
+  color: var(--night);
+  background: var(--cyan);
+  text-decoration: none;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+.kofi:hover { background: #7fdcff; }
 
 /* footer */
 

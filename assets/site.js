@@ -74,6 +74,9 @@
     a3: "Mehrere Konsolen im selben Haushalt können sich einen Server teilen. Das ist gebaut, aber noch nicht getestet. Online-Multiplayer über das Internet steht auf der Roadmap.",
     q4: "Wann kann ich es herunterladen?",
     a4: "Sobald alle Aktivitäten laufen und die Anleitung fertig ist. Einen Termin gibt es noch nicht. Neue Videos auf dem YouTube-Kanal zeigen jeden Fortschritt.",
+    q6: "Kann ich das Projekt unterstützen?",
+    a6: "Ja, mit einem Trinkgeld auf Ko-fi. Das Projekt bleibt so oder so kostenlos, und für eine Unterstützung wird nichts zusätzlich freigeschaltet.",
+    kofi: "Auf Ko-fi unterstützen",
     channel: "YouTube-Kanal",
     legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment, PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Spiel-Screenshots © Ubisoft Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony.",
   };
