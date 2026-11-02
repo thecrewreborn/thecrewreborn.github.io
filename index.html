@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Crew Reborn</title>
+<meta name="description" content="Fan project: The Crew (2014) runs again on PS4, offline on your own home server. Progress, videos and what comes next.">
+<meta property="og:title" content="The Crew Reborn">
+<meta property="og:description" content="The Crew (2014) runs again on PS4, offline on your own home server.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knutwurst.github.io/the-crew-reborn/">
+<meta property="og:image" content="https://knutwurst.github.io/the-crew-reborn/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <button class="lang" id="lang" type="button" aria-label="Sprache wechseln / switch language">
+    <span data-lang="en">EN</span><span data-lang="de">DE</span>
+  </button>
+
+  <div class="gantry">
+    <div class="sign">
+      <span class="exit-tab" data-i18n="exit">Exit 2014</span>
+      <h1>The Crew Reborn</h1>
+      <p class="sign-sub" data-i18n="tagline">The Crew (2014) runs again on PS4, offline on your own server.</p>
+      <nav class="lanes" aria-label="Sections">
+        <a href="#video"><span class="arrow" aria-hidden="true">&#8595;</span><span data-i18n="laneVideo">Watch it drive</span></a>
+        <a href="#status"><span class="arrow" aria-hidden="true">&#8595;</span><span data-i18n="laneStatus">Trip status</span></a>
+      </nav>
+    </div>
+  </div>
+  <div class="posts" aria-hidden="true"><i></i><i></i></div>
+
+  <svg class="road" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+    <path class="ridge" d="M0 46 L120 20 L210 38 L330 8 L460 40 L560 22 L700 44 L820 12 L960 36 L1080 18 L1200 40 L1200 60 L0 60 Z"/>
+    <path class="asphalt" d="M560 60 L640 60 L1200 300 L0 300 Z"/>
+    <path class="edge" d="M566 60 L40 300 M634 60 L1160 300"/>
+    <path class="dash" d="M600 60 L600 300"/>
+  </svg>
+  <p class="disclaimer" data-i18n="fan">Fan project. Not affiliated with or endorsed by Ubisoft.</p>
+</header>
+
+<main>
+  <section id="video" class="wrap">
+    <h2 class="plate" data-i18n="videoTitle">See it running</h2>
+    <p class="lede" data-i18n="videoText">Recorded on my own PS4: the game starts, finds my server on the home network and drops me back into the world.</p>
+    <div class="player" id="player">
+      <button type="button" class="facade" id="facade">
+        <span class="play" aria-hidden="true"></span>
+        <span class="facade-title" id="facadeTitle"></span>
+        <span class="facade-note" data-i18n="videoNote">Plays from YouTube once you click.</span>
+      </button>
+    </div>
+    <ul class="playlist" id="playlist" hidden></ul>
+  </section>
+
+  <section id="status" class="wrap">
+    <h2 class="plate" data-i18n="statusTitle">Where the trip stands</h2>
+    <p class="lede" data-i18n="statusText">The game boots, the world loads and your progress sticks. I'm rebuilding the remaining server features one at a time.</p>
+
+    <ol class="route">
+      <li class="passed"><span class="post">1</span><h3 data-i18n="m1">Back on the road</h3><p data-i18n="m1t">The game starts and talks to my server instead of the shut-down official one.</p></li>
+      <li class="passed"><span class="post">2</span><h3 data-i18n="m2">Into the world</h3><p data-i18n="m2t">Login, free roam and the story opening work. Progress saves after every event.</p></li>
+      <li class="passed"><span class="post">3</span><h3 data-i18n="m3">Missions and rewards</h3><p data-i18n="m3t">Missions pay out, you level up and unlock perks.</p></li>
+      <li class="here"><span class="post">4</span><h3 data-i18n="m4">Cars and tuning</h3><p data-i18n="m4t">Dealer purchases and street specs work. Performance parts come next.</p><span class="you" data-i18n="here">You are here</span></li>
+      <li><span class="post">5</span><h3 data-i18n="m5">Every activity</h3><p data-i18n="m5t">Police chases, Summit events, factions and the remaining mission types.</p></li>
+      <li><span class="post">6</span><h3 data-i18n="m6">Open source release</h3><p data-i18n="m6t">Server, console patch and a step-by-step guide, free to download.</p></li>
+      <li><span class="post">7</span><h3 data-i18n="m7">Server on the console</h3><p data-i18n="m7t">Later: run everything on the PS4 itself, no second device needed.</p></li>
+    </ol>
+
+    <div class="lists">
+      <div>
+        <h3 class="list-head" data-i18n="worksTitle">Working today, tested on my PS4</h3>
+        <ul class="checks">
+          <li data-i18n="w1">Starts without the official servers</li>
+          <li data-i18n="w2">Story opening and free roam</li>
+          <li data-i18n="w3">Missions, rewards, level-ups and perks</li>
+          <li data-i18n="w4">Buying your first car at the dealer</li>
+          <li data-i18n="w5">A garage that keeps your cars</li>
+          <li data-i18n="w6">Street spec upgrades at the tuner</li>
+          <li data-i18n="w7">Progress saved on the server, one save per PS4 profile</li>
+          <li data-i18n="w8">Settings saved on the console, per profile</li>
+          <li data-i18n="w9">The console finds the server on your network by itself</li>
+          <li data-i18n="w10">Fake online drivers on or off, your choice</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="list-head" data-i18n="testTitle">Built, waiting for its first test</h3>
+        <ul class="checks pending">
+          <li data-i18n="t1">No more kick for standing still</li>
+          <li data-i18n="t2">Several consoles on one home server</li>
+        </ul>
+        <h3 class="list-head" data-i18n="benchTitle">On the workbench</h3>
+        <ul class="checks ahead">
+          <li data-i18n="b1">Performance parts</li>
+          <li data-i18n="b2">Police chases</li>
+          <li data-i18n="b3">Summit events</li>
+          <li data-i18n="b4">Factions</li>
+          <li data-i18n="b5">The remaining mission types</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="shots" class="wrap">
+    <h2 class="plate" data-i18n="shotsTitle">From the road</h2>
+    <div class="gallery" id="gallery"></div>
+    <p class="empty" id="galleryEmpty" data-i18n="shotsEmpty">Screenshots from my PS4 land here soon. Until then, the video shows the game in motion.</p>
+  </section>
+
+  <section id="need" class="wrap">
+    <h2 class="plate" data-i18n="needTitle">What you'll need</h2>
+    <ul class="needs">
+      <li><strong data-i18n="n1">Your own copy of The Crew for PS4</strong><span data-i18n="n1t">Tested with the European version 1.21 (CUSA00161). Other regions are planned.</span></li>
+      <li><strong data-i18n="n2">A PS4 that runs homebrew game patches</strong><span data-i18n="n2t">The patch points the game at your server.</span></li>
+      <li><strong data-i18n="n3">A computer on the same network</strong><span data-i18n="n3t">Windows, macOS or Linux with Python. It runs the server while you play.</span></li>
+    </ul>
+    <p class="note" data-i18n="needNote">I don't share game files. You bring your own copy; the project ships only its own code. A step-by-step guide comes with the open-source release.</p>
+  </section>
+
+  <section id="faq" class="wrap">
+    <h2 class="plate" data-i18n="faqTitle">Questions</h2>
+    <details>
+      <summary data-i18n="q1">Do I need PS Plus?</summary>
+      <p data-i18n="a1">No. The game talks to your own server only.</p>
+    </details>
+    <details>
+      <summary data-i18n="q2">Where is my progress stored?</summary>
+      <p data-i18n="a2">On your server, one save per PS4 profile. Your game settings stay on the console.</p>
+    </details>
+    <details>
+      <summary data-i18n="q3">Can I play with friends?</summary>
+      <p data-i18n="a3">Several consoles in one home can share a server; that part waits for its first test. Online play over the internet isn't on the plan yet.</p>
+    </details>
+    <details>
+      <summary data-i18n="q4">When can I download it?</summary>
+      <p data-i18n="a4">Once the game is fully playable and the install guide is written. There's no date yet. New videos on the YouTube channel show each step.</p>
+    </details>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-links">
+      <a href="https://www.youtube.com/@Knutwurst" data-i18n="channel">YouTube channel</a>
+      <a href="https://github.com/knutwurst/the-crew-reborn">GitHub</a>
+    </p>
+    <p data-i18n="legal">The Crew Reborn is a fan project by Knutwurst. The Crew is a trademark of Ubisoft Entertainment. PlayStation and PS4 are trademarks of Sony Interactive Entertainment. This site is not affiliated with or endorsed by Ubisoft or Sony.</p>
+  </div>
+</footer>
+
+<script src="assets/content.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
