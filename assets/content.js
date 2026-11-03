@@ -1,6 +1,9 @@
 // Edit this file to add videos and screenshots. The first video is the one shown big.
 window.CONTENT = {
   videos: [
+    { id: "08VfaAiLwRI", title: "The Crew Reborn #1: The Prologue Works on PS4 | Offline in 2026" },
+    { id: "cFsyzKxU5_0", title: "The Crew Reborn #2: First Night Race in Detroit | PS4 Offline 2026" },
+    { id: "gi1rPwy8GEY", title: "The Crew Reborn #3: Drive to the Bridge | PS4 Offline 2026" },
     { id: "-7mQ-vVzTK0", title: "The Crew Is BACK on PS4! Offline in 2026" },
   ],
   // Screenshots live in assets/shots/. The first one is shown large.
