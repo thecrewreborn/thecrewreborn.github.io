@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 </head>
 <body>
 
@@ -48,15 +48,20 @@
   <section id="video" class="band">
     <div class="wrap">
       <h2 data-i18n="videoTitle">See it running</h2>
-      <p class="lede" data-i18n="videoText">Recorded on a real PS4: the game boots, finds the server on the home network and drops straight back into Detroit.</p>
-      <div class="player" id="player">
-        <button type="button" class="facade" id="facade">
-          <span class="play" aria-hidden="true"></span>
-          <span class="facade-title" id="facadeTitle"></span>
-          <span class="facade-note" data-i18n="videoNote">Plays from YouTube once you click.</span>
-        </button>
+      <p class="lede" data-i18n="videoText">Recorded on a PS4 in November 2026, starting from a new save. Four episodes in story order, from the prologue to the first tuned car.</p>
+      <div class="series">
+        <div class="player" id="player">
+          <button type="button" class="facade" id="facade">
+            <span class="play" aria-hidden="true"></span>
+            <span class="facade-title" id="facadeTitle"></span>
+            <span class="facade-note" data-i18n="videoNote">Plays from YouTube once you click.</span>
+          </button>
+        </div>
+        <div class="episodes">
+          <ol class="playlist" id="playlist" hidden></ol>
+          <a class="series-link" id="seriesLink" href="https://www.youtube.com/@Knutwurst" data-i18n="videoAll" hidden>Watch the whole series on YouTube</a>
+        </div>
       </div>
-      <ul class="playlist" id="playlist" hidden></ul>
     </div>
   </section>
 
@@ -216,7 +221,7 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/content.js?v=10"></script>
-<script src="assets/site.js?v=10"></script>
+<script src="assets/content.js?v=11"></script>
+<script src="assets/site.js?v=11"></script>
 </body>
 </html>

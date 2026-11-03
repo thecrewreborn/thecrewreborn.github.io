@@ -5,7 +5,8 @@
     ctaStatus: "Zum aktuellen Stand",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
-    videoText: "Aufgenommen auf einer echten PS4: Das Spiel startet, findet den Server im Heimnetz und geht direkt zurück nach Detroit.",
+    videoText: "Aufgenommen im November 2026 auf einer PS4, mit einem neuen Spielstand. Vier Folgen in der Reihenfolge der Story, vom Prolog bis zum ersten getunten Auto.",
+    videoAll: "Die ganze Serie auf YouTube",
     videoNote: "Das Video wird erst nach dem Klick von YouTube geladen.",
     statusTitle: "Aktueller Stand",
     statusText: "Das Spiel startet, die Welt lädt und der Fortschritt wird gespeichert. Die restlichen Serverfunktionen folgen Schritt für Schritt.",
@@ -101,13 +102,28 @@
     document.documentElement.lang = lang;
     document.getElementById("lang").dataset.active = lang;
     renderGallery();
+    renderPlaylist();
     try { localStorage.setItem("lang", lang); } catch (e) { /* private mode */ }
   }
 
-  function showVideo(v, play) {
+  let current = 0;
+
+  function markCurrent() {
+    document.querySelectorAll("#playlist button").forEach((b, k) => {
+      if (k === current) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
+    });
+  }
+
+  function showVideo(i, play) {
+    const v = C.videos[i];
+    current = i;
+    markCurrent();
     if (!play) {
       document.getElementById("facadeTitle").textContent = v.title;
-      document.getElementById("facade").onclick = () => showVideo(v, true);
+      const facade = document.getElementById("facade");
+      if (v.poster) facade.style.backgroundImage =
+        "linear-gradient(180deg, rgba(7, 11, 18, .25), rgba(7, 11, 18, .8)), url(\"" + v.poster + "\")";
+      facade.onclick = () => showVideo(i, true);
       return;
     }
     const f = document.createElement("iframe");
@@ -123,19 +139,40 @@
       document.getElementById("video").hidden = true;
       return;
     }
-    showVideo(C.videos[0], false);
-    if (C.videos.length < 2) return;
     const list = document.getElementById("playlist");
-    C.videos.forEach((v) => {
+    list.replaceChildren();
+    C.videos.forEach((v, i) => {
       const li = document.createElement("li");
       const b = document.createElement("button");
       b.type = "button";
-      b.textContent = v.title;
-      b.onclick = () => showVideo(v, true);
+      b.className = "episode";
+      const img = document.createElement("img");
+      img.src = v.poster || "";
+      img.alt = "";
+      img.loading = "lazy";
+      const no = document.createElement("span");
+      no.className = "ep-no";
+      no.textContent = String(i + 1).padStart(2, "0");
+      const title = document.createElement("span");
+      title.className = "ep-title";
+      title.textContent = v.title;
+      const text = document.createElement("span");
+      text.className = "ep-text";
+      text.textContent = v[lang] || v.en || "";
+      const time = document.createElement("span");
+      time.className = "ep-time";
+      time.textContent = v.time || "";
+      b.append(img, no, title, text, time);
+      b.onclick = () => showVideo(i, true);
       li.append(b);
       list.append(li);
     });
-    list.hidden = false;
+    list.hidden = C.videos.length < 2;
+    const link = document.getElementById("seriesLink");
+    if (C.playlist) link.href = "https://www.youtube.com/playlist?list=" + encodeURIComponent(C.playlist);
+    link.hidden = false;
+    if (document.querySelector("#player iframe")) markCurrent();
+    else showVideo(current, false);
   }
 
   const lb = document.getElementById("lightbox");
@@ -171,7 +208,6 @@
   }
 
   document.getElementById("lang").addEventListener("click", () => setLang(lang === "de" ? "en" : "de"));
-  renderPlaylist();
   const asked = new URLSearchParams(location.search).get("lang");
   const saved = asked === "de" || asked === "en" ? asked : stored();
   setLang(saved || ((navigator.language || "").toLowerCase().startsWith("de") ? "de" : "en"));

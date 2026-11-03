@@ -342,6 +342,7 @@ h2::before {
 .play {
   position: relative;
   z-index: 1;
+  flex: none;
   width: 92px;
   height: 92px;
   border-radius: 50%;
@@ -364,17 +365,73 @@ h2::before {
 .facade-title { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-style: italic; font-size: clamp(1.3rem, 3vw, 2rem); line-height: 1.1; }
 .facade-note { font-size: .9rem; color: var(--steel); }
 
-.playlist { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.playlist button {
-  font: 600 .95rem "Barlow", sans-serif;
-  color: var(--ice);
-  background: rgba(255, 255, 255, .06);
-  border: 0;
-  padding: 9px 16px;
-  cursor: pointer;
-  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+.series {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+  gap: 20px;
+  align-items: start;
 }
-.playlist button:hover { background: var(--cyan-soft); }
+.episodes { display: flex; flex-direction: column; gap: 14px; }
+
+.playlist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.episode {
+  position: relative;
+  display: grid;
+  grid-template-columns: 116px auto 1fr;
+  grid-template-areas: "img no time" "img title title" "img text text";
+  column-gap: 14px;
+  align-items: baseline;
+  width: 100%;
+  padding: 10px 14px 10px 10px;
+  border: 0;
+  text-align: left;
+  color: var(--ice);
+  font: inherit;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .04);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  transition: background .2s;
+}
+.episode:hover { background: rgba(255, 255, 255, .08); }
+/* the clip-path cuts off outlines, so focus is drawn inside */
+.episode:focus-visible, .facade:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--cyan); }
+.episode[aria-current] { background: linear-gradient(90deg, rgba(46, 197, 255, .16), rgba(46, 197, 255, .04)); }
+.episode[aria-current]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(46, 197, 255, .8);
+}
+.episode img {
+  grid-area: img;
+  align-self: center;
+  width: 116px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.7) brightness(.8);
+  transition: filter .2s;
+}
+.episode:hover img, .episode[aria-current] img { filter: none; }
+.ep-no { grid-area: no; font: italic 800 .95rem "Barlow Condensed", sans-serif; color: var(--cyan); letter-spacing: .04em; }
+.ep-time { grid-area: time; justify-self: end; font-size: .82rem; color: var(--steel); font-variant-numeric: tabular-nums; }
+.ep-title { grid-area: title; font: italic 800 1.25rem/1.1 "Barlow Condensed", sans-serif; margin: 1px 0 3px; }
+.ep-text {
+  grid-area: text;
+  font-size: .86rem;
+  line-height: 1.35;
+  color: var(--steel);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.series-link { align-self: flex-start; font-weight: 600; font-size: .98rem; color: var(--ice); text-underline-offset: 4px; }
+.series-link:hover { color: var(--cyan); }
 
 /* status */
 
@@ -638,6 +695,7 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
 
 @media (max-width: 960px) {
   .journey { grid-template-columns: 1fr; }
+  .series { grid-template-columns: 1fr; }
   .map { position: relative; top: 0; }
   .lists { grid-template-columns: 1fr; }
   .needs { grid-template-columns: 1fr; }
@@ -652,6 +710,12 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
       url("shots/chase.jpg") 72% 40% / cover no-repeat;
   }
   .h1-b { padding-left: .2em; }
+  .facade { gap: 10px; }
+  .play { width: 64px; height: 64px; }
+  .play::after { left: 26px; top: 20px; border-left-width: 20px; border-top-width: 12px; border-bottom-width: 12px; }
+  .facade-note { font-size: .8rem; }
+  .episode { grid-template-columns: 96px auto 1fr; column-gap: 12px; }
+  .episode img { width: 96px; }
   .gallery { grid-template-columns: 1fr; grid-auto-rows: 56vw; }
   .shot:first-child { grid-column: auto; grid-row: auto; }
   .disclaimer { text-align: left; }
@@ -661,5 +725,5 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
   html { scroll-behavior: auto; }
   .hero-bg, h1, .tagline, .ctas, .platforms, .node.here .ping { animation: none; }
   .streaks { display: none; }
-  .shot img, .play, summary::after, .btn { transition: none; }
+  .shot img, .play, summary::after, .btn, .episode, .episode img { transition: none; }
 }

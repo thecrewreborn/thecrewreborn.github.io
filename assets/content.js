@@ -1,8 +1,21 @@
-// Edit this file to add videos and screenshots. The first video is the one shown big.
+// Edit this file to add videos and screenshots. Videos are listed in story order; the first one is shown big.
 window.CONTENT = {
   videos: [
-    { id: "-7mQ-vVzTK0", title: "The Crew Is BACK on PS4! Offline in 2026" },
+    { id: "mGOb_1bIwuY", title: "The Prologue", time: "8:23", poster: "assets/videos/the-prologue.jpg",
+      en: "A new save: the chase, the radio tower, the barn.",
+      de: "Neues Spiel: Verfolgung, Funkturm, Scheune." },
+    { id: "GlhArdepV0k", title: "First Night Race", time: "3:04", poster: "assets/videos/first-night-race.jpg",
+      en: "Detroit's first night race, nine checkpoints.",
+      de: "Das erste Nachtrennen durch Detroit." },
+    { id: "EFWpRBiQ838", title: "Drive to the Bridge", time: "2:30", poster: "assets/videos/drive-to-the-bridge.jpg",
+      en: "Dayton's cutscene, then a timed run to the bridge.",
+      de: "Dayton, dann gegen die Uhr zur Brücke." },
+    { id: "PxOrlLmJxqk", title: "Buying and Tuning", time: "3:02", poster: "assets/videos/buying-and-tuning.jpg",
+      en: "A Camaro SS from the dealer, then the street kit.",
+      de: "Ein Camaro SS vom Händler, dann das Straßen-Kit." },
   ],
+  // the playlist with every episode, linked under the list
+  playlist: "PLbKxOmFihheM",
   // Screenshots live in assets/shots/. The first one is shown large.
   screenshots: [
     { src: "assets/shots/new-york.jpg", en: "New York after dark", de: "New York bei Nacht" },
