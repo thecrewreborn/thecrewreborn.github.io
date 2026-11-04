@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=11">
+<link rel="stylesheet" href="assets/style.css?v=12">
 </head>
 <body>
 
@@ -81,16 +81,18 @@
             </defs>
             <image href="assets/shots/map.jpg" width="1600" height="900"/>
             <rect class="map-tint" width="1600" height="900"/>
-            <path class="route-done" d="M1128 243 L992 270 L1264 387 L1328 720"/>
-            <path class="route-ahead" d="M1328 720 L1008 612 L640 495 L448 414 L256 558"/>
+            <path class="route-done" d="M1128 243 L992 270 L1264 387 L1328 720 L1008 612"/>
+            <path class="route-ahead" d="M1008 612 L820 560 L640 495 L448 414 L256 558 L180 390"/>
             <g class="node done"><circle cx="1128" cy="243" r="14"/><text x="1128" y="249">1</text></g>
             <g class="node done"><circle cx="992" cy="270" r="14"/><text x="992" y="276">2</text></g>
             <g class="node done"><circle cx="1264" cy="387" r="14"/><text x="1264" y="393">3</text></g>
-            <g class="node here"><circle class="ping" cx="1328" cy="720" r="14"/><circle cx="1328" cy="720" r="16"/><text x="1328" y="726">4</text></g>
-            <g class="node"><circle cx="1008" cy="612" r="14"/><text x="1008" y="618">5</text></g>
-            <g class="node"><circle cx="640" cy="495" r="14"/><text x="640" y="501">6</text></g>
-            <g class="node"><circle cx="448" cy="414" r="14"/><text x="448" y="420">7</text></g>
-            <g class="node"><circle cx="256" cy="558" r="14"/><text x="256" y="564">8</text></g>
+            <g class="node done"><circle cx="1328" cy="720" r="14"/><text x="1328" y="726">4</text></g>
+            <g class="node here"><circle class="ping" cx="1008" cy="612" r="14"/><circle cx="1008" cy="612" r="16"/><text x="1008" y="618">5</text></g>
+            <g class="node"><circle cx="820" cy="560" r="14"/><text x="820" y="566">6</text></g>
+            <g class="node"><circle cx="640" cy="495" r="14"/><text x="640" y="501">7</text></g>
+            <g class="node"><circle cx="448" cy="414" r="14"/><text x="448" y="420">8</text></g>
+            <g class="node"><circle cx="256" cy="558" r="14"/><text x="256" y="564">9</text></g>
+            <g class="node"><circle cx="180" cy="390" r="14"/><text x="180" y="396">10</text></g>
           </svg>
         </div>
 
@@ -98,10 +100,12 @@
           <li class="done"><h3 data-i18n="m1">Back on the road</h3><p data-i18n="m1t">The game starts and connects to the Reborn server instead of the shut-down official one.</p></li>
           <li class="done"><h3 data-i18n="m2">Into the world</h3><p data-i18n="m2t">Login, free roam across the map, progress saved after every event.</p></li>
           <li class="done"><h3 data-i18n="m3">Missions and rewards</h3><p data-i18n="m3t">Story missions pay out, you level up and unlock perks.</p></li>
-          <li class="here"><h3><span data-i18n="m4">Cars and tuning</span> <em data-i18n="here">You are here</em></h3><p data-i18n="m4t">Dealer purchases and street specs work. Performance parts come next.</p></li>
-          <li><h3 data-i18n="m3b">The whole story</h3><p data-i18n="m3bt">With cars and tuning in place, the campaign plays from start to finish.</p></li>
-          <li><h3 data-i18n="m5">Every activity</h3><p data-i18n="m5t">Police chases, Summit events, factions and the remaining mission types.</p></li>
-          <li><h3 data-i18n="m6">Open source release</h3><p data-i18n="m6t">Server, console patch and a step-by-step guide, free to download.</p></li>
+          <li class="done"><h3 data-i18n="m4">Cars and tuning</h3><p data-i18n="m4t">Dealers, tuner specs and the garage work, and every car loads again after a restart.</p></li>
+          <li class="here"><h3><span data-i18n="m5">Every activity</span> <em data-i18n="here">You are here</em></h3><p data-i18n="m5t">Summit events, police chases, factions and the parts shops are built and calculate like the original server. Now they get tested on the PS4.</p></li>
+          <li><h3 data-i18n="m3b">The whole story</h3><p data-i18n="m3bt">With cars and every activity in place, the campaign plays from start to finish.</p></li>
+          <li><h3 data-i18n="mpc">PC version</h3><p data-i18n="mpct">The PC game speaks the same language as the PS4 version. A small file in the game folder points it at the same server.</p></li>
+          <li><h3 data-i18n="m6">Open source release</h3><p data-i18n="m6t">Server, console patch, the PC file and a step-by-step guide, free to download.</p></li>
+          <li><h3 data-i18n="mmp">Online multiplayer and crossplay</h3><p data-i18n="mmpt">Meet friends on a shared server: crews of up to four, races against each other, PC and PS4 players on the same map.</p></li>
           <li><h3 data-i18n="m7">Server on the console</h3><p data-i18n="m7t">Later: everything runs on the PS4 itself, no second device needed.</p></li>
         </ol>
       </div>
@@ -123,6 +127,7 @@
             <li data-i18n="w11">The summit calendar shows the summit of the week</li>
             <li data-i18n="w12">DLC cars from the DLC you own</li>
             <li data-i18n="w13">Your PSN profile picture in the game</li>
+            <li data-i18n="w14">Tuned cars load again after a restart</li>
           </ul>
         </div>
         <div class="panel">
@@ -130,13 +135,19 @@
           <ul class="checks pending">
             <li data-i18n="t1">No more kick for standing still</li>
             <li data-i18n="t2">Several consoles on one home server</li>
+            <li data-i18n="t3">Summit events, entry and rewards</li>
+            <li data-i18n="t4">Factions and the daily bonus</li>
+            <li data-i18n="t5">Police chases: rewards for escaping, fines for getting caught</li>
+            <li data-i18n="t6">Buying cars at every dealer on the map</li>
+            <li data-i18n="t7">Parts shops and fitting parts in the garage</li>
+            <li data-i18n="t8">Buying perk points</li>
+            <li data-i18n="t9">Collectibles kept, a car for every region's landmarks</li>
           </ul>
           <h3 data-i18n="benchTitle">In the garage</h3>
           <ul class="checks ahead">
-            <li data-i18n="b1">Performance parts</li>
-            <li data-i18n="b2">Police chases</li>
-            <li data-i18n="b3">Summit events</li>
-            <li data-i18n="b4">Factions</li>
+            <li data-i18n="b1">Reward parts from missions</li>
+            <li data-i18n="b2">The chase car after ten escapes</li>
+            <li data-i18n="b3">Repairs that cost money</li>
             <li data-i18n="b5">The remaining mission types</li>
           </ul>
         </div>
@@ -145,7 +156,7 @@
       <div class="later">
         <h3 data-i18n="laterTitle">Further down the road</h3>
         <ul class="later-grid">
-          <li class="panel"><strong data-i18n="r1">Online multiplayer</strong><span data-i18n="r1t">Meet up with friends anywhere on the map: crews of up to four, co-op missions and races against each other.</span></li>
+          <li class="panel"><strong data-i18n="r1">More game regions</strong><span data-i18n="r1t">The US and Asian releases of the PS4 game, next to the European version 1.21.</span></li>
           <li class="panel"><strong data-i18n="r2">Single-player cheats</strong><span data-i18n="r2t">Unlimited money, every car and every part unlocked, for when you just want to cruise. Single player only; in multiplayer everyone plays fair.</span></li>
           <li class="panel"><strong data-i18n="r3">Up to 4K on PS4 Pro and PS5</strong><span data-i18n="r3t">A patch raises the render resolution. Same world, a much sharper picture.</span></li>
         </ul>
@@ -190,7 +201,11 @@
       </details>
       <details>
         <summary data-i18n="q3">Can I play with friends?</summary>
-        <p data-i18n="a3">Several consoles in one home can share a server; that part waits for its first test. Online multiplayer over the internet is on the roadmap.</p>
+        <p data-i18n="a3">Several consoles in one home can share a server; that part waits for its first test. Online multiplayer over the internet is on the roadmap, with PC and PS4 players together as the goal.</p>
+      </details>
+      <details>
+        <summary data-i18n="q7">Is there a PC version?</summary>
+        <p data-i18n="a7">It's planned. The PC game uses the same protocol as the PS4 version, so it can use the same server. A small file in the game folder will point it there; you need your own copy of the PC game.</p>
       </details>
       <details>
         <summary data-i18n="q4">When can I download it?</summary>
@@ -221,7 +236,7 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/content.js?v=11"></script>
-<script src="assets/site.js?v=11"></script>
+<script src="assets/content.js?v=12"></script>
+<script src="assets/site.js?v=12"></script>
 </body>
 </html>
