@@ -505,6 +505,8 @@ h2::before {
 .legs .proof { margin: 12px 0 4px; max-width: 340px; }
 .legs .proof img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(46, 197, 255, .35); }
 .legs .proof figcaption { margin-top: 6px; color: var(--steel); font-size: .88rem; }
+.legs .proof-video { display: inline-block; margin-top: 6px; color: var(--cyan); font-size: .92rem; font-weight: 700; }
+.legs .proof-video:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .legs em {
   display: inline-block;
   margin-left: 6px;

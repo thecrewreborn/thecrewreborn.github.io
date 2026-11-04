@@ -28,6 +28,7 @@
     mmp: "Online-Multiplayer und Crossplay",
     mmpt: "PS4 und PC auf derselben Karte, auf deinem eigenen Server. Am 4. November haben sich zum ersten Mal eine echte PS4 und ein PC auf einem Server getroffen und sich in derselben Straße fahren sehen. Als Nächstes kommen Spielernamen, Crews und Rennen.",
     mmpProof: "Erster Crossplay-Test: PS4 (oben) und PC (unten) sehen sich gegenseitig.",
+    mmpVideo: "Clip auf YouTube ansehen",
     mmpProofAlt: "Eine PS4 auf dem Fernseher und darunter ein PC, beide zeigen das Auto des anderen Spielers in derselben Straße",
     m6: "Open-Source-Release",
     m6t: "Server, Konsolen-Patch, die PC-Datei und eine Schritt-für-Schritt-Anleitung, kostenlos zum Download.",
