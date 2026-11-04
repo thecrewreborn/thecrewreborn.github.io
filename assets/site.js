@@ -26,7 +26,9 @@
     mpc: "PC-Version",
     mpct: "Die PC-Version läuft auf demselben Server wie die PS4: Eine kleine Datei im Spielordner leitet sie dorthin um. Anmeldung, Prolog und offene Welt funktionieren.",
     mmp: "Online-Multiplayer und Crossplay",
-    mmpt: "Mit Freunden auf einem gemeinsamen Server, PC und PS4 auf derselben Karte. Der Server stellt die Spieler einander schon vor, über beide Plattformen hinweg: Im ersten Test hat das PC-Spiel einen als PS4 angemeldeten Spieler angenommen und sich direkt mit ihm verbunden. Als Nächstes kommt die erste Runde mit echter PS4 und PC, danach Crews und Rennen.",
+    mmpt: "PS4 und PC auf derselben Karte, auf deinem eigenen Server. Am 4. November haben sich zum ersten Mal eine echte PS4 und ein PC auf einem Server getroffen und sich in derselben Straße fahren sehen. Als Nächstes kommen Spielernamen, Crews und Rennen.",
+    mmpProof: "Erster Crossplay-Test: PS4 (oben) und PC (unten) sehen sich gegenseitig.",
+    mmpProofAlt: "Eine PS4 auf dem Fernseher und darunter ein PC, beide zeigen das Auto des anderen Spielers in derselben Straße",
     m6: "Open-Source-Release",
     m6t: "Server, Konsolen-Patch, die PC-Datei und eine Schritt-für-Schritt-Anleitung, kostenlos zum Download.",
     m7: "Server direkt auf der Konsole",
@@ -86,7 +88,7 @@
     q2: "Wo wird mein Spielstand gespeichert?",
     a2: "Auf deinem Server, getrennt pro PS4-Profil oder PC-Spielername. Deine Spieleinstellungen bleiben auf der Konsole oder dem PC.",
     q3: "Kann ich mit Freunden spielen?",
-    a3: "Ja, das ist das Ziel, mit Crossplay zwischen PC und PS4. Multiplayer ist im Server eingeschaltet: Er stellt die Spieler einander vor, und die Spiele verbinden sich direkt. Im ersten Test hat das PC-Spiel einen als PS4 angemeldeten Spieler angenommen und die Verbindung aufgebaut. Als Nächstes kommt die erste Runde mit echter PS4 und PC, danach das Spielen über das Internet.",
+    a3: "Ja, mit Crossplay zwischen PC und PS4. Im ersten Test haben sich eine echte PS4 und ein PC auf einem Server getroffen und sich in der Welt gesehen. An Spielernamen, Crew-Einladungen und dem Spielen über das Internet wird noch gearbeitet.",
     q7: "Gibt es eine PC-Version?",
     a7: "Ja. Die PC-Version läuft auf demselben Server wie die PS4-Fassung: Eine kleine Datei im Spielordner leitet sie dorthin um. Anmeldung, Prolog und offene Welt funktionieren schon; die Datei kommt mit dem Open-Source-Release. Du brauchst dein eigenes Exemplar des PC-Spiels: Die Ubisoft-Connect-Version funktioniert, die Steam-Version wird noch getestet.",
     q4: "Wann kann ich es herunterladen?",
@@ -101,6 +103,8 @@
   const nodes = Array.from(document.querySelectorAll("[data-i18n]"));
   const EN = {};
   nodes.forEach((n) => (EN[n.dataset.i18n] = n.textContent));
+  const altNodes = Array.from(document.querySelectorAll("[data-i18n-alt]"));
+  altNodes.forEach((n) => (EN[n.dataset.i18nAlt] = n.alt));
   const C = window.CONTENT || { videos: [], screenshots: [] };
   let lang = "en";
 
@@ -112,6 +116,7 @@
     lang = next;
     const dict = lang === "de" ? DE : EN;
     nodes.forEach((n) => { if (dict[n.dataset.i18n]) n.textContent = dict[n.dataset.i18n]; });
+    altNodes.forEach((n) => { if (dict[n.dataset.i18nAlt]) n.alt = dict[n.dataset.i18nAlt]; });
     document.documentElement.lang = lang;
     document.getElementById("lang").dataset.active = lang;
     renderGallery();

@@ -502,6 +502,9 @@ h2::before {
 .legs h3 { margin: 0 0 .15em; font-size: 1.4rem; font-weight: 800; font-style: italic; line-height: 1.15; }
 .legs p { margin: 0; color: var(--steel); font-size: .98rem; }
 .legs li:not(.done):not(.here) h3 { color: #b7c1ce; }
+.legs .proof { margin: 12px 0 4px; max-width: 340px; }
+.legs .proof img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(46, 197, 255, .35); }
+.legs .proof figcaption { margin-top: 6px; color: var(--steel); font-size: .88rem; }
 .legs em {
   display: inline-block;
   margin-left: 6px;
