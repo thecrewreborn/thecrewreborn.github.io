@@ -1,6 +1,6 @@
 (function () {
   const DE = {
-    tagline: "The Crew (2014) läuft wieder auf PS4, PS5 und PC. Ohne Ubisoft-Server und ohne PS Plus, nur mit deiner Konsole oder deinem PC und einem kleinen Server bei dir zu Hause.",
+    tagline: "Das erste The Crew läuft wieder auf PS4, PS5 und PC. Ohne Ubisoft-Server und ohne PS Plus: Das Spiel verbindet sich mit einem eigenen Server im lokalen Netzwerk.",
     ctaDownload: "Pre-Release herunterladen",
     ctaVideo: "Video ansehen",
     ctaStatus: "Zum aktuellen Stand",
