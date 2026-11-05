@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=16">
+<link rel="stylesheet" href="assets/style.css?v=17">
 </head>
 <body>
 
@@ -39,6 +39,7 @@
       <a class="btn btn-primary" href="#video" data-i18n="ctaVideo">Watch it run</a>
       <a class="btn btn-ghost" href="#status" data-i18n="ctaStatus">See the progress</a>
     </div>
+    <a class="news" href="#crossplay"><b data-i18n="newsTag">New</b> <span data-i18n="news">PS4 and PC players in one crew, tested on real hardware</span></a>
   </div>
 
   <p class="disclaimer" data-i18n="fan">Fan project. Not affiliated with or endorsed by Ubisoft.</p>
@@ -48,7 +49,7 @@
   <section id="video" class="band">
     <div class="wrap">
       <h2 data-i18n="videoTitle">See it running</h2>
-      <p class="lede" data-i18n="videoText">Recorded on a PS4 in November 2026, starting from a new save. Four episodes in story order, from the prologue to the first tuned car.</p>
+      <p class="lede" data-i18n="videoText">Recorded in November 2026. The story on a PS4 from a new save, up to the first tuned car, then a crew with a PS4 and a PC player.</p>
       <div class="series">
         <div class="player" id="player">
           <button type="button" class="facade" id="facade">
@@ -68,7 +69,7 @@
   <section id="status" class="band status">
     <div class="wrap">
       <h2 data-i18n="statusTitle">Where the trip stands</h2>
-      <p class="lede" data-i18n="statusText">The game boots on PS4 and PC, the world loads and progress is saved. The remaining server features follow one by one.</p>
+      <p class="lede" data-i18n="statusText">The game boots on PS4 and PC, the world loads, progress is saved, and players on both platforms drive together in one crew. The remaining server features follow one by one.</p>
 
       <div class="journey">
         <div class="map" aria-hidden="true">
@@ -88,7 +89,7 @@
             <g class="node done"><circle cx="1264" cy="387" r="14"/><text x="1264" y="393">3</text></g>
             <g class="node done"><circle cx="1328" cy="720" r="14"/><text x="1328" y="726">4</text></g>
             <g class="node done"><circle cx="1008" cy="612" r="14"/><text x="1008" y="618">5</text></g>
-            <g class="node here"><circle class="ping" cx="820" cy="560" r="14"/><circle cx="820" cy="560" r="16"/><text x="820" y="566">6</text></g>
+            <g class="node done"><circle cx="820" cy="560" r="14"/><text x="820" y="566">6</text></g>
             <g class="node here"><circle class="ping" cx="640" cy="495" r="14"/><circle cx="640" cy="495" r="16"/><text x="640" y="501">7</text></g>
             <g class="node"><circle cx="448" cy="414" r="14"/><text x="448" y="420">8</text></g>
             <g class="node"><circle cx="256" cy="558" r="14"/><text x="256" y="564">9</text></g>
@@ -102,8 +103,8 @@
           <li class="done"><h3 data-i18n="m3">Missions and rewards</h3><p data-i18n="m3t">Story missions pay out, you level up and unlock perks.</p></li>
           <li class="done"><h3 data-i18n="m4">Cars and tuning</h3><p data-i18n="m4t">Dealers, tuner specs and the garage work, and every car loads again after a restart.</p></li>
           <li class="done"><h3 data-i18n="mpc">PC version</h3><p data-i18n="mpct">The PC game runs on the same server as the PS4: a small file in the game folder points it there. Login, the prologue and the open world work.</p></li>
-          <li class="here"><h3><span data-i18n="mmp">Online multiplayer and crossplay</span> <em data-i18n="here">In progress</em></h3><p data-i18n="mmpt">PS4 and PC on the same map, on your own server. On 4 November the first real PS4 and PC met on one server and saw each other driving in the same street. Player names, crews and races come next.</p>
-            <figure class="proof"><img src="assets/shots/crossplay.webp" width="900" height="1200" loading="lazy" alt="A PS4 on the TV and a PC below it, each showing the other player's car in the same street" data-i18n-alt="mmpProofAlt"><figcaption data-i18n="mmpProof">First crossplay test: the PS4 (top) and the PC (bottom) see each other.</figcaption><a class="proof-video" href="https://www.youtube.com/shorts/k7NOHK2vMmA" target="_blank" rel="noopener" data-i18n="mmpVideo">Watch the clip on YouTube</a></figure></li>
+          <li class="done" id="crossplay"><h3><span data-i18n="mmp">Online multiplayer and crossplay</span> <em class="ok" data-i18n="tested">Tested on PS4 and PC</em></h3><p data-i18n="mmpt">PS4 and PC players meet on your own server, see each other and drive together. Since 5 November crews work across platforms too: a PS4 player invites a PC player, the invite goes through and the crew lead changes hands.</p>
+            <figure class="proof"><img src="assets/shots/crossplay.webp" width="900" height="1200" loading="lazy" alt="A PS4 on the TV and a PC below it, each showing the other player's car in the same street" data-i18n-alt="mmpProofAlt"><figcaption data-i18n="mmpProof">First crossplay test: the PS4 (top) and the PC (bottom) see each other.</figcaption><a class="proof-video" href="#video" data-play="Ra0fcutVQ1Y" data-i18n="mmpCrew">Watch the crossplay crew video</a> <a class="proof-video" href="https://www.youtube.com/shorts/k7NOHK2vMmA" target="_blank" rel="noopener" data-i18n="mmpVideo">Watch the first clip on YouTube</a></figure></li>
           <li class="here"><h3><span data-i18n="m5">Every activity</span> <em data-i18n="here">In progress</em></h3><p data-i18n="m5t">Summit events, police chases, factions and the parts shops are built and calculate like the original server. Now they get tested on the PS4.</p></li>
           <li><h3 data-i18n="m3b">The whole story</h3><p data-i18n="m3bt">With cars and every activity in place, the campaign plays from start to finish.</p></li>
           <li><h3 data-i18n="m6">Open source release</h3><p data-i18n="m6t">Server, console patch, the PC file and a step-by-step guide, free to download.</p></li>
@@ -130,6 +131,8 @@
             <li data-i18n="w13">Your PSN profile picture in the game</li>
             <li data-i18n="w14">Tuned cars load again after a restart</li>
             <li data-i18n="w15">On PC: login, the prologue and the open world, on the same server as the PS4</li>
+            <li data-i18n="w16">Multiplayer: PS4 and PC players meet on one server and see each other</li>
+            <li data-i18n="w17">Crews across PS4 and PC: invite a player from the other platform</li>
           </ul>
         </div>
         <div class="panel">
@@ -237,7 +240,7 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/content.js?v=16"></script>
-<script src="assets/site.js?v=19"></script>
+<script src="assets/content.js?v=17"></script>
+<script src="assets/site.js?v=20"></script>
 </body>
 </html>

@@ -3,13 +3,15 @@
     tagline: "The Crew (2014) läuft wieder auf PS4, PS5 und PC. Ohne Ubisoft-Server und ohne PS Plus, nur mit deiner Konsole oder deinem PC und einem kleinen Server bei dir zu Hause.",
     ctaVideo: "Video ansehen",
     ctaStatus: "Zum aktuellen Stand",
+    newsTag: "Neu",
+    news: "PS4- und PC-Spieler in einer Crew, auf echter Hardware getestet",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
-    videoText: "Aufgenommen im November 2026 auf einer PS4, mit einem neuen Spielstand. Vier Folgen in der Reihenfolge der Story, vom Prolog bis zum ersten getunten Auto.",
+    videoText: "Aufgenommen im November 2026. Die Story auf einer PS4 mit neuem Spielstand bis zum ersten getunten Auto, dann eine Crew aus einem PS4- und einem PC-Spieler.",
     videoAll: "Die ganze Serie auf YouTube",
     videoNote: "Das Video wird erst nach dem Klick von YouTube geladen.",
     statusTitle: "Aktueller Stand",
-    statusText: "Das Spiel startet auf PS4 und PC, die Welt lädt und der Fortschritt wird gespeichert. Die restlichen Serverfunktionen folgen Schritt für Schritt.",
+    statusText: "Das Spiel startet auf PS4 und PC, die Welt lädt, der Fortschritt wird gespeichert und Spieler beider Plattformen fahren zusammen in einer Crew. Die restlichen Serverfunktionen folgen Schritt für Schritt.",
     m1: "Zurück auf der Straße",
     m1t: "Das Spiel startet und verbindet sich mit dem Reborn-Server statt mit den abgeschalteten Ubisoft-Servern.",
     m2: "Die offene Welt",
@@ -26,9 +28,11 @@
     mpc: "PC-Version",
     mpct: "Die PC-Version läuft auf demselben Server wie die PS4: Eine kleine Datei im Spielordner leitet sie dorthin um. Anmeldung, Prolog und offene Welt funktionieren.",
     mmp: "Online-Multiplayer und Crossplay",
-    mmpt: "PS4 und PC auf derselben Karte, auf deinem eigenen Server. Am 4. November haben sich zum ersten Mal eine echte PS4 und ein PC auf einem Server getroffen und sich in derselben Straße fahren sehen. Als Nächstes kommen Spielernamen, Crews und Rennen.",
+    mmpt: "PS4- und PC-Spieler treffen sich auf deinem eigenen Server, sehen sich und fahren zusammen. Seit dem 5. November klappen auch Crews über beide Plattformen: Ein PS4-Spieler lädt einen PC-Spieler ein, die Einladung kommt an und die Crew-Leitung wechselt.",
+    tested: "Getestet auf PS4 und PC",
+    mmpCrew: "Crossplay-Crew-Video ansehen",
     mmpProof: "Erster Crossplay-Test: PS4 (oben) und PC (unten) sehen sich gegenseitig.",
-    mmpVideo: "Clip auf YouTube ansehen",
+    mmpVideo: "Ersten Clip auf YouTube ansehen",
     mmpProofAlt: "Eine PS4 auf dem Fernseher und darunter ein PC, beide zeigen das Auto des anderen Spielers in derselben Straße",
     m6: "Open-Source-Release",
     m6t: "Server, Konsolen-Patch, die PC-Datei und eine Schritt-für-Schritt-Anleitung, kostenlos zum Download.",
@@ -50,6 +54,8 @@
     w13: "Dein PSN-Profilbild im Spiel",
     w14: "Getunte Autos laden auch nach einem Neustart",
     w15: "Auf dem PC: Anmeldung, Prolog und offene Welt, am selben Server wie die PS4",
+    w16: "Multiplayer: PS4- und PC-Spieler treffen sich auf einem Server und sehen sich",
+    w17: "Crews über PS4 und PC: Spieler der anderen Plattform einladen",
     testTitle: "Fertig, aber noch nicht getestet",
     t1: "Kein automatischer Rauswurf mehr bei Inaktivität",
     t2: "Mehrere Konsolen an einem Server",
@@ -125,7 +131,7 @@
     try { localStorage.setItem("lang", lang); } catch (e) { /* private mode */ }
   }
 
-  let current = 0;
+  let current = Math.max(0, C.videos.findIndex((v) => v.id === C.featured));
 
   function markCurrent() {
     document.querySelectorAll("#playlist button").forEach((b, k) => {
@@ -227,6 +233,11 @@
   }
 
   document.getElementById("lang").addEventListener("click", () => setLang(lang === "de" ? "en" : "de"));
+  // links elsewhere on the page that play an episode in the player
+  document.querySelectorAll("[data-play]").forEach((a) => a.addEventListener("click", () => {
+    const i = C.videos.findIndex((v) => v.id === a.dataset.play);
+    if (i >= 0) showVideo(i, true);
+  }));
   const asked = new URLSearchParams(location.search).get("lang");
   const saved = asked === "de" || asked === "en" ? asked : stored();
   setLang(saved || ((navigator.language || "").toLowerCase().startsWith("de") ? "de" : "en"));

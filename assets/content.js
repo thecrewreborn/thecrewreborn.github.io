@@ -1,4 +1,4 @@
-// Edit this file to add videos and screenshots. Videos are listed in story order; the first one is shown big.
+// Edit this file to add videos and screenshots. Videos are listed in story order; `featured` picks the one shown big.
 window.CONTENT = {
   videos: [
     { id: "mGOb_1bIwuY", title: "The Prologue", time: "8:23", poster: "assets/videos/the-prologue.jpg",
@@ -13,7 +13,12 @@ window.CONTENT = {
     { id: "PxOrlLmJxqk", title: "Buying and Tuning", time: "3:02", poster: "assets/videos/buying-and-tuning.jpg",
       en: "A Camaro SS from the dealer, then the street kit.",
       de: "Ein Camaro SS vom Händler, dann das Straßen-Kit." },
+    { id: "Ra0fcutVQ1Y", title: "Crossplay Crew", time: "2:53", poster: "assets/videos/crossplay-crew.jpg",
+      en: "A PS4 player invites a PC player into the crew.",
+      de: "Ein PS4-Spieler holt einen PC-Spieler in die Crew." },
   ],
+  // the episode the player shows first (the newest milestone); empty = the first one
+  featured: "Ra0fcutVQ1Y",
   // the playlist with every episode, linked under the list
   playlist: "PLbKxOmFihheM",
   // Screenshots live in assets/shots/. The first one is shown large.

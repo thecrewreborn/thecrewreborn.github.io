@@ -205,6 +205,35 @@ h1 {
   animation: rise .9s .5s ease-out both;
 }
 
+.news {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.4rem;
+  padding: 6px 16px 6px 6px;
+  color: var(--ice);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .98rem;
+  background: rgba(7, 11, 18, .55);
+  box-shadow: inset 0 0 0 1px rgba(46, 197, 255, .45);
+  backdrop-filter: blur(6px);
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  animation: rise .9s .9s ease-out both;
+}
+.news b {
+  padding: 2px 10px 1px;
+  font: 800 italic .95rem/1.2 "Barlow Condensed", sans-serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: var(--siren);
+  color: #fff;
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+.news:hover { box-shadow: inset 0 0 0 1px var(--cyan); }
+.news:hover span { color: var(--cyan); }
+.news:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--cyan); }
+
 .ctas {
   display: flex;
   flex-wrap: wrap;
@@ -518,6 +547,7 @@ h2::before {
   color: #fff;
   clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
 }
+.legs em.ok { background: var(--cyan); color: var(--night); }
 
 .lists {
   display: grid;
@@ -728,7 +758,7 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-bg, h1, .tagline, .ctas, .platforms, .node.here .ping { animation: none; }
+  .hero-bg, h1, .tagline, .ctas, .news, .platforms, .node.here .ping { animation: none; }
   .streaks { display: none; }
   .shot img, .play, summary::after, .btn, .episode, .episode img { transition: none; }
 }
