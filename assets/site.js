@@ -121,6 +121,8 @@
     r3t: "Ein Patch erhöht die Renderauflösung. Dieselbe Welt, ein deutlich schärferes Bild.",
     q1: "Brauche ich PS Plus?",
     a1: "Nein. Das Spiel verbindet sich nur mit deinem eigenen Server.",
+    q9: "Woher bekomme ich das Spiel?",
+    a9: "Du brauchst dein eigenes Exemplar von The Crew. Für die PS4 gibt es die Disc gebraucht noch problemlos; installier sie mit dem Update 1.21. Am PC brauchst du die Ubisoft-Connect-Version, die du besitzt und installiert hast. Dieses Projekt stellt keine Spieldateien, keine Download-Links und keine Hilfe zu Kopien bereit, die du nicht besitzt.",
     q5: "Läuft es auch auf der PS5?",
     a5: "Ja. Die PS5 startet die PS4-Version per Abwärtskompatibilität, mit demselben Patch und demselben Server.",
     q2: "Wo wird mein Spielstand gespeichert?",
