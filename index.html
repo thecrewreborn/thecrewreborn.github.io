@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=17">
+<link rel="stylesheet" href="assets/style.css?v=21">
 </head>
 <body>
 
@@ -36,10 +36,12 @@
     <h1><span class="h1-a">The Crew</span><span class="h1-b">Reborn</span></h1>
     <p class="tagline" data-i18n="tagline">The Crew (2014) runs again on PS4, PS5 and PC. No official servers, no PS Plus. Just you, your console or PC and a server on your home network.</p>
     <div class="ctas">
-      <a class="btn btn-primary" href="#video" data-i18n="ctaVideo">Watch it run</a>
+      <a class="btn btn-primary" href="https://github.com/thecrewreborn/server/releases" data-i18n="ctaDownload">Download the pre-release</a>
+      <a class="btn btn-ghost" href="#video" data-i18n="ctaVideo">Watch it run</a>
       <a class="btn btn-ghost" href="#status" data-i18n="ctaStatus">See the progress</a>
     </div>
-    <a class="news" href="#crossplay"><b data-i18n="newsTag">New</b> <span data-i18n="news">PS4 and PC players in one crew, tested on real hardware</span></a>
+    <a class="news" href="#prerelease"><b data-i18n="newsTag">New</b> <span data-i18n="news">Pre-release 0.0.1: download it and try it on your own server</span></a>
+    <a class="bug-link" href="https://github.com/thecrewreborn/server/issues" data-i18n="bugLink">Found a bug? Report it on GitHub</a>
   </div>
 
   <p class="disclaimer" data-i18n="fan">Fan project. Not affiliated with or endorsed by Ubisoft.</p>
@@ -66,10 +68,31 @@
     </div>
   </section>
 
+  <section id="cross" class="band cross">
+    <div class="wrap">
+      <h2 data-i18n="crossTitle">Crossplay, cross-save, cross-progression</h2>
+      <p class="lede" data-i18n="crossText">One server for PS4 and PC. Play together across platforms, and take your progress from the console to the PC and back.</p>
+      <ul class="needs cross-grid">
+        <li class="panel"><strong data-i18n="cp1">Crossplay</strong><em class="tag-ok" data-i18n="cp1tag">Tested on PS4 and PC</em><span data-i18n="cp1t">PS4 and PC players meet in the same world, see each other and drive in one crew.</span></li>
+        <li class="panel"><strong data-i18n="cp2">Cross-save</strong><em class="tag-ok" data-i18n="cp2tag">Tested from PS4 to PC</em><span data-i18n="cp2t">Your save lives on your server, not on the console: level, money, cars and missions. Start on the PS4, carry on at the PC.</span></li>
+        <li class="panel"><strong data-i18n="cp3">Cross-progression</strong><span data-i18n="cp3t">What you earn on one platform counts on the other, because both play the very same save.</span></li>
+      </ul>
+      <div class="panel howto">
+        <h3 data-i18n="howTitle">One save on PS4 and PC: how it works</h3>
+        <ol>
+          <li data-i18n="how1">Play on the PS4 as usual. The server keeps your save under your PS4 user name.</li>
+          <li data-i18n="how2">On the PC, open reborn.ini next to TheCrew.exe and set Name= to that PS4 user name, spelled exactly the same.</li>
+          <li data-i18n="how3">Start the game on the PC. It loads the same level, money, cars and missions. Works the other way round too.</li>
+        </ol>
+        <p class="ver-note" data-i18n="howNote">One name plays on one device at a time: the server refuses a second game with the same name (it shows error #0_35), so two games never write the same save.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="status" class="band status">
     <div class="wrap">
       <h2 data-i18n="statusTitle">Where the trip stands</h2>
-      <p class="lede" data-i18n="statusText">The game boots on PS4 and PC, the world loads, progress is saved, and players on both platforms drive together in one crew. The remaining server features follow one by one.</p>
+      <p class="lede" data-i18n="statusText">The game boots on PS4 and PC, the world loads, progress is saved, and players on both platforms drive together in one crew. The pre-release is out; what is built but untested gets tested one by one.</p>
 
       <div class="journey">
         <div class="map" aria-hidden="true">
@@ -105,9 +128,10 @@
           <li class="done"><h3 data-i18n="mpc">PC version</h3><p data-i18n="mpct">The PC game runs on the same server as the PS4: a small file in the game folder points it there. Login, the prologue and the open world work.</p></li>
           <li class="done" id="crossplay"><h3><span data-i18n="mmp">Online multiplayer and crossplay</span> <em class="ok" data-i18n="tested">Tested on PS4 and PC</em></h3><p data-i18n="mmpt">PS4 and PC players meet on your own server, see each other and drive together. Since 5 November crews work across platforms too: a PS4 player invites a PC player, the invite goes through and the crew lead changes hands.</p>
             <figure class="proof"><img src="assets/shots/crossplay.webp" width="900" height="1200" loading="lazy" alt="A PS4 on the TV and a PC below it, each showing the other player's car in the same street" data-i18n-alt="mmpProofAlt"><figcaption data-i18n="mmpProof">First crossplay test: the PS4 (top) and the PC (bottom) see each other.</figcaption><a class="proof-video" href="#video" data-play="Ra0fcutVQ1Y" data-i18n="mmpCrew">Watch the crossplay crew video</a> <a class="proof-video" href="https://www.youtube.com/shorts/k7NOHK2vMmA" target="_blank" rel="noopener" data-i18n="mmpVideo">Watch the first clip on YouTube</a></figure></li>
-          <li class="here"><h3><span data-i18n="m5">Every activity</span> <em data-i18n="here">In progress</em></h3><p data-i18n="m5t">Summit events, police chases, factions and the parts shops are built and calculate like the original server. Now they get tested on the PS4.</p></li>
-          <li><h3 data-i18n="m3b">The whole story</h3><p data-i18n="m3bt">With cars and every activity in place, the campaign plays from start to finish.</p></li>
-          <li><h3 data-i18n="m6">Open source release</h3><p data-i18n="m6t">Server, console patch, the PC file and a step-by-step guide, free to download.</p></li>
+          <li class="here" id="prerelease"><h3><span data-i18n="mpre">Pre-release: download and try it</span> <em data-i18n="now">Out now</em></h3><p data-i18n="mpret">The server is open source and runs on Windows, macOS and Linux; the console patch and the PC file come with it. Every activity and the whole story are built, but not all of it is tested yet. Expect bugs, and please report them.</p>
+            <p class="leg-links"><a class="btn btn-primary btn-small" href="https://github.com/thecrewreborn/server/releases" data-i18n="download">Download 0.0.1</a> <a class="btn btn-ghost btn-small" href="https://github.com/thecrewreborn/server/issues" data-i18n="reportBug">Report a bug</a></p></li>
+          <li><h3 data-i18n="m5">Every activity, tested</h3><p data-i18n="m5t">Summit events, police chases, factions and the parts shops calculate like the original server. Each one gets tested on PS4 and PC.</p></li>
+          <li><h3 data-i18n="m6">Release 1.0</h3><p data-i18n="m6t">The whole story played from start to finish, every activity tested, and a step-by-step guide.</p></li>
           <li><h3 data-i18n="m7">Server on the console</h3><p data-i18n="m7t">Later: everything runs on the PS4 itself, no second device needed.</p></li>
         </ol>
       </div>
@@ -133,6 +157,7 @@
             <li data-i18n="w15">On PC: login, the prologue and the open world, on the same server as the PS4</li>
             <li data-i18n="w16">Multiplayer: PS4 and PC players meet on one server and see each other</li>
             <li data-i18n="w17">Crews across PS4 and PC: invite a player from the other platform</li>
+            <li data-i18n="w18">Cross-save: one save on PS4 and PC under the same player name</li>
           </ul>
         </div>
         <div class="panel">
@@ -180,11 +205,20 @@
     <div class="wrap">
       <h2 data-i18n="needTitle">What you'll need</h2>
       <ul class="needs">
-        <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, European version 1.21 (CUSA00161); other regions are planned. PC: tested with the Ubisoft Connect version; the Steam version is being tested.</span></li>
+        <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, the European version with update 1.21. PC: the Ubisoft Connect version. The exact versions are listed below.</span></li>
         <li class="panel"><strong data-i18n="n2">On console: a PS4 or PS5 that runs homebrew game patches</strong><span data-i18n="n2t">The patch points the game at your server. On PC a small file in the game folder does the same.</span></li>
         <li class="panel"><strong data-i18n="n3">A computer on the same network</strong><span data-i18n="n3t">Windows, macOS or Linux with Python. It runs the server while you play.</span></li>
       </ul>
-      <p class="note" data-i18n="needNote">No game files are provided. You need your own copy; the project contains only original code. A step-by-step guide ships with the open-source release.</p>
+      <div class="panel versions" id="versions">
+        <h3 data-i18n="verTitle">Supported versions</h3>
+        <dl class="ver">
+          <dt>PS4</dt><dd data-i18n="verPs4">The Crew, European version CUSA00161, version 1.00 with update 1.21 installed (the game info shows 01.21). Tested on a PS4 with firmware 11.50 and GoldHEN.</dd>
+          <dt>PC</dt><dd data-i18n="verPc">Ubisoft Connect version: TheCrew.exe 1.2.0.0, build 502193, the last update. Tested on Windows 11.</dd>
+          <dt data-i18n="verSrvName">Server</dt><dd data-i18n="verSrv">Windows, macOS and Linux with Python 3.10 or newer; the start script installs Python on Windows and macOS.</dd>
+        </dl>
+        <p class="ver-note" data-i18n="verUntested">Might work, not tested yet: the Steam version for PC and the PS5 through backwards compatibility. Not yet: other PS4 regions and game versions, because the patch fits only CUSA00161 with update 1.21.</p>
+      </div>
+      <p class="note" data-i18n="needNote">No game files are provided. You need your own copy; the project contains only original code. The README in the download explains the setup.</p>
     </div>
   </section>
 
@@ -205,15 +239,19 @@
       </details>
       <details>
         <summary data-i18n="q3">Can I play with friends?</summary>
-        <p data-i18n="a3">Yes, with crossplay between PC and PS4. In the first test a real PS4 and a PC met on one server and saw each other in the world. Player names, inviting each other into a crew and playing over the internet are still being worked on.</p>
+        <p data-i18n="a3">Yes, with crossplay between PC and PS4: you see each other in the world and play in one crew. Playing over the internet is not tested yet.</p>
+      </details>
+      <details>
+        <summary data-i18n="q8">Can I take my PS4 progress to the PC?</summary>
+        <p data-i18n="a8">Yes. Saves are kept on your server by player name. Set Name in reborn.ini on the PC to your PS4 user name and the PC plays the same save: level, money, cars and missions. One name plays on one device at a time; a second login with it shows error #0_35.</p>
       </details>
       <details>
         <summary data-i18n="q7">Is there a PC version?</summary>
-        <p data-i18n="a7">Yes. The PC game runs on the same server as the PS4 version: a small file in the game folder points it there. Login, the prologue and the open world work today; the file comes with the open-source release. You need your own copy of the PC game: the Ubisoft Connect version works, the Steam version is being tested.</p>
+        <p data-i18n="a7">Yes. The PC game runs on the same server as the PS4 version: a small file in the game folder points it there. Login, the prologue and the open world work today; the file is in the PC download of the pre-release. You need your own copy of the PC game: the Ubisoft Connect version works, the Steam version is being tested.</p>
       </details>
       <details>
         <summary data-i18n="q4">When can I download it?</summary>
-        <p data-i18n="a4">Once every activity works and the install guide is written. There's no date yet. New videos on the YouTube channel show each step.</p>
+        <p data-i18n="a4">Now: pre-release 0.0.1 is on GitHub, with the server for Windows, macOS and Linux, the PS4 patch and the PC file. Not everything is tested yet; release 1.0 follows once the whole story is played through.</p>
       </details>
       <details>
         <summary data-i18n="q6">Can I support the project?</summary>
@@ -227,7 +265,9 @@
   <div class="wrap">
     <p class="foot-links">
       <a href="https://www.youtube.com/@Knutwurst" data-i18n="channel">YouTube channel</a>
-      <a href="https://github.com/thecrewreborn/thecrewreborn.github.io">GitHub</a>
+      <a href="https://github.com/thecrewreborn/server/releases" data-i18n="footDownload">Download</a>
+      <a href="https://github.com/thecrewreborn/server/issues" data-i18n="reportBug2">Report a bug</a>
+      <a href="https://github.com/thecrewreborn/server">GitHub</a>
       <a href="https://ko-fi.com/knutwurst">Ko-fi</a>
     </p>
     <p data-i18n="legal">The Crew Reborn is a fan project by Knutwurst. The Crew is a trademark of Ubisoft Entertainment. PlayStation and PS4 are trademarks of Sony Interactive Entertainment. Game screenshots &copy; Ubisoft Entertainment. This site is not affiliated with or endorsed by Ubisoft or Sony.</p>
@@ -240,7 +280,7 @@
   <p id="lbCap"></p>
 </div>
 
-<script src="assets/content.js?v=17"></script>
-<script src="assets/site.js?v=20"></script>
+<script src="assets/content.js?v=18"></script>
+<script src="assets/site.js?v=23"></script>
 </body>
 </html>

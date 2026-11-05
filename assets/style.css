@@ -531,10 +531,14 @@ h2::before {
 .legs h3 { margin: 0 0 .15em; font-size: 1.4rem; font-weight: 800; font-style: italic; line-height: 1.15; }
 .legs p { margin: 0; color: var(--steel); font-size: .98rem; }
 .legs li:not(.done):not(.here) h3 { color: #b7c1ce; }
-.legs .proof { margin: 12px 0 4px; max-width: 340px; }
-.legs .proof img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(46, 197, 255, .35); }
-.legs .proof figcaption { margin-top: 6px; color: var(--steel); font-size: .88rem; }
-.legs .proof-video { display: inline-block; margin-top: 6px; color: var(--cyan); font-size: .92rem; font-weight: 700; }
+.legs .proof { margin: 12px 0 4px; max-width: 520px; display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; align-items: start; }
+.legs .proof img { grid-row: 1 / span 3; display: block; width: 96px; height: auto; border-radius: 6px; border: 1px solid rgba(46, 197, 255, .35); }
+.legs .proof figcaption { color: var(--steel); font-size: .88rem; }
+.legs .proof-video { justify-self: start; margin-top: 6px; color: var(--cyan); font-size: .92rem; font-weight: 700; }
+.legs .leg-links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-small { padding: 8px 16px; font-size: .95rem; }
+.bug-link { display: block; width: fit-content; margin-top: 12px; color: var(--steel); font-size: .92rem; text-decoration: underline; text-underline-offset: 3px; }
+.bug-link:hover { color: var(--cyan); }
 .legs .proof-video:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .legs em {
   display: inline-block;
@@ -662,6 +666,19 @@ h2::before {
 .needs li { padding: 26px 24px 24px; }
 .needs strong { display: block; font: 800 italic 1.4rem/1.15 "Barlow Condensed", sans-serif; margin-bottom: .45em; }
 .needs span { color: var(--steel); font-size: .98rem; }
+.cross-grid { margin-top: 1.4rem; }
+.tag-ok { display: inline-block; margin: -.1em 0 .7em; padding: 2px 10px; background: var(--cyan); color: var(--night); font: 800 italic .85rem/1.5 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
+.cross-grid span { display: block; }
+.howto { margin-top: 16px; padding: 24px; }
+.howto h3 { margin: 0 0 .7em; font-size: 1.4rem; }
+.howto ol { margin: 0; padding-left: 1.3em; color: var(--ice); }
+.howto li { margin: .35em 0; }
+.versions { margin-top: 16px; padding: 24px; }
+.versions h3 { margin: 0 0 .7em; font-size: 1.4rem; }
+.ver { display: grid; grid-template-columns: 5.5rem 1fr; gap: 12px 18px; margin: 0; }
+.ver dt { font: 800 italic 1.15rem/1.3 "Barlow Condensed", sans-serif; color: var(--cyan); }
+.ver dd { margin: 0; color: var(--ice); }
+.ver-note { margin: 1.1em 0 0; color: var(--steel); font-size: .95rem; }
 .note { margin: 1.8rem 0 0; max-width: var(--measure); color: var(--steel); }
 
 /* faq */
@@ -722,7 +739,7 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
   background: linear-gradient(90deg, var(--cyan), rgba(46, 197, 255, .15) 45%, rgba(255, 59, 59, .4) 80%, transparent);
 }
 .foot p { max-width: 80ch; margin: 0; }
-.foot-links { display: flex; gap: 24px; margin-bottom: 14px !important; font-weight: 600; font-size: 1rem; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 14px !important; font-weight: 600; font-size: 1rem; }
 .foot-links a { color: var(--ice); text-underline-offset: 4px; }
 .foot-links a:hover { color: var(--cyan); }
 
