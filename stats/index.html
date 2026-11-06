@@ -74,7 +74,7 @@
       refresh: "Aktualisieren", note: "GitHub zählt jeden Download; lädt jemand zweimal, zählt das doppelt.",
       updated: "Stand", failed: "GitHub ist gerade nicht erreichbar.", pre: "Pre-Release",
       dashboard: "Zum Besucher-Dashboard (Seitenaufrufe, Besucher, Herkunft)",
-      hourly: "GoatCounter aktualisiert die öffentlichen Zahlen einmal pro Stunde.", visitors: "Besucher insgesamt", views: "Seitenaufrufe", unique: "Eindeutige Besucher", closed: "Die öffentlichen Zähler sind in GoatCounter noch ausgeschaltet."
+      blocked: "Die Besucherzahlen ließen sich nicht laden. Ein Werbe- oder Tracking-Blocker im Browser kann GoatCounter sperren; das Dashboard zeigt die Zahlen trotzdem.", hourly: "GoatCounter aktualisiert die öffentlichen Zahlen einmal pro Stunde.", visitors: "Besucher insgesamt", views: "Seitenaufrufe", unique: "Eindeutige Besucher", closed: "Die öffentlichen Zähler sind in GoatCounter noch ausgeschaltet."
     },
     en: {
       title: "Statistics", total: "Downloads in total", ps4: "PS4 patch", pc: "PC patch", perRelease: "Per release",
@@ -83,7 +83,7 @@
       refresh: "Refresh", note: "GitHub counts every download, so one person downloading twice counts twice.",
       updated: "Updated", failed: "GitHub cannot be reached right now.", pre: "Pre-release",
       dashboard: "Open the visitor dashboard (page views, visitors, referrers)",
-      hourly: "GoatCounter updates the public numbers once an hour.", visitors: "visitors in total", views: "Page views", unique: "Unique visitors", closed: "The public counters are still switched off in GoatCounter."
+      blocked: "The visitor numbers could not be loaded. An ad or tracking blocker in the browser may block GoatCounter; the dashboard still shows them.", hourly: "GoatCounter updates the public numbers once an hour.", visitors: "visitors in total", views: "Page views", unique: "Unique visitors", closed: "The public counters are still switched off in GoatCounter."
     }
   };
   const asked = new URLSearchParams(location.search).get("lang");
@@ -160,11 +160,15 @@
     const hourly = document.createElement("p");
     hourly.textContent = t("hourly");
     box.append(tiles, hourly, a);
-    fetch(base + "/counter/TOTAL.json").then((r) => (r.ok ? r.json() : null)).then((c) => {
-      if (!c || c.count === undefined) { tiles.replaceWith(Object.assign(document.createElement("p"), { textContent: t("closed") })); return; }
-      unique.textContent = c.count_unique;
-      views.textContent = c.count;
-    }).catch(() => { tiles.replaceWith(Object.assign(document.createElement("p"), { textContent: t("closed") })); });
+    const fail = (key) => tiles.replaceWith(Object.assign(document.createElement("p"), { textContent: t(key) }));
+    // no-store: a browser must not keep an old answer (GoatCounter allows caching it for hours)
+    fetch(base + "/counter/TOTAL.json", { cache: "no-store" }).then((r) => {
+      if (r.status === 403) return fail("closed");
+      return (r.ok ? r.json() : Promise.reject()).then((c) => {
+        unique.textContent = c.count_unique;
+        views.textContent = c.count;
+      });
+    }).catch(() => fail("blocked"));
   }
 
   function load() {
