@@ -1,7 +1,29 @@
 (function () {
   const DE = {
     tagline: "Das erste The Crew läuft wieder auf PS4, PS5 und PC. Ohne Ubisoft-Server und ohne PS Plus: Das Spiel verbindet sich mit einem eigenen Server im lokalen Netzwerk.",
-    ctaDownload: "Pre-Release herunterladen",
+    ctaDownload: "Herunterladen",
+    dlTitle: "Download",
+    dlLede: "Den Server brauchen alle. Dazu kommt der Patch für die Plattform, auf der du spielst.",
+    dlForAll: "Für alle",
+    dlServer: "Server",
+    dlGet1: "Herunterladen",
+    dlGet2: "Herunterladen",
+    dlGet3: "Herunterladen",
+    dlS1: "Entpacke das Zip auf einem Rechner in deinem Heimnetz.",
+    dlS2: "Windows: Doppelklick auf start-server.bat. macOS und Linux: ./start-server.sh im Terminal starten.",
+    dlS3: "Lass das Fenster geöffnet, solange du spielst.",
+    dlPs4: "Konsolen-Patch",
+    dlP1: "Kopiere CUSA00161.xml auf der Konsole nach /data/GoldHEN/patches/xml/.",
+    dlP2: "Schalte „Offline server redirect“ im Patch-Menü von GoldHEN ein.",
+    dlP3: "Starte zuerst den Server, dann das Spiel.",
+    dlPc: "PC-Patch",
+    dlC1: "Kopiere dinput8.dll und reborn.ini in den Spielordner, neben TheCrew.exe.",
+    dlC2: "Starte zuerst den Server, dann das Spiel.",
+    dlC3: "Um deinen PS4-Fortschritt weiterzuspielen, trage in reborn.ini bei Name deinen PS4-Benutzernamen ein.",
+    dlReq: "Unterstützte Versionen",
+    dlNotes: "Versionshinweise und alle Dateien",
+    dlBug: "Fehler melden",
+    dlFree: "Kostenlos. Der Server ist Open Source (GPL 3).",
     ctaVideo: "Video ansehen",
     ctaStatus: "Zum aktuellen Stand",
     newsTag: "Neu",
@@ -132,7 +154,7 @@
     q7: "Gibt es eine PC-Version?",
     a7: "Ja. Die PC-Version läuft auf demselben Server wie die PS4-Fassung: Eine kleine Datei im Spielordner leitet sie dorthin um. Anmeldung, Prolog und offene Welt funktionieren schon; die Datei ist im PC-Download des Pre-Releases enthalten. Du brauchst dein eigenes Exemplar des PC-Spiels: Die Ubisoft-Connect-Version funktioniert, die Steam-Version wird noch getestet.",
     q4: "Wann kann ich es herunterladen?",
-    a4: "Jetzt: Das Pre-Release 0.0.1 liegt auf GitHub, mit dem Server für Windows, macOS und Linux, dem PS4-Patch und der PC-Datei. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
+    a4: "Jetzt: Das Pre-Release 0.0.1 steht oben auf dieser Seite im Download-Bereich bereit, mit dem Server für Windows, macOS und Linux, dem PS4-Patch und dem PC-Patch. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
     q6: "Kann ich das Projekt unterstützen?",
     a6: "Ja, mit einem freiwilligen Beitrag auf Ko-fi. Das Projekt bleibt in jedem Fall kostenlos, und eine Unterstützung schaltet keine zusätzlichen Inhalte frei.",
     kofi: "Auf Ko-fi unterstützen",
@@ -161,6 +183,7 @@
     document.getElementById("lang").dataset.active = lang;
     renderGallery();
     renderPlaylist();
+    renderDownloads();
     try { localStorage.setItem("lang", lang); } catch (e) { /* private mode */ }
   }
 
@@ -232,6 +255,40 @@
     if (document.querySelector("#player iframe")) markCurrent();
     else showVideo(current, false);
   }
+
+  // Download section: the newest release (pre-releases too) from GitHub; the links in the page are the fallback.
+  const RELEASES = "https://api.github.com/repos/thecrewreborn/server/releases?per_page=5";
+  let release = null;
+
+  function size(bytes) {
+    const mb = bytes / 1048576;
+    const n = mb >= 1 ? mb.toFixed(1) + " MB" : Math.max(1, Math.round(bytes / 1024)) + " KB";
+    return lang === "de" ? n.replace(".", ",") : n;
+  }
+
+  function renderDownloads() {
+    const meta = document.getElementById("dlMeta");
+    if (!meta) return;
+    const r = release || { tag_name: "v0.0.1", prerelease: true, published_at: null, assets: [] };
+    const parts = ["Version " + r.tag_name.replace(/^v/, ""), r.prerelease ? (lang === "de" ? "Pre-Release" : "Pre-release") : "Release"];
+    if (r.published_at) {
+      parts.push(new Date(r.published_at).toLocaleDateString(lang === "de" ? "de-DE" : "en-GB",
+        { day: "numeric", month: "long", year: "numeric" }));
+    }
+    meta.textContent = parts.join(" · ");
+    document.querySelectorAll("[data-asset]").forEach((a) => {
+      const asset = r.assets.find((x) => x.name.startsWith("TheCrewReborn-" + a.dataset.asset + "-"));
+      if (!asset) return;
+      a.href = asset.browser_download_url;
+      a.querySelector(".dl-size").textContent = size(asset.size);
+    });
+    if (release) document.getElementById("dlNotes").href = release.html_url;
+  }
+
+  fetch(RELEASES).then((r) => (r.ok ? r.json() : [])).then((list) => {
+    release = list.find((r) => !r.draft && r.assets.length) || null;
+    renderDownloads();
+  }).catch(() => {});
 
   const lb = document.getElementById("lightbox");
   function openShot(s) {
