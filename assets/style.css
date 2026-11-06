@@ -681,6 +681,7 @@ h2::before {
 .contact-grid li { display: flex; flex-direction: column; }
 .contact-link { margin-top: .8em; color: var(--cyan); font-weight: 600; text-underline-offset: 3px; }
 .contact-link + .contact-link { margin-top: .35em; }
+.contact[hidden] { display: none; }
 .contact-mailbox { margin: -.4rem 0 1.6rem; }
 .contact-mail { color: var(--cyan); font-weight: 600; font-size: 1.1rem; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .cross-grid { margin-top: 1.4rem; }

@@ -162,7 +162,6 @@
     footContact: "Kontakt",
     contactTitle: "Kontakt",
     contactText: "The Crew Reborn ist ein Fanprojekt von Knutwurst. Fragen, Fehlermeldungen und Ideen sind willkommen; für alles, was nicht in den Issue-Tracker gehört, gibt es eine E-Mail-Adresse.",
-    mailShow: "E-Mail-Adresse anzeigen",
     ct1: "Fehler und Ideen",
     ct1t: "Melde sie bitte im Issue-Tracker auf GitHub, mit einer kurzen Beschreibung und dem Ordner captures des Servers.",
     ct1l: "Zum Issue-Tracker",
@@ -184,16 +183,28 @@
   const C = window.CONTENT || { videos: [], screenshots: [] };
   let lang = "en";
 
-  // The address is not in the page as text: it is built only when someone clicks, so crawlers do not find it.
-  const mailShow = document.getElementById("mailShow");
-  mailShow.addEventListener("click", () => {
-    const addr = atob(mailShow.dataset.m).split("").reverse().join("");
-    const a = document.createElement("a");
-    a.className = "contact-mail";
-    a.href = "mailto:" + addr;
-    a.textContent = addr;
-    mailShow.replaceWith(a);
+  // The contact section stays hidden until someone clicks "Contact" in the footer. The address is not in the
+  // page as text: it is built when the section opens, so crawlers do not find it.
+  function openContact() {
+    const section = document.getElementById("contact");
+    const box = document.getElementById("mailBox");
+    if (!box.firstChild) {
+      const addr = atob(box.dataset.m).split("").reverse().join("");
+      const a = document.createElement("a");
+      a.className = "contact-mail";
+      a.href = "mailto:" + addr;
+      a.textContent = addr;
+      box.append(a);
+    }
+    section.hidden = false;
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("contactOpen").addEventListener("click", (e) => {
+    e.preventDefault();
+    history.replaceState(null, "", "#contact");
+    openContact();
   });
+  if (location.hash === "#contact") openContact();
 
   function stored() {
     try { return localStorage.getItem("lang"); } catch (e) { return null; }

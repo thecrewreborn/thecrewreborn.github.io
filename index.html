@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/style.css?v=26">
+<link rel="stylesheet" href="assets/style.css?v=27">
 </head>
 <body>
 
@@ -305,11 +305,11 @@
       </details>
     </div>
   </section>
-  <section id="contact" class="band contact">
+  <section id="contact" class="band contact" hidden>
     <div class="wrap">
       <h2 data-i18n="contactTitle">Contact</h2>
       <p class="lede" data-i18n="contactText">The Crew Reborn is a fan project by Knutwurst. Questions, bug reports and ideas are welcome; for anything that does not belong in the issue tracker, there is an e-mail address.</p>
-      <p class="contact-mailbox"><button type="button" class="btn btn-ghost btn-small" id="mailShow" data-m="dGVuLmRsZWloczgubnJvYmVyd2VyY2VodEB0Y2F0bm9j" data-i18n="mailShow">Show e-mail address</button></p>
+      <p class="contact-mailbox" id="mailBox" data-m="dGVuLmRsZWloczgubnJvYmVyd2VyY2VodEB0Y2F0bm9j"></p>
       <ul class="needs contact-grid">
         <li class="panel"><strong data-i18n="ct1">Bugs and ideas</strong><span data-i18n="ct1t">Report them in the issue tracker on GitHub, with a short description and the server's captures folder.</span><a class="contact-link" href="https://github.com/thecrewreborn/server/issues" data-i18n="ct1l">Open the issue tracker</a></li>
         <li class="panel"><strong data-i18n="ct2">Source code</strong><span data-i18n="ct2t">The server is open source. Everything about it, from the code to the releases, lives on GitHub.</span><a class="contact-link" href="https://github.com/thecrewreborn/server" data-i18n="ct2l">thecrewreborn/server on GitHub</a></li>
@@ -322,7 +322,7 @@
 <footer class="foot">
   <div class="wrap">
     <p class="foot-links">
-      <a href="#contact" data-i18n="footContact">Contact</a>
+      <a href="#contact" id="contactOpen" data-i18n="footContact">Contact</a>
       <a href="https://www.youtube.com/@Knutwurst" data-i18n="channel">YouTube channel</a>
       <a href="#download" data-i18n="footDownload">Download</a>
       <a href="https://github.com/thecrewreborn/server/issues" data-i18n="reportBug2">Report a bug</a>
@@ -343,6 +343,6 @@
 
 <script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="assets/content.js?v=19"></script>
-<script src="assets/site.js?v=35"></script>
+<script src="assets/site.js?v=36"></script>
 </body>
 </html>
