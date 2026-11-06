@@ -160,16 +160,6 @@
     kofi: "Auf Ko-fi unterstützen",
     channel: "YouTube-Kanal",
     footContact: "Kontakt",
-    contactTitle: "Kontakt",
-    contactText: "The Crew Reborn ist ein Fanprojekt von Knutwurst. Fragen, Fehlermeldungen und Ideen sind willkommen; für alles, was nicht in den Issue-Tracker gehört, gibt es eine E-Mail-Adresse.",
-    ct1: "Fehler und Ideen",
-    ct1t: "Melde sie bitte im Issue-Tracker auf GitHub, mit einer kurzen Beschreibung und dem Ordner captures des Servers.",
-    ct1l: "Zum Issue-Tracker",
-    ct2: "Quellcode",
-    ct2t: "Der Server ist Open Source. Alles dazu, vom Code bis zu den Releases, liegt auf GitHub.",
-    ct2l: "thecrewreborn/server auf GitHub",
-    ct3: "Videos und Unterstützung",
-    ct3t: "Fortschrittsvideos auf YouTube; ein Beitrag auf Ko-fi hilft, das Projekt bleibt aber in jedem Fall kostenlos.",
     disclaimer: "The Crew Reborn steht in keiner Verbindung zu Ubisoft oder Ivory Tower. Das Projekt stellt keine Spieldateien bereit, verbreitet keine und unterstützt keine Raubkopien; du benötigst dein eigenes Exemplar des Spiels.",
     privacy: "Datenschutz: Diese Seite wird über GitHub Pages bereitgestellt; GitHub kann dabei technische Zugriffsdaten wie IP-Adressen protokollieren. Besuche werden mit GoatCounter gezählt, ohne Cookies und ohne Speicherung von IP-Adressen. Die Schriften werden von dieser Seite geladen. Videos werden erst nach einem Klick von YouTube geladen.",
     legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment, PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Die Spielbilder sind Standbilder aus eigenen PS4-Aufnahmen des Projekts; das Spiel und seine Inhalte © Ubisoft Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony.",
@@ -182,29 +172,6 @@
   altNodes.forEach((n) => (EN[n.dataset.i18nAlt] = n.alt));
   const C = window.CONTENT || { videos: [], screenshots: [] };
   let lang = "en";
-
-  // The contact section stays hidden until someone clicks "Contact" in the footer. The address is not in the
-  // page as text: it is built when the section opens, so crawlers do not find it.
-  function openContact() {
-    const section = document.getElementById("contact");
-    const box = document.getElementById("mailBox");
-    if (!box.firstChild) {
-      const addr = atob(box.dataset.m).split("").reverse().join("");
-      const a = document.createElement("a");
-      a.className = "contact-mail";
-      a.href = "mailto:" + addr;
-      a.textContent = addr;
-      box.append(a);
-    }
-    section.hidden = false;
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-  document.getElementById("contactOpen").addEventListener("click", (e) => {
-    e.preventDefault();
-    history.replaceState(null, "", "#contact");
-    openContact();
-  });
-  if (location.hash === "#contact") openContact();
 
   function stored() {
     try { return localStorage.getItem("lang"); } catch (e) { return null; }

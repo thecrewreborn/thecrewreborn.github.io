@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Crew Reborn – Contact</title>
+<meta name="theme-color" content="#070b12">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/style.css?v=28">
+<style>
+  .page-top { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+  .page-top a { color: var(--steel); text-decoration: none; font-weight: 600; }
+  .page-top a:hover { color: var(--cyan); }
+  .contact-page { padding-bottom: clamp(72px, 11vw, 128px); }
+</style>
+</head>
+<body>
+<main class="wrap contact-page">
+  <div class="page-top"><a href="../" data-t="back">← The Crew Reborn</a><a href="#" id="lang">DE / EN</a></div>
+  <h2 data-t="title">Contact</h2>
+  <p class="lede" data-t="text">The Crew Reborn is a fan project by Knutwurst. Questions, bug reports and ideas are welcome; for anything that does not belong in the issue tracker, there is an e-mail address.</p>
+  <p class="contact-mailbox" id="mailBox" data-m="dGVuLmRsZWloczgubnJvYmVyd2VyY2VodEB0Y2F0bm9j"></p>
+  <ul class="needs contact-grid">
+    <li class="panel"><strong data-t="ct1">Bugs and ideas</strong><span data-t="ct1t">Report them in the issue tracker on GitHub, with a short description and the server's captures folder.</span><a class="contact-link" href="https://github.com/thecrewreborn/server/issues" data-t="ct1l">Open the issue tracker</a></li>
+    <li class="panel"><strong data-t="ct2">Source code</strong><span data-t="ct2t">The server is open source. Everything about it, from the code to the releases, lives on GitHub.</span><a class="contact-link" href="https://github.com/thecrewreborn/server" data-t="ct2l">thecrewreborn/server on GitHub</a></li>
+    <li class="panel"><strong data-t="ct3">Videos and support</strong><span data-t="ct3t">Progress videos on YouTube; a tip on Ko-fi helps, but the project stays free either way.</span><a class="contact-link" href="https://www.youtube.com/@Knutwurst">YouTube @Knutwurst</a><a class="contact-link" href="https://ko-fi.com/knutwurst">Ko-fi</a></li>
+  </ul>
+</main>
+
+<script>
+(function () {
+  const DE = {
+    back: "← The Crew Reborn",
+    title: "Kontakt",
+    text: "The Crew Reborn ist ein Fanprojekt von Knutwurst. Fragen, Fehlermeldungen und Ideen sind willkommen; für alles, was nicht in den Issue-Tracker gehört, gibt es eine E-Mail-Adresse.",
+    ct1: "Fehler und Ideen",
+    ct1t: "Melde sie bitte im Issue-Tracker auf GitHub, mit einer kurzen Beschreibung und dem Ordner captures des Servers.",
+    ct1l: "Zum Issue-Tracker",
+    ct2: "Quellcode",
+    ct2t: "Der Server ist Open Source. Alles dazu, vom Code bis zu den Releases, liegt auf GitHub.",
+    ct2l: "thecrewreborn/server auf GitHub",
+    ct3: "Videos und Unterstützung",
+    ct3t: "Fortschrittsvideos auf YouTube; ein Beitrag auf Ko-fi hilft, das Projekt bleibt aber in jedem Fall kostenlos."
+  };
+  const nodes = Array.from(document.querySelectorAll("[data-t]"));
+  const EN = {};
+  nodes.forEach((n) => (EN[n.dataset.t] = n.textContent));
+
+  // The address is not in the page as text: the script builds it, so crawlers that only read the HTML do not find it.
+  const box = document.getElementById("mailBox");
+  const addr = atob(box.dataset.m).split("").reverse().join("");
+  const a = document.createElement("a");
+  a.className = "contact-mail";
+  a.href = "mailto:" + addr;
+  a.textContent = addr;
+  box.append(a);
+
+  function stored() {
+    try { return localStorage.getItem("lang"); } catch (e) { return null; }
+  }
+  const asked = new URLSearchParams(location.search).get("lang") || stored();
+  let lang = asked === "de" || asked === "en" ? asked : ((navigator.language || "").toLowerCase().startsWith("de") ? "de" : "en");
+
+  function render() {
+    const dict = lang === "de" ? DE : EN;
+    nodes.forEach((n) => { n.textContent = dict[n.dataset.t]; });
+    document.documentElement.lang = lang;
+    document.title = "The Crew Reborn – " + dict.title;
+  }
+  document.getElementById("lang").addEventListener("click", (e) => {
+    e.preventDefault();
+    lang = lang === "de" ? "en" : "de";
+    try { localStorage.setItem("lang", lang); } catch (err) { /* private mode */ }
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
