@@ -1,0 +1,54 @@
+# Publishes the site, with a snapshot of the GoatCounter visitor numbers in stats/visitors.json.
+# Runs on every push and once an hour, so the stats page reads the numbers from this site:
+# browser tracking blockers often block goatcounter.com itself.
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Stage the site
+        run: |
+          mkdir _site
+          cp -R index.html assets stats .nojekyll _site/
+      - name: Visitor snapshot
+        run: |
+          python3 - <<'PY'
+          import datetime, json, urllib.request
+          out = {"fetched": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")}
+          try:
+              with urllib.request.urlopen("https://knutwurst.goatcounter.com/counter/TOTAL.json", timeout=20) as r:
+                  data = json.load(r)
+              out.update(count=data["count"], count_unique=data["count_unique"])
+          except Exception as e:
+              out["error"] = str(e)
+          with open("_site/stats/visitors.json", "w") as f:
+              json.dump(out, f)
+          print(out)
+          PY
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v5

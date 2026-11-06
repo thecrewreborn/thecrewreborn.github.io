@@ -161,14 +161,14 @@
     hourly.textContent = t("hourly");
     box.append(tiles, hourly, a);
     const fail = (key) => tiles.replaceWith(Object.assign(document.createElement("p"), { textContent: t(key) }));
-    // no-store: a browser must not keep an old answer (GoatCounter allows caching it for hours)
-    fetch(base + "/counter/TOTAL.json", { cache: "no-store" }).then((r) => {
+    const show = (c) => { unique.textContent = c.count_unique; views.textContent = c.count; };
+    const live = () => fetch(base + "/counter/TOTAL.json", { cache: "no-store" }).then((r) => {
       if (r.status === 403) return fail("closed");
-      return (r.ok ? r.json() : Promise.reject()).then((c) => {
-        unique.textContent = c.count_unique;
-        views.textContent = c.count;
-      });
+      return (r.ok ? r.json() : Promise.reject()).then(show);
     }).catch(() => fail("blocked"));
+    // the site's own hourly snapshot (.github/workflows/pages.yml): tracking blockers often block goatcounter.com
+    fetch("visitors.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((c) => (c.count !== undefined ? show(c) : live())).catch(live);
   }
 
   function load() {
