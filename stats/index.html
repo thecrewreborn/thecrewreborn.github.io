@@ -29,7 +29,9 @@
   .visitors { padding: 20px; }
   .visitors p { margin: 0 0 .6em; color: var(--steel); }
   .visitors a { color: var(--cyan); }
-  #gcCount { font: 800 italic 1.6rem/1.2 "Barlow Condensed", sans-serif; color: var(--ice); }
+  .gc-tiles { grid-template-columns: repeat(2, 1fr); margin-bottom: 14px; }
+  .visitors { background: none; box-shadow: none; padding: 0; clip-path: none; }
+  .visitors::before { display: none; }
   .stats-foot { margin: 1.6rem 0 3rem; color: var(--steel); font-size: .9rem; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
   .stats-foot button { background: rgba(255,255,255,.09); color: var(--ice); border: 0; padding: 8px 16px; font: inherit; font-weight: 600; cursor: pointer; }
   @media (max-width: 760px) { .tiles { grid-template-columns: 1fr 1fr; } .releases .opt { display: none; } }
@@ -72,7 +74,7 @@
       refresh: "Aktualisieren", note: "GitHub zählt jeden Download; lädt jemand zweimal, zählt das doppelt.",
       updated: "Stand", failed: "GitHub ist gerade nicht erreichbar.", pre: "Pre-Release",
       dashboard: "Zum Besucher-Dashboard (Seitenaufrufe, Besucher, Herkunft)",
-      visitors: "Besucher insgesamt", closed: "Die öffentlichen Zähler sind in GoatCounter noch ausgeschaltet."
+      visitors: "Besucher insgesamt", views: "Seitenaufrufe", unique: "Eindeutige Besucher", closed: "Die öffentlichen Zähler sind in GoatCounter noch ausgeschaltet."
     },
     en: {
       title: "Statistics", total: "Downloads in total", ps4: "PS4 patch", pc: "PC patch", perRelease: "Per release",
@@ -81,7 +83,7 @@
       refresh: "Refresh", note: "GitHub counts every download, so one person downloading twice counts twice.",
       updated: "Updated", failed: "GitHub cannot be reached right now.", pre: "Pre-release",
       dashboard: "Open the visitor dashboard (page views, visitors, referrers)",
-      visitors: "visitors in total", closed: "The public counters are still switched off in GoatCounter."
+      visitors: "visitors in total", views: "Page views", unique: "Unique visitors", closed: "The public counters are still switched off in GoatCounter."
     }
   };
   const asked = new URLSearchParams(location.search).get("lang");
@@ -136,15 +138,31 @@
     const base = "https://" + GOATCOUNTER + ".goatcounter.com";
     const box = document.getElementById("visitors");
     box.replaceChildren();
-    const p = document.createElement("p");
-    p.id = "gcCount";
+    const tiles = document.createElement("ul");
+    tiles.className = "tiles gc-tiles";
+    const tile = (label) => {
+      const li = document.createElement("li");
+      li.className = "panel tile";
+      const b = document.createElement("b");
+      b.textContent = "–";
+      const span = document.createElement("span");
+      span.textContent = label;
+      li.append(b, span);
+      tiles.append(li);
+      return b;
+    };
+    const unique = tile(t("unique"));
+    unique.parentElement.classList.add("total");
+    const views = tile(t("views"));
     const a = document.createElement("a");
     a.href = base;
     a.textContent = t("dashboard");
-    box.append(p, a);
+    box.append(tiles, a);
     fetch(base + "/counter/TOTAL.json").then((r) => (r.ok ? r.json() : null)).then((c) => {
-      p.textContent = c && c.count ? c.count + " " + t("visitors") : t("closed");
-    }).catch(() => { p.textContent = t("closed"); });
+      if (!c || c.count === undefined) { tiles.replaceWith(Object.assign(document.createElement("p"), { textContent: t("closed") })); return; }
+      unique.textContent = c.count_unique;
+      views.textContent = c.count;
+    }).catch(() => { tiles.replaceWith(Object.assign(document.createElement("p"), { textContent: t("closed") })); });
   }
 
   function load() {
