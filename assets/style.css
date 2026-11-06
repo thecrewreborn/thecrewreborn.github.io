@@ -760,6 +760,28 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
 .foot-links a { color: var(--ice); text-underline-offset: 4px; }
 .foot-links a:hover { color: var(--cyan); }
 
+/* ---------- why teaser (bottom of the main page) ---------- */
+
+.why-teaser {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 52px);
+  isolation: isolate;
+}
+.why-teaser::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(11, 18, 28, .97) 0%, rgba(11, 18, 28, .9) 50%, rgba(11, 18, 28, .55) 100%),
+    url("why/servers.webp") 70% 50% / cover no-repeat;
+  filter: saturate(.5);
+}
+.why-teaser::before { background: var(--siren); }
+.why-teaser h2 { margin-bottom: .35em; }
+.why-teaser p { margin: 0 0 1.4rem; max-width: 60ch; color: #c3ccd8; }
+
 /* ---------- smaller screens ---------- */
 
 @media (max-width: 960px) {
