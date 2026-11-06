@@ -159,6 +159,7 @@
     a6: "Ja, mit einem freiwilligen Beitrag auf Ko-fi. Das Projekt bleibt in jedem Fall kostenlos, und eine Unterstützung schaltet keine zusätzlichen Inhalte frei.",
     kofi: "Auf Ko-fi unterstützen",
     channel: "YouTube-Kanal",
+    privacy: "Datenschutz: Diese Seite zählt Besuche mit GoatCounter, ohne Cookies und ohne Speicherung von IP-Adressen. Videos werden erst nach einem Klick von YouTube geladen.",
     legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment, PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Spiel-Screenshots © Ubisoft Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony.",
   };
 

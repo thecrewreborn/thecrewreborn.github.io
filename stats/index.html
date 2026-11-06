@@ -29,6 +29,7 @@
   .visitors { padding: 20px; }
   .visitors p { margin: 0 0 .6em; color: var(--steel); }
   .visitors a { color: var(--cyan); }
+  #gcCount { font: 800 italic 1.6rem/1.2 "Barlow Condensed", sans-serif; color: var(--ice); }
   .stats-foot { margin: 1.6rem 0 3rem; color: var(--steel); font-size: .9rem; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
   .stats-foot button { background: rgba(255,255,255,.09); color: var(--ice); border: 0; padding: 8px 16px; font: inherit; font-weight: 600; cursor: pointer; }
   @media (max-width: 760px) { .tiles { grid-template-columns: 1fr 1fr; } .releases .opt { display: none; } }
@@ -62,7 +63,7 @@
 <script>
 (function () {
   // GoatCounter site code once the account exists, e.g. "thecrewreborn" -> https://thecrewreborn.goatcounter.com
-  const GOATCOUNTER = "";
+  const GOATCOUNTER = "knutwurst";
   const T = {
     de: {
       title: "Statistik", total: "Downloads insgesamt", ps4: "PS4-Patch", pc: "PC-Patch", perRelease: "Pro Version",
@@ -70,8 +71,8 @@
       visitorsTitle: "Besucher der Website", visitorsPending: "Die Besucherzählung ist noch nicht eingerichtet.",
       refresh: "Aktualisieren", note: "GitHub zählt jeden Download; lädt jemand zweimal, zählt das doppelt.",
       updated: "Stand", failed: "GitHub ist gerade nicht erreichbar.", pre: "Pre-Release",
-      dashboard: "Zum Besucher-Dashboard (Seitenaufrufe und eindeutige Besucher)",
-      views: "Seitenaufrufe der Startseite", unique: "eindeutige Besucher"
+      dashboard: "Zum Besucher-Dashboard (Seitenaufrufe, Besucher, Herkunft)",
+      visitors: "Besucher insgesamt", closed: "Die öffentlichen Zähler sind in GoatCounter noch ausgeschaltet."
     },
     en: {
       title: "Statistics", total: "Downloads in total", ps4: "PS4 patch", pc: "PC patch", perRelease: "Per release",
@@ -79,8 +80,8 @@
       visitorsTitle: "Website visitors", visitorsPending: "Visitor counting is not set up yet.",
       refresh: "Refresh", note: "GitHub counts every download, so one person downloading twice counts twice.",
       updated: "Updated", failed: "GitHub cannot be reached right now.", pre: "Pre-release",
-      dashboard: "Open the visitor dashboard (page views and unique visitors)",
-      views: "views of the home page", unique: "unique visitors"
+      dashboard: "Open the visitor dashboard (page views, visitors, referrers)",
+      visitors: "visitors in total", closed: "The public counters are still switched off in GoatCounter."
     }
   };
   const asked = new URLSearchParams(location.search).get("lang");
@@ -141,9 +142,9 @@
     a.href = base;
     a.textContent = t("dashboard");
     box.append(p, a);
-    fetch(base + "/counter/" + encodeURIComponent("/") + ".json").then((r) => (r.ok ? r.json() : null)).then((c) => {
-      if (c && c.count) p.textContent = c.count + " " + t("views");
-    }).catch(() => {});
+    fetch(base + "/counter/TOTAL.json").then((r) => (r.ok ? r.json() : null)).then((c) => {
+      p.textContent = c && c.count ? c.count + " " + t("visitors") : t("closed");
+    }).catch(() => { p.textContent = t("closed"); });
   }
 
   function load() {
