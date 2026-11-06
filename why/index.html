@@ -15,7 +15,7 @@
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/fonts.css">
 <link rel="stylesheet" href="../assets/style.css?v=29">
-<link rel="stylesheet" href="../assets/why.css?v=4">
+<link rel="stylesheet" href="../assets/why.css?v=6">
 </head>
 <body>
 
@@ -111,13 +111,13 @@
     <div class="wrap">
       <div class="panel compare">
         <table>
-          <thead><tr><th><span class="sr" data-t="cHead">Comparison</span></th><th data-t="cOther">Other fan project</th><th class="us">The Crew Reborn</th></tr></thead>
+          <thead><tr><th><span class="sr" data-t="cHead">Comparison</span></th><th data-t="cOther"><span class="long">Other fan project</span><span class="short">Other project</span></th><th class="us"><span class="long">The Crew Reborn</span><span class="short">Reborn</span></th></tr></thead>
           <tbody>
-            <tr><th>PlayStation 4 · PS5</th><td><span class="no" data-t="cNo1">No</span></td><td class="us"><span class="yes" data-t="cPs">Yes, with a GoldHEN patch</span></td></tr>
-            <tr><th>PC</th><td><span class="yes" data-t="cYes1">Yes</span></td><td class="us"><span class="yes" data-t="cPc">Yes, Ubisoft Connect version</span></td></tr>
-            <tr><th data-t="cMp">Multiplayer</th><td><span class="soon" data-t="cMpT">Announced</span></td><td class="us"><span class="yes" data-t="cMpR">Yes, with crossplay PS4 and PC</span></td></tr>
-            <tr><th data-t="cSrc">Source code</th><td><span class="no" data-t="cSrcT">Not public</span></td><td class="us"><span class="yes" data-t="cSrcR">Open source, GPL 3</span></td></tr>
-            <tr><th data-t="cStage">Status</th><td><span class="yes" data-t="cStageT">Released</span></td><td class="us"><span class="soon" data-t="cStageR">Pre-release 0.0.2</span></td></tr>
+            <tr><th><span class="long">PlayStation 4 · PS5</span><span class="short">PS4 · PS5</span></th><td><span class="no" data-t="cNo1">No</span></td><td class="us"><span class="yes" data-t="cPs">Yes<span class="det">, with a GoldHEN patch</span></span></td></tr>
+            <tr><th>PC</th><td><span class="yes" data-t="cYes1">Yes</span></td><td class="us"><span class="yes" data-t="cPc">Yes<span class="det">, Ubisoft Connect version</span></span></td></tr>
+            <tr><th data-t="cMp">Multiplayer</th><td><span class="soon" data-t="cMpT">Announced</span></td><td class="us"><span class="yes" data-t="cMpR">Yes<span class="det">, with crossplay PS4 and PC</span></span></td></tr>
+            <tr><th data-t="cSrc">Source code</th><td><span class="no" data-t="cSrcT">Not public</span></td><td class="us"><span class="yes" data-t="cSrcR">Open source<span class="det">, GPL 3</span></span></td></tr>
+            <tr><th data-t="cStage"><span class="long">Status</span><span class="short">Status</span></th><td><span class="yes" data-t="cStageT">Released</span></td><td class="us"><span class="soon" data-t="cStageR">Pre-release<span class="det"> 0.0.2</span></span></td></tr>
           </tbody>
         </table>
       </div>
@@ -235,19 +235,19 @@
     rb3: "<strong>Der Code ist Open Source unter der GPL 3.</strong> Höre ich eines Tages auf, bleibt der Code öffentlich, und jeder kann ihn weiterführen. Niemand kann dir diesen Server abschalten, auch ich nicht.",
     cHead: "Vergleich",
     cNo1: "Nein",
-    cOther: "Anderes Fanprojekt",
-    cPs: "Ja, mit GoldHEN-Patch",
+    cOther: "<span class=\"long\">Anderes Fanprojekt</span><span class=\"short\">Anderes Projekt</span>",
+    cPs: "Ja<span class=\"det\">, mit GoldHEN-Patch</span>",
     cYes1: "Ja",
-    cPc: "Ja, Ubisoft-Connect-Version",
+    cPc: "Ja<span class=\"det\">, Ubisoft-Connect-Version</span>",
     cMp: "Multiplayer",
     cMpT: "Angekündigt",
-    cMpR: "Ja, mit Crossplay PS4 und PC",
+    cMpR: "Ja<span class=\"det\">, mit Crossplay PS4 und PC</span>",
     cSrc: "Quellcode",
     cSrcT: "Nicht öffentlich",
-    cSrcR: "Open Source, GPL 3",
-    cStage: "Entwicklungsstand",
+    cSrcR: "Open Source<span class=\"det\">, GPL 3</span>",
+    cStage: "<span class=\"long\">Entwicklungsstand</span><span class=\"short\">Stand</span>",
     cStageT: "Veröffentlicht",
-    cStageR: "Pre-Release 0.0.2",
+    cStageR: "Pre-Release<span class=\"det\"> 0.0.2</span>",
     cAsof: "Stand November 2026. Das andere Projekt ist auf dem PC weiter und bietet Mods; The Crew Reborn deckt Konsolen und Multiplayer ab.",
     ctaDl: "Download 0.0.2",
     ctaVideo: "Im Video ansehen",
@@ -286,10 +286,6 @@
     document.documentElement.lang = lang;
     document.title = dict.title;
     btn.dataset.active = lang;
-    const heads = Array.from(document.querySelectorAll(".compare thead th"));
-    document.querySelectorAll(".compare tbody tr").forEach((tr) => {
-      Array.from(tr.children).forEach((cell, i) => { if (cell.tagName === "TD") cell.dataset.label = heads[i].textContent; });
-    });
   }
   btn.addEventListener("click", () => {
     lang = lang === "de" ? "en" : "de";
