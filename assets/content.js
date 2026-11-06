@@ -21,16 +21,16 @@ window.CONTENT = {
   featured: "Ra0fcutVQ1Y",
   // the playlist with every episode, linked under the list
   playlist: "PLbKxOmFihheM",
-  // Screenshots live in assets/shots/. The first one is shown large.
+  // Screenshots live in assets/shots/ (stills from the project's own PS4 recordings). The first one is shown large.
   screenshots: [
-    { src: "assets/shots/new-york.jpg", en: "New York after dark", de: "New York bei Nacht" },
-    { src: "assets/shots/detroit-night.jpg", en: "Detroit's industrial district", de: "Detroits Industrieviertel" },
-    { src: "assets/shots/west-coast.jpg", en: "Sunset on the West Coast", de: "Sonnenuntergang an der Westküste" },
-    { src: "assets/shots/desert.jpg", en: "Desert roads of the Mountain States", de: "Wüstenstraßen in den Mountain States" },
-    { src: "assets/shots/canyon.jpg", en: "Canyon run", de: "Durch den Canyon" },
-    { src: "assets/shots/forest.jpg", en: "Off-road through the forest", de: "Offroad durch den Wald" },
-    { src: "assets/shots/dust.jpg", en: "Raid through the dust", de: "Raid durch den Staub" },
-    { src: "assets/shots/pursuit.jpg", en: "Police pursuit", de: "Polizeiverfolgung" },
-    { src: "assets/shots/docks.jpg", en: "Street race at the docks", de: "Straßenrennen am Hafen" },
+    { src: "assets/shots/golden-raptor.jpg", en: "Golden hour in the Midwest", de: "Goldene Stunde im Mittleren Westen" },
+    { src: "assets/shots/detroit-dusk.jpg", en: "Detroit at dusk", de: "Detroit in der Abenddämmerung" },
+    { src: "assets/shots/night-meet.jpg", en: "A night meet in Detroit", de: "Nächtliches Treffen in Detroit" },
+    { src: "assets/shots/muscle-car-night.jpg", en: "Muscle car under the street lights", de: "Muscle Car unter Straßenlaternen" },
+    { src: "assets/shots/offroad-field.jpg", en: "Off-road across the fields", de: "Offroad über die Felder" },
+    { src: "assets/shots/camaro-garage.jpg", en: "A Camaro SS at the tuner", de: "Ein Camaro SS beim Tuner" },
+    { src: "assets/shots/fields-sunset.jpg", en: "Evening on the outskirts of Detroit", de: "Abendstimmung am Stadtrand von Detroit" },
+    { src: "assets/shots/backstreet.jpg", en: "Back streets of Detroit", de: "In Detroits Seitenstraßen" },
+    { src: "assets/shots/workshop.jpg", en: "In the workshop", de: "In der Werkstatt" },
   ],
 };

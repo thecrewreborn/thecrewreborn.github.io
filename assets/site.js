@@ -118,7 +118,7 @@
     b6: "Rivalen in den Ranglisten, mit Zeiten im Rahmen der Medaillen",
     b5: "Die restlichen Missionstypen",
     shotsTitle: "Screenshots",
-    shotsText: "Szenen aus der ganzen Spielwelt. Genau so sieht es auch auf deinem eigenen Server aus.",
+    shotsText: "Szenen, aufgenommen auf einer PS4, die auf dem Reborn-Server spielt.",
     needTitle: "Das brauchst du",
     n1: "Dein eigenes The Crew für PS4 oder PC",
     n1t: "PS4: Disc oder Download, die europäische Version mit Update 1.21. PC: die Ubisoft-Connect-Version. Die genauen Versionen stehen weiter unten.",
@@ -161,7 +161,7 @@
     channel: "YouTube-Kanal",
     disclaimer: "The Crew Reborn steht in keiner Verbindung zu Ubisoft oder Ivory Tower. Das Projekt stellt keine Spieldateien bereit, verbreitet keine und unterstützt keine Raubkopien; du benötigst dein eigenes Exemplar des Spiels.",
     privacy: "Datenschutz: Diese Seite wird über GitHub Pages bereitgestellt; GitHub kann dabei technische Zugriffsdaten wie IP-Adressen protokollieren. Besuche werden mit GoatCounter gezählt, ohne Cookies und ohne Speicherung von IP-Adressen. Die Schriften werden von dieser Seite geladen. Videos werden erst nach einem Klick von YouTube geladen.",
-    legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment, PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Spiel-Screenshots © Ubisoft Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony.",
+    legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment, PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Die Spielbilder sind Standbilder aus eigenen PS4-Aufnahmen des Projekts; das Spiel und seine Inhalte © Ubisoft Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony.",
   };
 
   const nodes = Array.from(document.querySelectorAll("[data-i18n]"));
