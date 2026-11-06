@@ -189,7 +189,7 @@
   max-width: 52ch;
 }
 
-/* ---------- The Crew Unlimited ---------- */
+/* ---------- the other fan project ---------- */
 
 .limits { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .limits li { padding: 24px 24px 22px; }
