@@ -253,9 +253,18 @@
   .timeline li::after { left: 5px; top: 26px; }
   .timeline time { text-align: left; font-size: 1.25rem; margin-bottom: 4px; }
   .timeline div { padding-left: 0; }
-  .compare th, .compare td { padding: 12px 8px; font-size: .9rem; }
-  .compare thead th { font-size: 1rem; }
-  .compare tbody th { width: 28%; }
+  /* phones: one card per feature, both projects underneath, labelled from the table head (data-label) */
+  .compare { padding: 6px 18px; }
+  .compare table, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: auto; }
+  .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .compare tr { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .compare tr:last-child { border-bottom: 0; }
+  .compare th, .compare td, .compare tr:last-child th, .compare tr:last-child td { border: 0; }
+  .compare tbody th { width: auto; padding: 0 0 10px; font: 800 italic 1.3rem/1.1 "Barlow Condensed", sans-serif; }
+  .compare td { width: auto; padding: 9px 12px 10px; font-size: .98rem; }
+  .compare td::before { content: attr(data-label); display: block; margin-bottom: 3px; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #6f7c8f; }
+  .compare td.us { border-left: 2px solid var(--cyan); }
+  .compare td.us::before { color: var(--cyan); }
   .why-credit { text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) {
