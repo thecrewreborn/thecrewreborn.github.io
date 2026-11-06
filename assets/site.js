@@ -32,7 +32,7 @@
     bugLink: "Fehler gefunden? Melde ihn auf GitHub",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
-    videoText: "Aufgenommen im November 2026. Die Story auf einer PS4 mit neuem Spielstand bis zum ersten getunten Auto, dann eine Crew aus einem PS4- und einem PC-Spieler.",
+    videoText: "Aufgenommen im November 2026. Die Story auf einer PS4 mit neuem Spielstand bis zum ersten getunten Auto, eine Crew aus einem PS4- und einem PC-Spieler und eine Nachtfahrt von Detroit nach St. Louis.",
     videoAll: "Die ganze Serie auf YouTube",
     videoNote: "Das Video wird erst nach dem Klick von YouTube geladen.",
     crossTitle: "Crossplay, Cross-Save, Cross-Progression",
