@@ -681,6 +681,8 @@ h2::before {
 .contact-grid li { display: flex; flex-direction: column; }
 .contact-link { margin-top: .8em; color: var(--cyan); font-weight: 600; text-underline-offset: 3px; }
 .contact-link + .contact-link { margin-top: .35em; }
+.contact-mailbox { margin: -.4rem 0 1.6rem; }
+.contact-mail { color: var(--cyan); font-weight: 600; font-size: 1.1rem; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .cross-grid { margin-top: 1.4rem; }
 .tag-ok { display: inline-block; margin: -.1em 0 .7em; padding: 2px 10px; background: var(--cyan); color: var(--night); font: 800 italic .85rem/1.5 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
 .cross-grid span { display: block; }
