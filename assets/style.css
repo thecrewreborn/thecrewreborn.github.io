@@ -678,6 +678,9 @@ h2::before {
 .dl-steps li { margin: .35em 0; }
 .dl-foot { margin: 1.3rem 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--steel); font-size: .95rem; }
 .dl-foot a { color: var(--cyan); text-underline-offset: 3px; }
+.contact-grid li { display: flex; flex-direction: column; }
+.contact-link { margin-top: .8em; color: var(--cyan); font-weight: 600; text-underline-offset: 3px; }
+.contact-link + .contact-link { margin-top: .35em; }
 .cross-grid { margin-top: 1.4rem; }
 .tag-ok { display: inline-block; margin: -.1em 0 .7em; padding: 2px 10px; background: var(--cyan); color: var(--night); font: 800 italic .85rem/1.5 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
 .cross-grid span { display: block; }
