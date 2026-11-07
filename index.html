@@ -78,7 +78,7 @@
         <li class="panel dl-card">
           <span class="dl-kicker">PC</span>
           <strong data-i18n="dlPc">PC patch</strong>
-          <span class="dl-sys">Ubisoft Connect · TheCrew.exe 1.2.0.0</span>
+          <span class="dl-sys">Ubisoft Connect / Steam · TheCrew.exe 1.2.0.0</span>
           <a class="btn btn-primary dl-btn" data-asset="PC" data-goatcounter-click="download-pc" data-goatcounter-title="Download PC" href="https://github.com/thecrewreborn/server/releases/download/v0.0.2/TheCrewReborn-PC-0.0.2.zip"><span data-i18n="dlGet3">Download</span><small class="dl-size"></small></a>
           <ol class="dl-steps">
             <li data-i18n="dlC1">Copy dinput8.dll and reborn.ini into the game folder, next to TheCrew.exe.</li>
@@ -203,6 +203,7 @@
             <li data-i18n="w18">Cross-save: one save on PS4 and PC under the same player name</li>
             <li data-i18n="w19">Performance parts in the garage: owned parts load and can be fitted</li>
             <li data-i18n="w20">The PC game on Windows 11 for ARM, too</li>
+            <li data-i18n="w22">The Steam version of the PC game, just like the Ubisoft Connect version</li>
             <li data-i18n="w21">Paint and body parts at the tuner, paid with bucks or crew credits, and fitted</li>
           </ul>
         </div>
@@ -243,7 +244,6 @@
           <li class="panel"><strong data-i18n="r5">Playing over the internet</strong><span data-i18n="r5t">Drive with friends outside your home network, with your player name protected.</span></li>
           <li class="panel"><strong data-i18n="r6">Friends and chat</strong><span data-i18n="r6t">A friends list and the in-game chat, on your own server.</span></li>
           <li class="panel"><strong data-i18n="r7">Community challenges and news</strong><span data-i18n="r7t">Weekly challenges for everyone on the server, and news in the game's menu.</span></li>
-          <li class="panel"><strong data-i18n="r8">Steam version on PC</strong><span data-i18n="r8t">The Steam release of the PC game, next to the Ubisoft Connect version.</span></li>
           <li class="panel"><strong data-i18n="r9">Own error messages on PC</strong><span data-i18n="r9t">Clear messages that name the server and this site, like on the PS4.</span></li>
         </ul>
       </div>
@@ -262,7 +262,7 @@
     <div class="wrap">
       <h2 data-i18n="needTitle">What you'll need</h2>
       <ul class="needs">
-        <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, the European version with update 1.21. PC: the Ubisoft Connect version. The exact versions are listed below.</span></li>
+        <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, the European version with update 1.21. PC: the Ubisoft Connect or the Steam version. The exact versions are listed below.</span></li>
         <li class="panel"><strong data-i18n="n2">On console: a PS4 or PS5 that runs homebrew game patches</strong><span data-i18n="n2t">The patch points the game at your server. On PC a small file in the game folder does the same.</span></li>
         <li class="panel"><strong data-i18n="n3">A computer on the same network</strong><span data-i18n="n3t">Windows, macOS or Linux with Python. It runs the server while you play.</span></li>
       </ul>
@@ -270,10 +270,10 @@
         <h3 data-i18n="verTitle">Supported versions</h3>
         <dl class="ver">
           <dt>PS4</dt><dd data-i18n="verPs4">The Crew, European version CUSA00161, version 1.00 with update 1.21 installed (the game info shows 01.21). Tested on a PS4 with firmware 11.50 and GoldHEN.</dd>
-          <dt>PC</dt><dd data-i18n="verPc">Ubisoft Connect version: TheCrew.exe 1.2.0.0, build 502193, the last update. Tested on Windows 11, also Windows 11 on ARM (Parallels on a Mac with Apple silicon).</dd>
+          <dt>PC</dt><dd data-i18n="verPc">Ubisoft Connect or Steam version: TheCrew.exe 1.2.0.0, build 502193, the last update. Tested on Windows 11, also Windows 11 on ARM (Parallels on a Mac with Apple silicon).</dd>
           <dt data-i18n="verSrvName">Server</dt><dd data-i18n="verSrv">Windows, macOS and Linux with Python 3.10 or newer; the start script installs Python on Windows and macOS.</dd>
         </dl>
-        <p class="ver-note" data-i18n="verUntested">Might work, not tested yet: the Steam version for PC and the PS5 through backwards compatibility. Not yet: other PS4 regions and game versions, because the patch fits only CUSA00161 with update 1.21.</p>
+        <p class="ver-note" data-i18n="verUntested">Might work, not tested yet: the PS5 through backwards compatibility. Not yet: other PS4 regions and game versions, because the patch fits only CUSA00161 with update 1.21.</p>
       </div>
       <p class="note" data-i18n="needNote">No game files are provided. You need your own copy; the project contains only original code. The README in the download explains the setup.</p>
     </div>
@@ -288,7 +288,7 @@
       </details>
       <details>
         <summary data-i18n="q9">Where do I get the game?</summary>
-        <p data-i18n="a9">You need your own copy of The Crew. On PS4 the disc is still easy to find second-hand; install it with update 1.21. On PC you need the Ubisoft Connect version that you own and have installed. This project provides no game files, no download links and no help with copies you don't own.</p>
+        <p data-i18n="a9">You need your own copy of The Crew. On PS4 the disc is still easy to find second-hand; install it with update 1.21. On PC you need the Ubisoft Connect or the Steam version that you own and have installed. This project provides no game files, no download links and no help with copies you don't own.</p>
       </details>
       <details>
         <summary data-i18n="q5">Does it run on PS5?</summary>
@@ -308,7 +308,7 @@
       </details>
       <details>
         <summary data-i18n="q7">Is there a PC version?</summary>
-        <p data-i18n="a7">Yes. The PC game runs on the same server as the PS4 version: a small file in the game folder points it there. Login, the prologue and the open world work today; the file is in the PC download of the pre-release. You need your own copy of the PC game: the Ubisoft Connect version works, the Steam version is being tested.</p>
+        <p data-i18n="a7">Yes. The PC game runs on the same server as the PS4 version: a small file in the game folder points it there. Login, the prologue and the open world work today; the file is in the PC download of the pre-release. You need your own copy of the PC game: the Ubisoft Connect and the Steam versions both work.</p>
       </details>
       <details>
         <summary data-i18n="q4">When can I download it?</summary>
