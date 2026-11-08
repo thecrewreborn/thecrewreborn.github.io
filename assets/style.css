@@ -644,11 +644,13 @@ h2::before {
   align-content: center;
   gap: 12px;
   padding: 24px;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   background: rgba(4, 7, 12, .92);
   backdrop-filter: blur(8px);
 }
 .lightbox[hidden] { display: none; }
-.lightbox img { max-width: min(1400px, 94vw); max-height: 80vh; display: block; }
+.lightbox img { max-width: min(1400px, 100%); max-height: 80vh; display: block; }
 .lightbox p { margin: 0; font: 700 italic 1.3rem "Barlow Condensed", sans-serif; }
 .lb-close {
   position: absolute;
@@ -660,6 +662,29 @@ h2::before {
   font-size: 2.4rem;
   line-height: 1;
   cursor: pointer;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .1);
+  color: var(--ice);
+  font-size: 2.6rem;
+  line-height: 1;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+.lb-nav:hover { background: rgba(255, 255, 255, .22); color: var(--cyan); }
+.lb-prev { left: 18px; }
+.lb-next { right: 18px; }
+.lb-count { color: var(--steel); font-weight: 700; font-size: .95rem; }
+@media (max-width: 700px) {
+  .lb-nav { width: 44px; height: 44px; font-size: 2.1rem; top: auto; bottom: 18px; transform: none; }
 }
 
 /* needs */

@@ -347,23 +347,50 @@
     renderDownloads();
   }).catch(() => {});
 
+  // Lightbox: arrows, arrow keys and a swipe step through the screenshots, wrapping around at both ends
   const lb = document.getElementById("lightbox");
-  function openShot(s) {
+  let shot = 0;
+  function showShot(i) {
+    const n = C.screenshots.length;
+    shot = (i + n) % n;
+    const s = C.screenshots[shot];
     document.getElementById("lbImg").src = s.src;
     document.getElementById("lbImg").alt = s[lang] || s.en;
     document.getElementById("lbCap").textContent = s[lang] || s.en;
+    document.getElementById("lbCount").textContent = (shot + 1) + " / " + n;
+    [shot - 1, shot + 1].forEach((k) => { new Image().src = C.screenshots[(k + n) % n].src; });
+  }
+  function openShot(i) {
+    showShot(i);
     lb.hidden = false;
-    document.getElementById("lbClose").focus();
+    document.getElementById("lbNext").focus();
   }
   function closeShot() { lb.hidden = true; }
-  lb.addEventListener("click", (e) => { if (e.target === lb || e.target.id === "lbClose") closeShot(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) closeShot(); });
+  lb.addEventListener("click", (e) => {
+    if (e.target.id === "lbPrev") showShot(shot - 1);
+    else if (e.target.id === "lbNext") showShot(shot + 1);
+    else if (e.target === lb || e.target.id === "lbClose") closeShot();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") closeShot();
+    else if (e.key === "ArrowLeft") showShot(shot - 1);
+    else if (e.key === "ArrowRight") showShot(shot + 1);
+  });
+  let touchX = null;
+  lb.addEventListener("touchstart", (e) => { touchX = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  lb.addEventListener("touchend", (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 50) showShot(dx < 0 ? shot + 1 : shot - 1);
+  });
 
   function renderGallery() {
     const g = document.getElementById("gallery");
     g.replaceChildren();
     document.getElementById("shots").hidden = C.screenshots.length === 0;
-    C.screenshots.forEach((s) => {
+    C.screenshots.forEach((s, i) => {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "shot";
@@ -374,7 +401,7 @@
       const cap = document.createElement("span");
       cap.textContent = s[lang] || s.en || "";
       b.append(img, cap);
-      b.onclick = () => openShot(s);
+      b.onclick = () => openShot(i);
       g.append(b);
     });
   }
