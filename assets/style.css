@@ -125,6 +125,8 @@ h1, h2, h3, .btn, .mark, .lang, summary {
   border-left: 4px solid var(--cyan);
   line-height: 1;
 }
+a.mark { text-decoration: none; }
+a.mark:hover { color: var(--cyan); }
 
 .lang {
   display: inline-flex;
