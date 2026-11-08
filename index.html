@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/style.css?v=29">
+<link rel="stylesheet" href="assets/style.css?v=30">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
       <a class="btn btn-ghost" href="#status" data-i18n="ctaStatus">See the progress</a>
       <a class="btn btn-ghost" href="why/" data-i18n="ctaWhy">Why this project</a>
     </div>
-    <a class="news" href="#download"><b data-i18n="newsTag">New</b> <span data-i18n="news">Pre-release 0.0.2: reward parts for your cars, the PC game on Windows on ARM, and a fix for a story crash</span></a>
+    <a class="news" href="#download"><b data-i18n="newsTag">New</b> <span data-i18n="news">Pre-release 0.0.3: the PS4 base game 1.00 runs too, next to 1.21 with Wild Run</span></a>
     <a class="bug-link" href="https://github.com/thecrewreborn/server/issues" data-i18n="bugLink">Found a bug? Report it on GitHub</a>
   </div>
 
@@ -51,13 +51,13 @@
     <div class="wrap">
       <h2 data-i18n="dlTitle">Download</h2>
       <p class="lede" data-i18n="dlLede">Everyone needs the server. Add the patch for the platform you play on.</p>
-      <p class="dl-meta" id="dlMeta">Version 0.0.2 · Pre-release</p>
+      <p class="dl-meta" id="dlMeta">Version 0.0.3 · Pre-release</p>
       <ul class="dl-grid">
         <li class="panel dl-card">
           <span class="dl-kicker" data-i18n="dlForAll">For everyone</span>
           <strong data-i18n="dlServer">Server</strong>
           <span class="dl-sys">Windows · macOS · Linux</span>
-          <a class="btn btn-primary dl-btn" data-asset="Server" data-goatcounter-click="download-server" data-goatcounter-title="Download Server" href="https://github.com/thecrewreborn/server/releases/download/v0.0.2/TheCrewReborn-Server-0.0.2.zip"><span data-i18n="dlGet1">Download</span><small class="dl-size"></small></a>
+          <a class="btn btn-primary dl-btn" data-asset="Server" data-goatcounter-click="download-server" data-goatcounter-title="Download Server" href="https://github.com/thecrewreborn/server/releases/download/v0.0.3/TheCrewReborn-Server-0.0.3.zip"><span data-i18n="dlGet1">Download</span><small class="dl-size"></small></a>
           <ol class="dl-steps">
             <li data-i18n="dlS1">Unpack the zip on a computer in your home network.</li>
             <li data-i18n="dlS2">Windows: double-click start-server.bat. macOS and Linux: run ./start-server.sh in a terminal.</li>
@@ -67,8 +67,8 @@
         <li class="panel dl-card">
           <span class="dl-kicker">PS4 · PS5</span>
           <strong data-i18n="dlPs4">Console patch</strong>
-          <span class="dl-sys">GoldHEN · CUSA00161 1.21</span>
-          <a class="btn btn-primary dl-btn" data-asset="PS4" data-goatcounter-click="download-ps4" data-goatcounter-title="Download PS4" href="https://github.com/thecrewreborn/server/releases/download/v0.0.2/TheCrewReborn-PS4-0.0.2.zip"><span data-i18n="dlGet2">Download</span><small class="dl-size"></small></a>
+          <span class="dl-sys">GoldHEN · CUSA00161 1.00 / 1.21</span>
+          <a class="btn btn-primary dl-btn" data-asset="PS4" data-goatcounter-click="download-ps4" data-goatcounter-title="Download PS4" href="https://github.com/thecrewreborn/server/releases/download/v0.0.3/TheCrewReborn-PS4-0.0.3.zip"><span data-i18n="dlGet2">Download</span><small class="dl-size"></small></a>
           <ol class="dl-steps">
             <li data-i18n="dlP1">Copy CUSA00161.xml to /data/GoldHEN/patches/xml/ on the console.</li>
             <li data-i18n="dlP2">Switch on “Offline server redirect” in GoldHEN's patch menu.</li>
@@ -79,7 +79,7 @@
           <span class="dl-kicker">PC</span>
           <strong data-i18n="dlPc">PC patch</strong>
           <span class="dl-sys">Ubisoft Connect / Steam · TheCrew.exe 1.2.0.0</span>
-          <a class="btn btn-primary dl-btn" data-asset="PC" data-goatcounter-click="download-pc" data-goatcounter-title="Download PC" href="https://github.com/thecrewreborn/server/releases/download/v0.0.2/TheCrewReborn-PC-0.0.2.zip"><span data-i18n="dlGet3">Download</span><small class="dl-size"></small></a>
+          <a class="btn btn-primary dl-btn" data-asset="PC" data-goatcounter-click="download-pc" data-goatcounter-title="Download PC" href="https://github.com/thecrewreborn/server/releases/download/v0.0.3/TheCrewReborn-PC-0.0.3.zip"><span data-i18n="dlGet3">Download</span><small class="dl-size"></small></a>
           <ol class="dl-steps">
             <li data-i18n="dlC1">Copy dinput8.dll and reborn.ini into the game folder, next to TheCrew.exe.</li>
             <li data-i18n="dlC2">Start the server first, then the game.</li>
@@ -94,7 +94,7 @@
   <section id="video" class="band">
     <div class="wrap">
       <h2 data-i18n="videoTitle">See it running</h2>
-      <p class="lede" data-i18n="videoText">Recorded in November 2026. The story on a PS4 from a new save, up to the first tuned car, a crew with a PS4 and a PC player, and a night run from Detroit to St. Louis.</p>
+      <p class="lede" data-i18n="videoText">Recorded in November 2026. The story on a PS4 from a new save, up to the first tuned car, a crew with a PS4 and a PC player, a night run from Detroit to St. Louis, and the whole prologue in the base game 1.00.</p>
       <div class="series">
         <div class="player" id="player">
           <button type="button" class="facade" id="facade">
@@ -108,6 +108,47 @@
           <a class="series-link" id="seriesLink" href="https://www.youtube.com/@Knutwurst" data-i18n="videoAll" hidden>Watch the whole series on YouTube</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="versions-compare" class="band vc">
+    <div class="wrap">
+      <h2 data-i18n="vcTitle">Two games in one: 1.00 and 1.21</h2>
+      <p class="lede" data-i18n="vcText">The server plays both PS4 versions. Drive the base game as it shipped in December 2014, or with update 1.21 and Wild Run, the way most players know it from 2015 on. The same spot in the same mission, two looks: drag the slider.</p>
+      <figure class="vc-stage panel">
+        <div class="vc-frame" id="vcFrame" style="--pos: 50%">
+          <img class="vc-img vc-121" id="vcImg121" src="assets/compare/pipes-121.webp" width="1280" height="720" alt="">
+          <img class="vc-img vc-100" id="vcImg100" src="assets/compare/pipes-100.webp" width="1280" height="720" alt="">
+          <span class="vc-line" aria-hidden="true"></span>
+          <span class="vc-tag vc-tag-l">1.00 · 2014</span>
+          <span class="vc-tag vc-tag-r">1.21 · Wild Run</span>
+          <input class="vc-range" id="vcRange" type="range" min="0" max="100" value="50" aria-label="Comparison: 1.00 on the left, 1.21 on the right" data-i18n-aria="vcRange">
+        </div>
+        <figcaption class="vc-cap" id="vcCap"></figcaption>
+      </figure>
+      <div class="vc-thumbs" id="vcThumbs"></div>
+      <p class="ver-note" data-i18n="vcNote">Stills from the project's own PS4 recordings, at the same spot in the same mission. The time of day and the weather can differ between two runs; the HUD, the lighting and the road surface show the version.</p>
+      <ul class="needs vc-facts">
+        <li class="panel"><strong data-i18n="vc100">Base game 1.00 (December 2014)</strong>
+          <ul class="vc-list">
+            <li data-i18n="vc100a">The original look: the launch lighting and colours, before the graphics overhaul</li>
+            <li data-i18n="vc100b">The launch handling, before the rework of steering, grip and counter-steering</li>
+            <li data-i18n="vc100c">No rain, no thunderstorms: the dynamic weather came with the update</li>
+            <li data-i18n="vc100d">The story, skills, factions and the cars of the base game, without add-ons</li>
+            <li data-i18n="vc100e">Experimental on the Reborn server: tested from the start of the story to the first tuning shop</li>
+          </ul></li>
+        <li class="panel"><strong data-i18n="vc121">Update 1.21 with Wild Run (2015 to 2016)</strong>
+          <ul class="vc-list">
+            <li data-i18n="vc121a">New physically based rendering with reworked lighting, new car shaders and far less pop-in</li>
+            <li data-i18n="vc121b">Reworked handling: aerodynamics, steering, counter-steering and grip</li>
+            <li data-i18n="vc121c">Dynamic weather: rain, wet roads and thunderstorms</li>
+            <li data-i18n="vc121d">Wild Run and Calling All Units: motorbikes, drift, drag and monster truck specs, The Summit, police missions; the server unlocks the add-ons</li>
+            <li data-i18n="vc121e">Tested on the Reborn server, on PS4 and PC</li>
+          </ul></li>
+      </ul>
+      <p class="vc-taste" data-i18n="vcTaste">Which one looks better is a matter of taste. The 2015 press praised the new rendering, and some players miss the warmer colours of the launch. Now you drive both and decide for yourself.</p>
+      <p class="leg-links"><a class="btn btn-primary btn-small" href="#video" data-play="-Bk-wqqBn0I" data-i18n="vcVideo">Watch the prologue in 1.00</a></p>
+      <p class="vc-src"><span data-i18n="vcSources">Sources for the changes:</span> <a href="https://news.ubisoft.com/en-us/article/3mQRxyREr44vOVlZHRAgoG/the-crew-wild-run-is-out-now" target="_blank" rel="noopener">Ubisoft</a> · <a href="https://www.videogamer.com/news/the-crew-wild-runs-new-graphics-engine-is-a-big-improvement" target="_blank" rel="noopener">VideoGamer</a> · <a href="https://gamingbolt.com/the-crew-wild-run-graphics-comparison-new-patch-drastically-improves-visuals" target="_blank" rel="noopener">GamingBolt</a> · <a href="https://www.pcgamesn.com/the-crew/the-crew-wild-run-is-out-now-comes-with-a-two-hour-timed-demo" target="_blank" rel="noopener">PCGamesN</a></p>
     </div>
   </section>
 
@@ -171,8 +212,10 @@
           <li class="done"><h3 data-i18n="mpc">PC version</h3><p data-i18n="mpct">The PC game runs on the same server as the PS4: a small file in the game folder points it there. Login, the prologue and the open world work.</p></li>
           <li class="done" id="crossplay"><h3><span data-i18n="mmp">Online multiplayer and crossplay</span> <em class="ok" data-i18n="tested">Tested on PS4 and PC</em></h3><p data-i18n="mmpt">PS4 and PC players meet on your own server, see each other and drive together. Since 5 November crews work across platforms too: a PS4 player invites a PC player, the invite goes through and the crew lead changes hands.</p>
             <figure class="proof"><img src="assets/shots/crossplay.webp" width="900" height="1200" loading="lazy" alt="A PS4 on the TV and a PC below it, each showing the other player's car in the same street" data-i18n-alt="mmpProofAlt"><figcaption data-i18n="mmpProof">First crossplay test: the PS4 (top) and the PC (bottom) see each other.</figcaption><a class="proof-video" href="#video" data-play="Ra0fcutVQ1Y" data-i18n="mmpCrew">Watch the crossplay crew video</a> <a class="proof-video" href="https://www.youtube.com/shorts/k7NOHK2vMmA" target="_blank" rel="noopener" data-i18n="mmpVideo">Watch the first clip on YouTube</a></figure></li>
+          <li class="done" id="v100"><h3><span data-i18n="mv100">PS4 base game 1.00</span> <em class="ok" data-i18n="mv100tag">Tested on PS4</em></h3><p data-i18n="mv100t">The game without any update runs on the same server, on its own port and with its own saves. Tested from the start of the story to the first tuning shop; experimental.</p>
+            <p class="leg-links"><a class="btn btn-ghost btn-small" href="#versions-compare" data-i18n="mv100cmp">Compare 1.00 and 1.21</a></p></li>
           <li class="here" id="prerelease"><h3><span data-i18n="mpre">Pre-release: download and try it</span> <em data-i18n="now">Out now</em></h3><p data-i18n="mpret">The server is open source and runs on Windows, macOS and Linux; the console patch and the PC file come with it. Every activity and the whole story are built, but not all of it is tested yet. Expect bugs, and please report them.</p>
-            <p class="leg-links"><a class="btn btn-primary btn-small" href="#download" data-i18n="download">Download 0.0.2</a> <a class="btn btn-ghost btn-small" href="https://github.com/thecrewreborn/server/issues" data-i18n="reportBug">Report a bug</a></p></li>
+            <p class="leg-links"><a class="btn btn-primary btn-small" href="#download" data-i18n="download">Download 0.0.3</a> <a class="btn btn-ghost btn-small" href="https://github.com/thecrewreborn/server/issues" data-i18n="reportBug">Report a bug</a></p></li>
           <li><h3 data-i18n="m5">Every activity, tested</h3><p data-i18n="m5t">Summit events, police chases, factions and the parts shops calculate like the original server. Each one gets tested on PS4 and PC.</p></li>
           <li><h3 data-i18n="m6">Release 1.0</h3><p data-i18n="m6t">The whole story played from start to finish, every activity tested, and a step-by-step guide.</p></li>
           <li><h3 data-i18n="m7">Server on the console</h3><p data-i18n="m7t">Later: everything runs on the PS4 itself, no second device needed.</p></li>
@@ -237,7 +280,7 @@
       <div class="later">
         <h3 data-i18n="laterTitle">Further down the road</h3>
         <ul class="later-grid">
-          <li class="panel"><strong data-i18n="r1">More game regions</strong><span data-i18n="r1t">The US and Asian releases of the PS4 game, next to the European version 1.21.</span></li>
+          <li class="panel"><strong data-i18n="r1">More game regions</strong><span data-i18n="r1t">The US and Asian releases of the PS4 game, next to the European version.</span></li>
           <li class="panel"><strong data-i18n="r2">Single-player cheats</strong><span data-i18n="r2t">Unlimited money, every car and every part unlocked, for when you just want to cruise. Single player only; in multiplayer everyone plays fair.</span></li>
           <li class="panel"><strong data-i18n="r3">Up to 4K on PS4 Pro and PS5</strong><span data-i18n="r3t">A patch raises the render resolution. Same world, a much sharper picture.</span></li>
           <li class="panel"><strong data-i18n="r4">PvP races</strong><span data-i18n="r4t">Races against other players on your server, with lobbies and matchmaking.</span></li>
@@ -262,18 +305,18 @@
     <div class="wrap">
       <h2 data-i18n="needTitle">What you'll need</h2>
       <ul class="needs">
-        <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, the European version with update 1.21. PC: the Ubisoft Connect or the Steam version. The exact versions are listed below.</span></li>
+        <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, the European version, with update 1.21 or as the base game 1.00. PC: the Ubisoft Connect or the Steam version. The exact versions are listed below.</span></li>
         <li class="panel"><strong data-i18n="n2">On console: a PS4 or PS5 that runs homebrew game patches</strong><span data-i18n="n2t">The patch points the game at your server. On PC a small file in the game folder does the same.</span></li>
         <li class="panel"><strong data-i18n="n3">A computer on the same network</strong><span data-i18n="n3t">Windows, macOS or Linux with Python. It runs the server while you play.</span></li>
       </ul>
       <div class="panel versions" id="versions">
         <h3 data-i18n="verTitle">Supported versions</h3>
         <dl class="ver">
-          <dt>PS4</dt><dd data-i18n="verPs4">The Crew, European version CUSA00161, version 1.00 with update 1.21 installed (the game info shows 01.21). Tested on a PS4 with firmware 11.50 and GoldHEN.</dd>
+          <dt>PS4</dt><dd data-i18n="verPs4">The Crew, European version CUSA00161, with update 1.21 installed (the game info shows 01.21), or the base game without any update (01.00, experimental). Tested on a PS4 with firmware 11.50 and GoldHEN.</dd>
           <dt>PC</dt><dd data-i18n="verPc">Ubisoft Connect or Steam version: TheCrew.exe 1.2.0.0, build 502193, the last update. Tested on Windows 11, also Windows 11 on ARM (Parallels on a Mac with Apple silicon).</dd>
           <dt data-i18n="verSrvName">Server</dt><dd data-i18n="verSrv">Windows, macOS and Linux with Python 3.10 or newer; the start script installs Python on Windows and macOS.</dd>
         </dl>
-        <p class="ver-note" data-i18n="verUntested">Might work, not tested yet: the PS5 through backwards compatibility. Not yet: other PS4 regions and game versions, because the patch fits only CUSA00161 with update 1.21.</p>
+        <p class="ver-note" data-i18n="verUntested">Might work, not tested yet: the PS5 through backwards compatibility. Not yet: other PS4 regions and game versions, because the patch fits only CUSA00161 1.00 and 1.21.</p>
       </div>
       <p class="note" data-i18n="needNote">No game files are provided. You need your own copy; the project contains only original code. The README in the download explains the setup.</p>
     </div>
@@ -288,7 +331,7 @@
       </details>
       <details>
         <summary data-i18n="q9">Where do I get the game?</summary>
-        <p data-i18n="a9">You need your own copy of The Crew. On PS4 the disc is still easy to find second-hand; install it with update 1.21. On PC you need the Ubisoft Connect or the Steam version that you own and have installed. This project provides no game files, no download links and no help with copies you don't own.</p>
+        <p data-i18n="a9">You need your own copy of The Crew. On PS4 the disc is still easy to find second-hand; install it with update 1.21, or play the base game 1.00 without it. On PC you need the Ubisoft Connect or the Steam version that you own and have installed. This project provides no game files, no download links and no help with copies you don't own.</p>
       </details>
       <details>
         <summary data-i18n="q5">Does it run on PS5?</summary>
@@ -312,7 +355,7 @@
       </details>
       <details>
         <summary data-i18n="q4">When can I download it?</summary>
-        <p data-i18n="a4">Now: pre-release 0.0.2 is in the download section at the top of this page, with the server for Windows, macOS and Linux, the PS4 patch and the PC patch. Not everything is tested yet; release 1.0 follows once the whole story is played through.</p>
+        <p data-i18n="a4">Now: pre-release 0.0.3 is in the download section at the top of this page, with the server for Windows, macOS and Linux, the PS4 patch and the PC patch. Not everything is tested yet; release 1.0 follows once the whole story is played through.</p>
       </details>
       <details>
         <summary data-i18n="q6">Can I support the project?</summary>
@@ -355,7 +398,7 @@
 </div>
 
 <script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script src="assets/content.js?v=20"></script>
-<script src="assets/site.js?v=47"></script>
+<script src="assets/content.js?v=21"></script>
+<script src="assets/site.js?v=48"></script>
 </body>
 </html>

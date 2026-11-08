@@ -28,11 +28,11 @@
     ctaStatus: "Zum aktuellen Stand",
     ctaWhy: "Warum dieses Projekt",
     newsTag: "Neu",
-    news: "Pre-Release 0.0.2: Belohnungsteile für deine Autos, das PC-Spiel unter Windows für ARM und ein Fix für einen Absturz in der Story",
+    news: "Pre-Release 0.0.3: Jetzt läuft auch das PS4-Basisspiel 1.00, neben 1.21 mit Wild Run",
     bugLink: "Fehler gefunden? Melde ihn auf GitHub",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
-    videoText: "Aufgenommen im November 2026. Die Story auf einer PS4 mit neuem Spielstand bis zum ersten getunten Auto, eine Crew aus einem PS4- und einem PC-Spieler und eine Nachtfahrt von Detroit nach St. Louis.",
+    videoText: "Aufgenommen im November 2026. Die Story auf einer PS4 mit neuem Spielstand bis zum ersten getunten Auto, eine Crew aus einem PS4- und einem PC-Spieler, eine Nachtfahrt von Detroit nach St. Louis und der ganze Prolog im Basisspiel 1.00.",
     videoAll: "Die ganze Serie auf YouTube",
     videoNote: "Das Video wird erst nach dem Klick von YouTube geladen.",
     crossTitle: "Crossplay, Cross-Save, Cross-Progression",
@@ -71,7 +71,7 @@
     mpre: "Pre-Release: herunterladen und ausprobieren",
     now: "Jetzt verfügbar",
     mpret: "Der Server ist Open Source und läuft unter Windows, macOS und Linux; Konsolen-Patch und PC-Datei sind dabei. Alle Aktivitäten und die komplette Story sind gebaut, aber noch nicht alles ist getestet. Es kann daher noch zu Fehlern kommen. Bitte melde sie auf GitHub.",
-    download: "0.0.2 herunterladen",
+    download: "0.0.3 herunterladen",
     reportBug: "Fehler melden",
     reportBug2: "Fehler melden",
     footDownload: "Download",
@@ -82,6 +82,10 @@
     mmp: "Online-Multiplayer und Crossplay",
     mmpt: "PS4- und PC-Spieler treffen sich auf deinem eigenen Server, sehen sich und fahren zusammen. Seit dem 5. November funktionieren auch Crews über beide Plattformen hinweg: Ein PS4-Spieler lädt einen PC-Spieler ein, die Einladung kommt an und die Crew-Leitung wechselt.",
     tested: "Getestet auf PS4 und PC",
+    mv100: "PS4-Basisspiel 1.00",
+    mv100tag: "Getestet auf PS4",
+    mv100t: "Das Spiel ohne jedes Update läuft auf demselben Server, mit eigenem Port und eigenen Spielständen. Getestet vom Beginn der Story bis zum ersten Tuning-Shop; experimentell.",
+    mv100cmp: "1.00 und 1.21 vergleichen",
     mmpCrew: "Crossplay-Crew-Video ansehen",
     mmpProof: "Erster Crossplay-Test: PS4 (oben) und PC (unten) sehen sich gegenseitig.",
     mmpVideo: "Ersten Clip auf YouTube ansehen",
@@ -127,17 +131,36 @@
     b9: "Fraktionsrang, Gehalt und das Monatsergebnis",
     b10: "Polizeimissionen: Kisten, Fragmente und die Autos, die sie freischalten",
     b11: "Crews: erneut beitreten nach einem Verbindungsabbruch",
+    vcTitle: "Zwei Spiele in einem: 1.00 und 1.21",
+    vcText: "Der Server spielt beide PS4-Versionen. Fahr das Basisspiel so, wie es im Dezember 2014 erschien, oder mit Update 1.21 und Wild Run, so wie es die meisten ab 2015 kennen. Dieselbe Stelle in derselben Mission, zwei Looks: Zieh den Regler.",
+    vcNote: "Standbilder aus eigenen PS4-Aufnahmen, an derselben Stelle derselben Mission. Tageszeit und Wetter können zwischen zwei Fahrten abweichen; HUD, Licht und Straßenbelag zeigen die Version.",
+    vcRange: "Vergleich: links 1.00, rechts 1.21",
+    vc100: "Basisspiel 1.00 (Dezember 2014)",
+    vc100a: "Der ursprüngliche Look: Licht und Farben vom Start, vor der Überarbeitung der Grafik",
+    vc100b: "Das Fahrverhalten vom Start, vor der Überarbeitung von Lenkung, Grip und Gegenlenken",
+    vc100c: "Kein Regen und kein Gewitter: Das dynamische Wetter kam erst mit dem Update",
+    vc100d: "Die Story, Skills, Fraktionen und die Autos des Basisspiels, ohne Add-ons",
+    vc100e: "Auf dem Reborn-Server experimentell: getestet vom Beginn der Story bis zum ersten Tuning-Shop",
+    vc121: "Update 1.21 mit Wild Run (2015 bis 2016)",
+    vc121a: "Neue, physikalisch basierte Grafik mit überarbeitetem Licht, neuen Auto-Shadern und kaum noch nachladenden Objekten",
+    vc121b: "Überarbeitetes Fahrverhalten: Aerodynamik, Lenkung, Gegenlenken und Grip",
+    vc121c: "Dynamisches Wetter: Regen, nasse Straßen und Gewitter",
+    vc121d: "Wild Run und Calling All Units: Motorräder, Drift-, Drag- und Monstertruck-Specs, der Summit, Polizeimissionen; der Server schaltet die Add-ons frei",
+    vc121e: "Auf dem Reborn-Server getestet, auf PS4 und PC",
+    vcTaste: "Welche Version besser aussieht, ist Geschmackssache. Die Presse lobte 2015 die neue Grafik, manche Spieler vermissen die wärmeren Farben vom Start. Jetzt fährst du beide und entscheidest selbst.",
+    vcVideo: "Den Prolog in 1.00 ansehen",
+    vcSources: "Quellen zu den Änderungen:",
     shotsTitle: "Screenshots",
     shotsText: "Szenen, aufgenommen auf einer PS4, die auf dem Reborn-Server spielt.",
     needTitle: "Das brauchst du",
     n1: "Dein eigenes The Crew für PS4 oder PC",
-    n1t: "PS4: Disc oder Download, die europäische Version mit Update 1.21. PC: die Ubisoft-Connect- oder die Steam-Version. Die genauen Versionen stehen weiter unten.",
+    n1t: "PS4: Disc oder Download, die europäische Version, mit Update 1.21 oder als Basisspiel 1.00. PC: die Ubisoft-Connect- oder die Steam-Version. Die genauen Versionen stehen weiter unten.",
     verTitle: "Unterstützte Versionen",
-    verPs4: "The Crew, europäische Version CUSA00161, Version 1.00 mit installiertem Update 1.21 (die Spielinfo zeigt 01.21). Getestet auf einer PS4 mit Firmware 11.50 und GoldHEN.",
+    verPs4: "The Crew, europäische Version CUSA00161, mit installiertem Update 1.21 (die Spielinfo zeigt 01.21) oder als Basisspiel ohne Update (01.00, experimentell). Getestet auf einer PS4 mit Firmware 11.50 und GoldHEN.",
     verPc: "Ubisoft-Connect- oder Steam-Version: TheCrew.exe 1.2.0.0, Build 502193, das letzte Update. Getestet unter Windows 11, auch unter Windows 11 für ARM (Parallels auf einem Mac mit Apple-Chip).",
     verSrvName: "Server",
     verSrv: "Windows, macOS und Linux mit Python 3.10 oder neuer; das Startskript installiert Python unter Windows und macOS.",
-    verUntested: "Möglicherweise lauffähig, aber noch nicht getestet: die PS5 per Abwärtskompatibilität. Noch nicht unterstützt: andere PS4-Regionen und Spielversionen, denn der Patch passt nur auf CUSA00161 mit Update 1.21.",
+    verUntested: "Möglicherweise lauffähig, aber noch nicht getestet: die PS5 per Abwärtskompatibilität. Noch nicht unterstützt: andere PS4-Regionen und Spielversionen, denn der Patch passt nur auf CUSA00161 1.00 und 1.21.",
     n2: "Auf der Konsole: eine PS4 oder PS5, die Homebrew-Patches laden kann",
     n2t: "Der Patch leitet das Spiel auf deinen Server um. Auf dem PC übernimmt das eine kleine Datei im Spielordner.",
     n3: "Einen Rechner im selben Netzwerk",
@@ -146,7 +169,7 @@
     faqTitle: "Häufige Fragen",
     laterTitle: "Was noch kommt",
     r1: "Weitere Spielregionen",
-    r1t: "Die US- und Asien-Fassungen des PS4-Spiels, neben der europäischen Version 1.21.",
+    r1t: "Die US- und Asien-Fassungen des PS4-Spiels, neben der europäischen Version.",
     r2: "Cheats für den Einzelspieler",
     r2t: "Unbegrenztes Geld sowie alle Autos und Teile freigeschaltet, für entspanntes Fahren durch die Spielwelt. Nur im Einzelspielermodus; im Multiplayer gelten für alle dieselben Regeln.",
     r3: "Bis zu 4K auf PS4 Pro und PS5",
@@ -164,7 +187,7 @@
     q1: "Brauche ich PS Plus?",
     a1: "Nein. Das Spiel verbindet sich nur mit deinem eigenen Server.",
     q9: "Woher bekomme ich das Spiel?",
-    a9: "Du brauchst dein eigenes Exemplar von The Crew. Die PS4-Disc ist gebraucht weiterhin gut erhältlich; installiere sie zusammen mit dem Update 1.21. Am PC brauchst du die Ubisoft-Connect- oder die Steam-Version, die du besitzt und installiert hast. Dieses Projekt stellt keine Spieldateien, keine Download-Links und keine Hilfe zu Kopien bereit, die du nicht besitzt.",
+    a9: "Du brauchst dein eigenes Exemplar von The Crew. Die PS4-Disc ist gebraucht weiterhin gut erhältlich; installiere sie zusammen mit dem Update 1.21 oder spiel das Basisspiel 1.00 ohne Update. Am PC brauchst du die Ubisoft-Connect- oder die Steam-Version, die du besitzt und installiert hast. Dieses Projekt stellt keine Spieldateien, keine Download-Links und keine Hilfe zu Kopien bereit, die du nicht besitzt.",
     q5: "Läuft es auch auf der PS5?",
     a5: "Ja. Die PS5 startet die PS4-Version per Abwärtskompatibilität, mit demselben Patch und demselben Server.",
     q2: "Wo wird mein Spielstand gespeichert?",
@@ -174,7 +197,7 @@
     q7: "Gibt es eine PC-Version?",
     a7: "Ja. Die PC-Version läuft auf demselben Server wie die PS4-Fassung: Eine kleine Datei im Spielordner leitet sie dorthin um. Anmeldung, Prolog und offene Welt funktionieren schon; die Datei ist im PC-Download des Pre-Releases enthalten. Du brauchst dein eigenes Exemplar des PC-Spiels: Die Ubisoft-Connect- und die Steam-Version funktionieren beide.",
     q4: "Wann kann ich es herunterladen?",
-    a4: "Jetzt: Das Pre-Release 0.0.2 steht oben auf dieser Seite im Download-Bereich bereit, mit dem Server für Windows, macOS und Linux, dem PS4-Patch und dem PC-Patch. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
+    a4: "Jetzt: Das Pre-Release 0.0.3 steht oben auf dieser Seite im Download-Bereich bereit, mit dem Server für Windows, macOS und Linux, dem PS4-Patch und dem PC-Patch. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
     q6: "Kann ich das Projekt unterstützen?",
     a6: "Ja, mit einem freiwilligen Beitrag auf Ko-fi. Das Projekt bleibt in jedem Fall kostenlos, und eine Unterstützung schaltet keine zusätzlichen Inhalte frei.",
     kofi: "Auf Ko-fi unterstützen",
@@ -208,9 +231,14 @@
     altNodes.forEach((n) => { if (dict[n.dataset.i18nAlt]) n.alt = dict[n.dataset.i18nAlt]; });
     document.documentElement.lang = lang;
     document.getElementById("lang").dataset.active = lang;
+    document.querySelectorAll("[data-i18n-aria]").forEach((n) => {
+      if (!EN[n.dataset.i18nAria]) EN[n.dataset.i18nAria] = n.getAttribute("aria-label");
+      if (dict[n.dataset.i18nAria]) n.setAttribute("aria-label", dict[n.dataset.i18nAria]);
+    });
     renderGallery();
     renderPlaylist();
     renderDownloads();
+    renderCompare();
     try { localStorage.setItem("lang", lang); } catch (e) { /* private mode */ }
   }
 
@@ -296,7 +324,7 @@
   function renderDownloads() {
     const meta = document.getElementById("dlMeta");
     if (!meta) return;
-    const r = release || { tag_name: "v0.0.2", prerelease: true, published_at: null, assets: [] };
+    const r = release || { tag_name: "v0.0.3", prerelease: true, published_at: null, assets: [] };
     const parts = ["Version " + r.tag_name.replace(/^v/, ""), r.prerelease ? (lang === "de" ? "Pre-Release" : "Pre-release") : "Release"];
     if (r.published_at) {
       parts.push(new Date(r.published_at).toLocaleDateString(lang === "de" ? "de-DE" : "en-GB",
@@ -348,6 +376,41 @@
       g.append(b);
     });
   }
+
+  // 1.00 vs 1.21: one pair at a time, a slider reveals the 1.00 image from the left
+  let pair = 0;
+  function renderCompare() {
+    const box = document.getElementById("vcThumbs");
+    const list = C.compare || [];
+    if (!box || !list.length) return;
+    const p = list[pair];
+    const img100 = document.getElementById("vcImg100");
+    const img121 = document.getElementById("vcImg121");
+    img100.src = "assets/compare/" + p.name + "-100.webp";
+    img121.src = "assets/compare/" + p.name + "-121.webp";
+    img100.alt = (p[lang] || p.en) + " (1.00)";
+    img121.alt = (p[lang] || p.en) + " (1.21)";
+    document.getElementById("vcCap").textContent = p[lang] || p.en;
+    box.textContent = "";
+    list.forEach((q, k) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "vc-thumb";
+      if (k === pair) b.setAttribute("aria-current", "true");
+      const im = document.createElement("img");
+      im.src = "assets/compare/" + q.name + "-100.webp";
+      im.alt = "";
+      im.loading = "lazy";
+      const s = document.createElement("span");
+      s.textContent = q[lang] || q.en;
+      b.append(im, s);
+      b.onclick = () => { pair = k; renderCompare(); };
+      box.append(b);
+    });
+  }
+  const vcRange = document.getElementById("vcRange");
+  if (vcRange) vcRange.addEventListener("input", () =>
+    document.getElementById("vcFrame").style.setProperty("--pos", vcRange.value + "%"));
 
   document.getElementById("lang").addEventListener("click", () => setLang(lang === "de" ? "en" : "de"));
   // links elsewhere on the page that play an episode in the player

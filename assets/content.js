@@ -19,11 +19,22 @@ window.CONTENT = {
     { id: "xES0otBDySc", title: "Night Run to St. Louis", time: "10:55", poster: "assets/videos/night-run-st-louis.jpg",
       en: "By night from Detroit to St. Louis: hidden car parts, a satellite radar, a mission (spoiler at the end).",
       de: "Nachts von Detroit nach St. Louis: Wrackteile, ein Satellitenradar, eine Mission (Spoiler am Ende)." },
+    { id: "-Bk-wqqBn0I", title: "Base Game 1.00: the Prologue", time: "14:44", poster: "assets/videos/version-1-00-prologue.jpg",
+      en: "The PS4 game without any update: the whole prologue, uncut, to the dealer and the tuner (spoilers).",
+      de: "Das PS4-Spiel ohne Update: der ganze Prolog ungeschnitten, bis zum Händler und zum Tuner (Spoiler)." },
   ],
   // the episode the player shows first (the newest milestone); empty = the first one
-  featured: "xES0otBDySc",
+  featured: "-Bk-wqqBn0I",
   // the playlist with every episode, linked under the list
   playlist: "PLbKxOmFihheM",
+  // The same spot in base game 1.00 and in 1.21 (assets/compare/<name>-100.webp and -121.webp), first one shown first
+  compare: [
+    { name: "pipes", en: "Slalom skill under the pipelines, Detroit", de: "Slalom-Skill unter den Rohrleitungen, Detroit" },
+    { name: "crane", en: "The same skill at the harbour crane", de: "Derselbe Skill am Hafenkran" },
+    { name: "highway", en: "On the highway to the first race", de: "Auf der Autobahn zum ersten Rennen" },
+    { name: "overpass", en: "Under the overpass", de: "Unter der Hochstraße" },
+    { name: "clay", en: "Cutscene: Clay Industrial Center", de: "Zwischensequenz: Clay Industrial Center" },
+  ],
   // Screenshots live in assets/shots/ (stills from the project's own PS4 recordings). The first one is shown large.
   screenshots: [
     { src: "assets/shots/golden-raptor.jpg", en: "Golden hour in the Midwest", de: "Goldene Stunde im Mittleren Westen" },
