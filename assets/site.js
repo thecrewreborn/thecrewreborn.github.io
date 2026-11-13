@@ -164,7 +164,7 @@
     n1t: "PS4: Disc oder Download, die europäische Version, mit Update 1.21 oder als Basisspiel 1.00. PC: die Ubisoft-Connect- oder die Steam-Version. Die genauen Versionen stehen weiter unten.",
     verTitle: "Unterstützte Versionen",
     verPs4: "The Crew, europäische Version CUSA00161, mit installiertem Update 1.21 (die Spielinfo zeigt 01.21) oder als Basisspiel ohne Update (01.00, experimentell). Getestet auf einer PS4 mit Firmware 11.50 und GoldHEN.",
-    verPc: "Ubisoft-Connect- oder Steam-Version: TheCrew.exe 1.2.0.0, Build 502193, das letzte Update. Getestet unter Windows 11, auch unter Windows 11 für ARM (Parallels auf einem Mac mit Apple-Chip).",
+    verPc: "Ubisoft-Connect- oder Steam-Version: TheCrew.exe 1.2.0.0, Build 502193, das letzte Update. Getestet unter Windows 11, auch unter Windows 11 für ARM (in einer virtuellen Maschine).",
     verSrvName: "Server",
     verSrv: "Windows, macOS und Linux mit Python 3.10 oder neuer; das Startskript installiert Python unter Windows und macOS.",
     verUntested: "Möglicherweise lauffähig, aber noch nicht getestet: die PS5 per Abwärtskompatibilität. Noch nicht unterstützt: andere PS4-Regionen und Spielversionen, denn der Patch passt nur auf CUSA00161 1.00 und 1.21.",
