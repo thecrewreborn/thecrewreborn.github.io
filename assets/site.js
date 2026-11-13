@@ -127,7 +127,7 @@
     t6: "Autos bei jedem Händler auf der Karte kaufen",
     t8: "Perkpunkte kaufen",
     t9: "Sammelobjekte bleiben erhalten, komplette Sets schalten Teile frei, ein Auto für die Sehenswürdigkeiten jeder Region",
-    t11: "Ein Server im Internet: kostenlos bei Oracle Cloud oder zu Hause mit Portfreigabe",
+    t11: "Ein Server im Internet: auf einem Linux-Server oder zu Hause mit Portfreigabe",
     t10: "Belohnungsteile: Eine Goldmedaille in einer Mission bringt ein Leistungsteil für das gefahrene Auto",
     benchTitle: "In Arbeit",
     b1: "Belohnungsteile aus Skills und Aktivitäten",
