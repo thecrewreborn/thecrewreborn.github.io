@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/style.css?v=33">
+<link rel="stylesheet" href="assets/style.css?v=34">
 </head>
 <body>
 
@@ -57,11 +57,18 @@
           <span class="dl-kicker" data-i18n="dlForAll">For everyone</span>
           <strong data-i18n="dlServer">Server</strong>
           <span class="dl-sys">Windows · macOS · Linux</span>
-          <a class="btn btn-primary dl-btn" data-asset="Server" data-goatcounter-click="download-server" data-goatcounter-title="Download Server" href="https://github.com/thecrewreborn/server/releases/download/v0.0.4/TheCrewReborn-Server-0.0.4.zip"><span data-i18n="dlGet1">Download</span><small class="dl-size"></small></a>
+          <div class="dl-btns">
+            <a class="btn btn-primary dl-btn" data-platform="windows-x64" data-goatcounter-click="download-server-windows-x64" data-goatcounter-title="Download Server Windows x64" href="https://github.com/thecrewreborn/server/releases"><span>Windows x64</span><small class="dl-size"></small></a>
+            <a class="btn btn-primary dl-btn" data-platform="windows-arm64" data-goatcounter-click="download-server-windows-arm64" data-goatcounter-title="Download Server Windows ARM64" href="https://github.com/thecrewreborn/server/releases"><span>Windows ARM64</span><small class="dl-size"></small></a>
+            <a class="btn btn-primary dl-btn" data-platform="macos-universal" data-goatcounter-click="download-server-macos-universal" data-goatcounter-title="Download Server macOS" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlMac">macOS (Apple and Intel)</span><small class="dl-size"></small></a>
+            <a class="btn btn-primary dl-btn" data-platform="linux-x64" data-goatcounter-click="download-server-linux-x64" data-goatcounter-title="Download Server Linux x64" href="https://github.com/thecrewreborn/server/releases"><span>Linux x64</span><small class="dl-size"></small></a>
+            <a class="btn btn-primary dl-btn" data-platform="linux-arm64" data-goatcounter-click="download-server-linux-arm64" data-goatcounter-title="Download Server Linux ARM64" href="https://github.com/thecrewreborn/server/releases"><span>Linux ARM64</span><small class="dl-size"></small></a>
+          </div>
           <ol class="dl-steps">
             <li data-i18n="dlS1">Unpack the zip on a computer in your home network or on a server on the internet.</li>
-            <li data-i18n="dlS2">Windows: double-click start-server.bat. macOS and Linux: run ./start-server.sh in a terminal.</li>
-            <li data-i18n="dlS3">Keep the window open while you play.</li>
+            <li data-i18n="dlS2">Start TheCrewReborn-Server (on Windows: TheCrewReborn-Server.exe).</li>
+            <li data-i18n="dlS3">Allow it on the first start. Windows: confirm SmartScreen and the firewall prompt. macOS: allow the unsigned program once in the system settings, and allow incoming connections.</li>
+            <li data-i18n="dlS4">Keep it running while you play.</li>
           </ol>
         </li>
         <li class="panel dl-card">
@@ -312,14 +319,14 @@
       <ul class="needs">
         <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, the European version, with update 1.21 or as the base game 1.00. PC: the Ubisoft Connect or the Steam version. The exact versions are listed below.</span></li>
         <li class="panel"><strong data-i18n="n2">On console: a PS4 or PS5 that runs homebrew game patches</strong><span data-i18n="n2t">The patch points the game at your server. On PC a small file in the game folder does the same.</span></li>
-        <li class="panel"><strong data-i18n="n3">A computer on the same network</strong><span data-i18n="n3t">Windows, macOS or Linux with Python. It runs the server while you play.</span></li>
+        <li class="panel"><strong data-i18n="n3">A computer on the same network</strong><span data-i18n="n3t">Windows, macOS or Linux. It runs the server while you play.</span></li>
       </ul>
       <div class="panel versions" id="versions">
         <h3 data-i18n="verTitle">Supported versions</h3>
         <dl class="ver">
           <dt>PS4</dt><dd data-i18n="verPs4">The Crew, European version CUSA00161, with update 1.21 installed (the game info shows 01.21), or the base game without any update (01.00, experimental). Tested on a PS4 with firmware 11.50 and GoldHEN.</dd>
           <dt>PC</dt><dd data-i18n="verPc">Ubisoft Connect or Steam version: TheCrew.exe 1.2.0.0, build 502193, the last update. Tested on Windows 11, also Windows 11 on ARM (in a virtual machine).</dd>
-          <dt data-i18n="verSrvName">Server</dt><dd data-i18n="verSrv">Windows, macOS and Linux with Python 3.10 or newer; the start script installs Python on Windows and macOS.</dd>
+          <dt data-i18n="verSrvName">Server</dt><dd data-i18n="verSrv">Windows (x64 and ARM64), macOS (Apple and Intel) and Linux (x64 and ARM64). One program, nothing else to install.</dd>
         </dl>
         <p class="ver-note" data-i18n="verUntested">Might work, not tested yet: the PS5 through backwards compatibility. Not yet: other PS4 regions and game versions, because the patch fits only CUSA00161 1.00 and 1.21.</p>
       </div>
@@ -415,6 +422,6 @@
 
 <script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="assets/content.js?v=22"></script>
-<script src="assets/site.js?v=54"></script>
+<script src="assets/site.js?v=55"></script>
 </body>
 </html>

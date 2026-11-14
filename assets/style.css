@@ -700,6 +700,8 @@ h2::before {
 .dl-card strong { font: 800 italic 1.7rem/1.1 "Barlow Condensed", sans-serif; margin: .25em 0 .15em; }
 .dl-sys { color: var(--steel); font-size: .95rem; }
 .dl-btn { margin: 1.2rem 0 1.1rem; text-align: center; }
+.dl-btns { display: flex; flex-direction: column; gap: 8px; margin: 1.2rem 0 1.1rem; }
+.dl-btns .dl-btn { margin: 0; }
 .dl-size { margin-left: .5em; font-style: normal; font-weight: 600; font-size: .8em; opacity: .75; }
 .dl-steps { margin: 0; padding-left: 1.25em; color: var(--ice); font-size: .95rem; }
 .dl-steps li { margin: .35em 0; }

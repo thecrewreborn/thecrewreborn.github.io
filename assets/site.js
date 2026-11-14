@@ -6,14 +6,15 @@
     dlLede: "Den Server brauchen alle. Dazu kommt der Patch für die Plattform, auf der du spielst.",
     dlForAll: "Für alle",
     dlServer: "Server",
-    dlGet1: "Herunterladen",
     dlGet2: "Herunterladen",
     dlGet3: "Herunterladen",
     dlOtherTitle: "Spielst du auf einem Server außerhalb deines Heimnetzes?",
     dlOther: "Einen Server in deinem Heimnetz findet das Spiel von selbst. Für jeden anderen Server bekommst du die Adresse von seinem Betreiber. Trage sie genau so ein: auf der PS4 in die Datei /data/TheCrew/server.txt (kopiere sie per FTP auf die Konsole), am PC hinter Host= in reborn.ini. Die README im Server-Download erklärt jeden Schritt.",
     dlS1: "Entpacke das Zip auf einem Rechner in deinem Heimnetz oder auf einem Server im Internet.",
-    dlS2: "Windows: Doppelklick auf start-server.bat. macOS und Linux: ./start-server.sh im Terminal starten.",
-    dlS3: "Lass das Fenster geöffnet, solange du spielst.",
+    dlMac: "macOS (Apple und Intel)",
+    dlS2: "Starte TheCrewReborn-Server (unter Windows: TheCrewReborn-Server.exe).",
+    dlS3: "Erlaube das Programm beim ersten Start. Windows: Bestätige SmartScreen und die Firewall-Abfrage. macOS: Erlaube das nicht signierte Programm einmal in den Systemeinstellungen und erlaube eingehende Verbindungen.",
+    dlS4: "Lass es laufen, solange du spielst.",
     dlPs4: "Konsolen-Patch",
     dlP1: "Kopiere CUSA00161.xml auf der Konsole nach /data/GoldHEN/patches/xml/.",
     dlP2: "Schalte „Offline server redirect“ im Patch-Menü von GoldHEN ein.",
@@ -166,12 +167,12 @@
     verPs4: "The Crew, europäische Version CUSA00161, mit installiertem Update 1.21 (die Spielinfo zeigt 01.21) oder als Basisspiel ohne Update (01.00, experimentell). Getestet auf einer PS4 mit Firmware 11.50 und GoldHEN.",
     verPc: "Ubisoft-Connect- oder Steam-Version: TheCrew.exe 1.2.0.0, Build 502193, das letzte Update. Getestet unter Windows 11, auch unter Windows 11 für ARM (in einer virtuellen Maschine).",
     verSrvName: "Server",
-    verSrv: "Windows, macOS und Linux mit Python 3.10 oder neuer; das Startskript installiert Python unter Windows und macOS.",
+    verSrv: "Windows (x64 und ARM64), macOS (Apple und Intel) und Linux (x64 und ARM64). Ein einzelnes Programm, du musst nichts weiter installieren.",
     verUntested: "Möglicherweise lauffähig, aber noch nicht getestet: die PS5 per Abwärtskompatibilität. Noch nicht unterstützt: andere PS4-Regionen und Spielversionen, denn der Patch passt nur auf CUSA00161 1.00 und 1.21.",
     n2: "Auf der Konsole: eine PS4 oder PS5, die Homebrew-Patches laden kann",
     n2t: "Der Patch leitet das Spiel auf deinen Server um. Auf dem PC übernimmt das eine kleine Datei im Spielordner.",
     n3: "Einen Rechner im selben Netzwerk",
-    n3t: "Windows, macOS oder Linux mit Python. Darauf läuft der Server, während du spielst.",
+    n3t: "Windows, macOS oder Linux. Darauf läuft der Server, während du spielst.",
     needNote: "Spieldateien gibt es hier nicht. Du brauchst dein eigenes Exemplar; das Projekt enthält ausschließlich eigenen Code. Die DLCs sind im Server ausgeschaltet: Schalte sie in seiner config.ini nur ein, wenn du sie besitzt. Die README im Download erklärt die Einrichtung.",
     faqTitle: "Häufige Fragen",
     laterTitle: "Was noch kommt",
@@ -342,6 +343,13 @@
         { day: "numeric", month: "long", year: "numeric" }));
     }
     meta.textContent = parts.join(" · ");
+    document.querySelectorAll("[data-platform]").forEach((a) => {
+      const re = new RegExp("^TheCrewReborn-Server-.+-" + a.dataset.platform + "\\.zip$");
+      const asset = r.assets.find((x) => re.test(x.name));
+      if (!asset) return;
+      a.href = asset.browser_download_url;
+      a.querySelector(".dl-size").textContent = size(asset.size);
+    });
     document.querySelectorAll("[data-asset]").forEach((a) => {
       const asset = r.assets.find((x) => x.name.startsWith("TheCrewReborn-" + a.dataset.asset + "-"));
       if (!asset) return;
