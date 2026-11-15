@@ -13,7 +13,7 @@
     dlS1: "Entpacke das Zip auf einem Rechner in deinem Heimnetz oder auf einem Server im Internet.",
     dlMac: "macOS (Apple und Intel)",
     dlS2: "Starte TheCrewReborn-Server (unter Windows: TheCrewReborn-Server.exe).",
-    dlS3: "Erlaube das Programm beim ersten Start. Windows: Bestätige SmartScreen und die Firewall-Abfrage. macOS: Erlaube das nicht signierte Programm einmal in den Systemeinstellungen und erlaube eingehende Verbindungen.",
+    dlS3: "Erlaube das Programm beim ersten Start. Windows: Bestätige SmartScreen und die Firewall-Abfrage. macOS: Erlaube das nicht signierte Programm einmal in den Systemeinstellungen.",
     dlS4: "Lass es laufen, solange du spielst.",
     dlPs4: "Konsolen-Patch",
     dlP1: "Kopiere CUSA00161.xml auf der Konsole nach /data/GoldHEN/patches/xml/.",
