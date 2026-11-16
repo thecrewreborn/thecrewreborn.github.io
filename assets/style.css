@@ -405,6 +405,32 @@ h2::before {
 .episodes { display: flex; flex-direction: column; gap: 14px; }
 
 .playlist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+
+/* desktop: the list is exactly as tall as the player and scrolls inside; contain: size keeps it from
+   stretching the row, so the player alone sets the height */
+@media (min-width: 961px) {
+  .series { align-items: stretch; }
+  .episodes { contain: size; min-height: 0; }
+  .playlist {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-snap-type: y proximity;
+    padding-right: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(46, 197, 255, .45) transparent;
+    -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 36px), transparent);
+    mask-image: linear-gradient(180deg, #000 calc(100% - 36px), transparent);
+  }
+  .playlist.at-end { -webkit-mask-image: none; mask-image: none; }
+  .playlist li { scroll-snap-align: start; }
+  .playlist::-webkit-scrollbar { width: 6px; }
+  .playlist::-webkit-scrollbar-thumb { background: rgba(46, 197, 255, .45); border-radius: 3px; }
+  .playlist::-webkit-scrollbar-track { background: transparent; }
+  .playlist .episode { padding-top: 8px; padding-bottom: 8px; }
+  .playlist .ep-text { -webkit-line-clamp: 2; }
+}
 .episode {
   position: relative;
   display: grid;

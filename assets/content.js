@@ -22,9 +22,12 @@ window.CONTENT = {
     { id: "-Bk-wqqBn0I", title: "Base Game 1.00: the Prologue", time: "14:44", poster: "assets/videos/version-1-00-prologue.jpg",
       en: "The PS4 game without any update: the whole prologue, uncut, to the dealer and the tuner (spoilers).",
       de: "Das PS4-Spiel ohne Update: der ganze Prolog ungeschnitten, bis zum Händler und zum Tuner (Spoiler)." },
+    { id: "QZdTNngIwbc", title: "Police Chase with a Crate", time: "3:27", poster: "assets/videos/police-chase-crate.jpg",
+      en: "Calling All Units: a crate across Chicago with the police on my tail, then the crate opens.",
+      de: "Calling All Units: eine Kiste quer durch Chicago, die Polizei im Nacken, dann wird sie geöffnet." },
   ],
   // the episode the player shows first (the newest milestone); empty = the first one
-  featured: "-Bk-wqqBn0I",
+  featured: "QZdTNngIwbc",
   // the playlist with every episode, linked under the list
   playlist: "PLbKxOmFihheM",
   // The same spot in base game 1.00 and in 1.21 (assets/compare/<name>-100.webp and -121.webp), first one shown first

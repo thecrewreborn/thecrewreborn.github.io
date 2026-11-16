@@ -35,7 +35,7 @@
     bugLink: "Fehler gefunden? Melde ihn auf GitHub",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
-    videoText: "Aufgenommen im November 2026. Die Story auf einer PS4 mit neuem Spielstand bis zum ersten getunten Auto, eine Crew aus einem PS4- und einem PC-Spieler, eine Nachtfahrt von Detroit nach St. Louis und der ganze Prolog im Basisspiel 1.00.",
+    videoText: "Aufgenommen im November 2026. Die Story auf einer PS4 mit neuem Spielstand bis zum ersten getunten Auto, eine Crew aus einem PS4- und einem PC-Spieler, eine Nachtfahrt von Detroit nach St. Louis, der ganze Prolog im Basisspiel 1.00 und eine Polizeiverfolgung mit einer Kiste.",
     videoAll: "Die ganze Serie auf YouTube",
     videoNote: "Das Video wird erst nach dem Klick von YouTube geladen.",
     dlNew: "Was ist neu",
@@ -51,7 +51,7 @@
     nw3tag: "Wartet auf den ersten Test",
     nw3t: "Fraktionsmissionen bringen Ruf. Dein Rang folgt dem Stand deiner Fraktion, dein tägliches Gehalt folgt deinem Rang, und jeder Monat endet mit einem Ergebnis.",
     nw4: "Calling All Units",
-    nw4tag: "Wartet auf den ersten Test",
+    nw4tag: "Kisten-Auszahlung auf PS4 getestet",
     nw4t: "Entkomme mit einer Kiste: Sie zahlt aus und kann ein Fahrzeugfragment enthalten. Zehn Fragmente bringen das Auto in deine Garage.",
     nw5: "Instant Challenges",
     nw5tag: "Wartet auf den ersten Test",
@@ -345,6 +345,16 @@
       list.append(li);
     });
     list.hidden = C.videos.length < 2;
+    // the list scrolls on desktop: show the current episode and drop the fade at the end
+    const edge = () => list.classList.toggle("at-end", list.scrollTop + list.clientHeight >= list.scrollHeight - 2);
+    const reveal = () => {
+      const cur = list.querySelector("[aria-current]");
+      if (cur && list.scrollHeight > list.clientHeight) list.scrollTop = cur.parentElement.offsetTop - list.offsetTop;
+      edge();
+    };
+    list.onscroll = edge;
+    requestAnimationFrame(reveal);
+    if (document.readyState !== "complete") window.addEventListener("load", reveal, { once: true });
     const link = document.getElementById("seriesLink");
     if (C.playlist) link.href = "https://www.youtube.com/playlist?list=" + encodeURIComponent(C.playlist);
     link.hidden = false;
