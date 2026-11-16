@@ -31,7 +31,7 @@
     ctaStatus: "Zum aktuellen Stand",
     ctaWhy: "Warum dieses Projekt",
     newsTag: "Neu",
-    news: "Pre-Release 0.1.0: Ein Programm pro System ohne Python und eine Admin-Seite im Browser",
+    news: "Pre-Release 0.1.1: Jede Mission zahlt aus, dazu Summit-Preise, Fraktionen und Verfolgungsjagden",
     bugLink: "Fehler gefunden? Melde ihn auf GitHub",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
