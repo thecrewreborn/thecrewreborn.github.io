@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/style.css?v=34">
+<link rel="stylesheet" href="assets/style.css?v=35">
 </head>
 <body>
 
@@ -95,7 +95,22 @@
         </li>
       </ul>
       <p class="panel dl-other"><strong data-i18n="dlOtherTitle">Playing on a server outside your home?</strong> <span data-i18n="dlOther">The game finds a server in your home network by itself. For any other server, ask its owner for the address and enter it exactly as given: on the PS4 in the file /data/TheCrew/server.txt (copy it to the console over FTP), on the PC after Host= in reborn.ini. The README in the server download explains every step.</span></p>
-      <p class="dl-foot"><a href="#versions" data-i18n="dlReq">Supported versions</a><a href="https://github.com/thecrewreborn/server/releases" id="dlNotes" data-i18n="dlNotes">Release notes and all files</a><a href="https://github.com/thecrewreborn/server/issues" data-i18n="dlBug">Report a bug</a><span data-i18n="dlFree">Free of charge. The server is open source (GPL 3).</span></p>
+      <p class="dl-foot"><a href="#new" data-i18n="dlNew">What's new</a><a href="#versions" data-i18n="dlReq">Supported versions</a><a href="https://github.com/thecrewreborn/server/releases" id="dlNotes" data-i18n="dlNotes">Release notes and all files</a><a href="https://github.com/thecrewreborn/server/issues" data-i18n="dlBug">Report a bug</a><span data-i18n="dlFree">Free of charge. The server is open source (GPL 3).</span></p>
+    </div>
+  </section>
+
+  <section id="new" class="band whatsnew">
+    <div class="wrap">
+      <h2 data-i18n="newTitle">New in 0.1.1</h2>
+      <p class="lede" data-i18n="newText">Every mission pays again. The server reads each of the game's 630 missions from the game's own data and pays with the game's own formula: the amount the game shows before the start, plus the bonus for your medal.</p>
+      <ul class="needs cross-grid">
+        <li class="panel"><strong data-i18n="nw1">Every mission pays</strong><em class="tag-ok" data-i18n="nw1tag">Tested on PS4</em><span data-i18n="nw1t">Story, faction, summit and police missions, practice runs and Wild Run trials pay XP and bucks. A medal adds its bonus, and a medal also brings a performance part for the car you drove.</span></li>
+        <li class="panel"><strong data-i18n="nw2">The summit prize wheel</strong><em class="tag-new" data-i18n="nw2tag">Waiting for its first test</em><span data-i18n="nw2t">After a summit you played, the wheel turns: a speed boost for every reward, crew credits, the summit car, parts or an ESK token. The ESK gauge fills as in the game.</span></li>
+        <li class="panel"><strong data-i18n="nw3">Factions</strong><em class="tag-new" data-i18n="nw3tag">Waiting for its first test</em><span data-i18n="nw3t">Faction missions earn reputation. Your rank follows your faction's standing, your daily salary follows your rank, and every month ends with a result.</span></li>
+        <li class="panel"><strong data-i18n="nw4">Calling All Units</strong><em class="tag-new" data-i18n="nw4tag">Waiting for its first test</em><span data-i18n="nw4t">Escape with a crate and it pays out and may drop a car fragment. Ten fragments put the car in your garage.</span></li>
+        <li class="panel"><strong data-i18n="nw5">Instant challenges</strong><em class="tag-new" data-i18n="nw5tag">Waiting for its first test</em><span data-i18n="nw5t">The short routes and speed traps you start while driving pay out when you finish them.</span></li>
+        <li class="panel" id="new-idle"><strong data-i18n="nw6">No idle kick</strong><em class="tag-ok" data-i18n="nw6tag">Tested on PS4</em><span data-i18n="nw6t">Put the controller down as long as you like: the game no longer sends you back to the login after 20 minutes in the open world.</span></li>
+      </ul>
     </div>
   </section>
 
@@ -259,12 +274,13 @@
             <li data-i18n="w20">The PC game on Windows 11 for ARM, too</li>
             <li data-i18n="w22">The Steam version of the PC game, just like the Ubisoft Connect version</li>
             <li data-i18n="w21">Paint and body parts at the tuner, paid with bucks or crew credits, and fitted</li>
+            <li data-i18n="w25">Rewards for practice runs and skills, calculated as in the game</li>
+            <li data-i18n="t1">No more kick for standing still</li>
           </ul>
         </div>
         <div class="panel">
           <h3 data-i18n="testTitle">Built, waiting for its first test</h3>
           <ul class="checks pending">
-            <li data-i18n="t1">No more kick for standing still</li>
             <li data-i18n="t2">Several consoles on one home server</li>
             <li data-i18n="t3">Summit events, entry and rewards</li>
             <li data-i18n="t4">Factions, the daily bonus and a faction war that keeps running around the clock</li>
@@ -423,6 +439,6 @@
 
 <script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="assets/content.js?v=22"></script>
-<script src="assets/site.js?v=55"></script>
+<script src="assets/site.js?v=56"></script>
 </body>
 </html>

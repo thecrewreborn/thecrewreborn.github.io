@@ -717,6 +717,7 @@ h2::before {
 .cross-grid { margin-top: 1.4rem; }
 .tag-ok { display: inline-block; margin: -.1em 0 .7em; padding: 2px 10px; background: var(--cyan); color: var(--night); font: 800 italic .85rem/1.5 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
 .cross-grid span { display: block; }
+.tag-new { display: inline-block; margin: -.1em 0 .7em; padding: 1px 9px; border: 1px solid var(--cyan); color: var(--cyan); font: 800 italic .85rem/1.5 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
 .howto { margin-top: 16px; padding: 24px; }
 .howto h3 { margin: 0 0 .7em; font-size: 1.4rem; }
 .howto ol { margin: 0; padding-left: 1.3em; color: var(--ice); }
