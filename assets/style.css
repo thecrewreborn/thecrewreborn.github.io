@@ -402,15 +402,18 @@ h2::before {
   gap: 20px;
   align-items: start;
 }
-.episodes { display: flex; flex-direction: column; gap: 14px; }
+.episodes-box { display: flex; flex-direction: column; gap: 14px; }
 
 .playlist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 
-/* desktop: the list is exactly as tall as the player and scrolls inside; contain: size keeps it from
-   stretching the row, so the player alone sets the height */
+/* desktop: the list is exactly as tall as the player and scrolls inside. The player alone sets the row height
+   (aspect-ratio, not stretched); the episode box sits absolutely in the stretched right cell, so it never adds
+   height. (contain: size here left both at 0 px in Safari.) */
 @media (min-width: 961px) {
   .series { align-items: stretch; }
-  .episodes { contain: size; min-height: 0; }
+  .player { align-self: start; }
+  .episodes { position: relative; min-height: 0; }
+  .episodes-box { position: absolute; inset: 0; }
   .playlist {
     flex: 1 1 0;
     min-height: 0;
