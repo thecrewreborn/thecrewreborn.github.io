@@ -31,7 +31,7 @@
     ctaStatus: "Zum aktuellen Stand",
     ctaWhy: "Warum dieses Projekt",
     newsTag: "Neu",
-    news: "Pre-Release 0.0.4: Geschützte Spielernamen, und der Server kann jetzt auch im Internet laufen",
+    news: "Pre-Release 0.1.0: Ein Programm pro System ohne Python und eine Admin-Seite im Browser",
     bugLink: "Fehler gefunden? Melde ihn auf GitHub",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
@@ -76,7 +76,7 @@
     mpre: "Pre-Release: herunterladen und ausprobieren",
     now: "Jetzt verfügbar",
     mpret: "Der Server ist Open Source und läuft unter Windows, macOS und Linux; Konsolen-Patch und PC-Datei sind dabei. Alle Aktivitäten und die komplette Story sind gebaut, aber noch nicht alles ist getestet. Es kann daher noch zu Fehlern kommen. Bitte melde sie auf GitHub.",
-    download: "0.0.4 herunterladen",
+    download: "0.1.0 herunterladen",
     reportBug: "Fehler melden",
     reportBug2: "Fehler melden",
     footDownload: "Download",
@@ -209,7 +209,7 @@
     q7: "Gibt es eine PC-Version?",
     a7: "Ja. Die PC-Version läuft auf demselben Server wie die PS4-Fassung: Eine kleine Datei im Spielordner leitet sie dorthin um. Anmeldung, Prolog und offene Welt funktionieren schon; die Datei ist im PC-Download des Pre-Releases enthalten. Du brauchst dein eigenes Exemplar des PC-Spiels: Die Ubisoft-Connect- und die Steam-Version funktionieren beide.",
     q4: "Wann kann ich es herunterladen?",
-    a4: "Jetzt: Das Pre-Release 0.0.4 steht oben auf dieser Seite im Download-Bereich bereit, mit dem Server für Windows, macOS und Linux, dem PS4-Patch und dem PC-Patch. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
+    a4: "Jetzt: Das Pre-Release 0.1.0 steht oben auf dieser Seite im Download-Bereich bereit, mit dem Server für Windows, macOS und Linux, dem PS4-Patch und dem PC-Patch. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
     q6: "Kann ich das Projekt unterstützen?",
     a6: "Ja, mit einem freiwilligen Beitrag auf Ko-fi. Das Projekt bleibt in jedem Fall kostenlos, und eine Unterstützung schaltet keine zusätzlichen Inhalte frei.",
     kofi: "Auf Ko-fi unterstützen",
@@ -231,6 +231,12 @@
   altNodes.forEach((n) => (EN[n.dataset.i18nAlt] = n.alt));
   const C = window.CONTENT || { videos: [], screenshots: [] };
   let lang = "en";
+  // texts that name the current release: their version number follows the latest release on GitHub
+  const VERSIONED = new Set(["download", "a4"]);
+  let shownVersion = null;
+  function versioned(key, text) {
+    return shownVersion && VERSIONED.has(key) ? text.replace(/\d+\.\d+\.\d+/, shownVersion) : text;
+  }
 
   function stored() {
     try { return localStorage.getItem("lang"); } catch (e) { return null; }
@@ -239,7 +245,7 @@
   function setLang(next) {
     lang = next;
     const dict = lang === "de" ? DE : EN;
-    nodes.forEach((n) => { if (dict[n.dataset.i18n]) n.textContent = dict[n.dataset.i18n]; });
+    nodes.forEach((n) => { if (dict[n.dataset.i18n]) n.textContent = versioned(n.dataset.i18n, dict[n.dataset.i18n]); });
     altNodes.forEach((n) => { if (dict[n.dataset.i18nAlt]) n.alt = dict[n.dataset.i18nAlt]; });
     document.documentElement.lang = lang;
     document.getElementById("lang").dataset.active = lang;
@@ -336,13 +342,18 @@
   function renderDownloads() {
     const meta = document.getElementById("dlMeta");
     if (!meta) return;
-    const r = release || { tag_name: "v0.0.4", prerelease: true, published_at: null, assets: [] };
+    const r = release || { tag_name: "v0.1.0", prerelease: true, published_at: null, assets: [] };
     const parts = ["Version " + r.tag_name.replace(/^v/, ""), r.prerelease ? (lang === "de" ? "Pre-Release" : "Pre-release") : "Release"];
     if (r.published_at) {
       parts.push(new Date(r.published_at).toLocaleDateString(lang === "de" ? "de-DE" : "en-GB",
         { day: "numeric", month: "long", year: "numeric" }));
     }
     meta.textContent = parts.join(" · ");
+    if (release) {
+      shownVersion = release.tag_name.replace(/^v/, "");
+      const dict = lang === "de" ? DE : EN;
+      nodes.forEach((n) => { if (VERSIONED.has(n.dataset.i18n) && dict[n.dataset.i18n]) n.textContent = versioned(n.dataset.i18n, dict[n.dataset.i18n]); });
+    }
     document.querySelectorAll("[data-platform]").forEach((a) => {
       const re = new RegExp("^TheCrewReborn-Server-.+-" + a.dataset.platform + "\\.zip$");
       const asset = r.assets.find((x) => re.test(x.name));
