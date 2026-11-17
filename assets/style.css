@@ -726,21 +726,29 @@ h2::before {
 .needs strong { display: block; font: 800 italic 1.4rem/1.15 "Barlow Condensed", sans-serif; margin-bottom: .45em; }
 .needs span { color: var(--steel); font-size: .98rem; }
 .dl-meta { margin: .4rem 0 0; color: var(--steel); font-weight: 600; }
-.dl-grid { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.dl-grid { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.dl-server { grid-column: 1 / -1; }
 .dl-card { padding: 26px 24px 24px; display: flex; flex-direction: column; }
 .dl-kicker { color: var(--cyan); font: 800 italic .95rem/1.2 "Barlow Condensed", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
 .dl-card strong { font: 800 italic 1.7rem/1.1 "Barlow Condensed", sans-serif; margin: .25em 0 .15em; }
 .dl-sys { color: var(--steel); font-size: .95rem; }
 .dl-btn { margin: 1.2rem 0 1.1rem; text-align: center; }
-.dl-btns { display: flex; flex-direction: column; gap: 8px; margin: 1.2rem 0 1.1rem; }
-.dl-btns .dl-btn { margin: 0; }
+/* the server builds: one column per system, the matching one marked (site.js markYours) */
+.dl-os { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 1.2rem 0 1.2rem; }
+.dl-group { display: flex; flex-direction: column; gap: 8px; }
+.dl-osname { font: 800 italic 1.2rem/1.1 "Barlow Condensed", sans-serif; color: var(--ice); }
+.dl-os .dl-btn { margin: 0; padding: 10px 18px 8px; font-size: 1.05rem; }
+.dl-steps-wide { columns: 2; column-gap: 40px; }
+.dl-steps-wide li { break-inside: avoid; }
+.dl-note { margin: 1rem 0 0; padding-top: .9rem; border-top: 1px solid rgba(255, 255, 255, .08); color: var(--ice); font-size: .95rem; }
+.dl-note b { font-weight: 700; }
 /* the server download that matches the visitor's system (site.js markYours): a running frame, the others step back */
 @property --dl-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes dl-spin { to { --dl-a: 360deg; } }
-.dl-btns.has-match .dl-btn:not(.dl-match) { background: rgba(255, 255, 255, .09); color: var(--ice); }
-.dl-btns.has-match .dl-btn:not(.dl-match):hover { background: rgba(255, 255, 255, .16); }
-.dl-btn.dl-match {
-  padding: 10px 27px 8px;
+.dl-os.has-match .dl-btn:not(.dl-match) { background: rgba(255, 255, 255, .09); color: var(--ice); }
+.dl-os.has-match .dl-btn:not(.dl-match):hover { background: rgba(255, 255, 255, .16); }
+.dl-os .dl-btn.dl-match {
+  padding: 7px 15px 5px;
   border: 3px solid transparent;
   background:
     linear-gradient(var(--cyan), var(--cyan)) padding-box,
@@ -768,6 +776,15 @@ h2::before {
 .cross-grid { margin-top: 1.4rem; }
 .tag-ok { display: inline-block; margin: -.1em 0 .7em; padding: 2px 10px; background: var(--cyan); color: var(--night); font: 800 italic .85rem/1.5 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
 .cross-grid span { display: block; }
+/* what's new: the lead text beside the TV + phone picture */
+.new-lead { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 36px; align-items: center; }
+.new-lead .lede { margin-bottom: 0; }
+.new-pic { margin: 0; }
+.new-pic img { display: block; width: 100%; height: auto;
+  -webkit-mask-image: radial-gradient(ellipse 58% 62% at 52% 48%, #000 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 58% 62% at 52% 48%, #000 62%, transparent 100%); }
+.new-foot { margin: 1.2rem 0 0; color: var(--steel); font-size: .95rem; }
+@media (max-width: 960px) { .new-lead { grid-template-columns: 1fr; gap: 20px; } }
 .tag-new { display: inline-block; margin: -.1em 0 .7em; padding: 1px 9px; border: 1px solid var(--cyan); color: var(--cyan); font: 800 italic .85rem/1.5 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
 .howto { margin-top: 16px; padding: 24px; }
 .howto h3 { margin: 0 0 .7em; font-size: 1.4rem; }
@@ -874,6 +891,8 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
   .lists { grid-template-columns: 1fr; }
   .needs { grid-template-columns: 1fr; }
   .dl-grid { grid-template-columns: 1fr; }
+  .dl-os { grid-template-columns: repeat(2, 1fr); }
+  .dl-steps-wide { columns: 1; }
   .later-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 34vw; }
 }

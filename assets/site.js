@@ -31,7 +31,7 @@
     ctaStatus: "Zum aktuellen Stand",
     ctaWhy: "Warum dieses Projekt",
     newsTag: "Neu",
-    news: "Pre-Release 0.1.1: Jede Mission zahlt aus, dazu Summit-Preise, Fraktionen und Verfolgungsjagden",
+    news: "Pre-Release 0.2.0: Der Server läuft jetzt auch auf einem Android-Handy",
     bugLink: "Fehler gefunden? Melde ihn auf GitHub",
     fan: "Fanprojekt. Kein offizielles Produkt von Ubisoft.",
     videoTitle: "Das Spiel in Aktion",
@@ -39,26 +39,36 @@
     videoAll: "Die ganze Serie auf YouTube",
     videoNote: "Das Video wird erst nach dem Klick von YouTube geladen.",
     dlNew: "Was ist neu",
-    newTitle: "Neu in 0.1.1",
-    newText: "Jede Mission zahlt wieder aus. Der Server liest jede der 630 Missionen aus den Daten des Spiels und zahlt mit der Formel des Spiels: den Betrag, den das Spiel vor dem Start anzeigt, plus den Bonus für deine Medaille.",
-    nw1: "Jede Mission zahlt aus",
-    nw1tag: "Getestet auf PS4",
-    nw1t: "Story-, Fraktions-, Summit- und Polizeimissionen, Trainingsläufe und Wild-Run-Prüfungen bringen Erfahrung und Bucks. Eine Medaille bringt ihren Bonus dazu und dazu ein Leistungsteil für das gefahrene Auto.",
-    nw2: "Das Summit-Glücksrad",
-    nw2tag: "Wartet auf den ersten Test",
-    nw2t: "Nach einem Summit, an dem du teilgenommen hast, dreht sich das Rad: ein Tempo-Boost für jede Belohnung, Crew Credits, das Summit-Auto, Teile oder ein ESK-Token. Die ESK-Anzeige füllt sich wie im Spiel.",
-    nw3: "Fraktionen",
-    nw3tag: "Wartet auf den ersten Test",
-    nw3t: "Fraktionsmissionen bringen Ruf. Dein Rang folgt dem Stand deiner Fraktion, dein tägliches Gehalt folgt deinem Rang, und jeder Monat endet mit einem Ergebnis.",
-    nw4: "Calling All Units",
-    nw4tag: "Kisten-Auszahlung auf PS4 getestet",
-    nw4t: "Entkomme mit einer Kiste: Sie zahlt aus und kann ein Fahrzeugfragment enthalten. Zehn Fragmente bringen das Auto in deine Garage.",
-    nw5: "Instant Challenges",
-    nw5tag: "Wartet auf den ersten Test",
-    nw5t: "Die kurzen Strecken und Radarfallen, die du während der Fahrt startest, zahlen aus, sobald du sie abschließt.",
-    nw6: "Kein Rauswurf bei Inaktivität",
-    nw6tag: "Getestet auf PS4",
-    nw6t: "Leg den Controller weg, so lange du willst: Das Spiel schickt dich in der offenen Welt nach 20 Minuten nicht mehr zur Anmeldung zurück.",
+    newTitle: "Neu in 0.2.0",
+    newText: "Der Server läuft jetzt auch auf einem Android-Handy. Starte die App und spiel wie gewohnt auf deiner PS4 oder deinem PC, mit der Verwaltungsseite des Servers in der Hand. Dazu eine Spieleransicht auf dieser Seite und Korrekturen für Anmeldungen und Crossplay.",
+    newPicAlt: "Das Spiel auf einem Fernseher, daneben die Server-App mit ihrer Verwaltungsseite auf einem Handy",
+    newFoot: "Außerdem neu: Die Anleitung des Servers nennt die Regel für die Windows-Firewall, die ein PC braucht, damit PS4-Spieler seiner Crew-Sitzung beitreten können.",
+    nw1: "Der Server auf einem Android-Handy",
+    nw1tag: "Getestet mit einer PS4",
+    nw1t: "Installiere die App, tippe auf Start, und deine PS4 oder dein PC findet den Server im WLAN wie jeden anderen. Die App lässt ihn im Hintergrund laufen und zeigt die Verwaltungsseite.",
+    nw2: "Spieleransicht auf der Verwaltungsseite",
+    nw2t: "Autos und Specs mit Namen, Missionen nach Art, jeder Skill mit bester Medaille und Punktzahl, Sammelobjekte und Wahrzeichen pro Region. Die Seite passt jetzt auch aufs Handy.",
+    nw3: "Belohnungsteile auf dem Ergebnisbildschirm",
+    nw3tag: "Getestet auf PS4",
+    nw3t: "Eine Skill-Medaille bringt ein Leistungsteil für das Auto, mit dem du gefahren bist, und der Ergebnisbildschirm zeigt, welches. Eine bessere Medaille bringt später ein weiteres.",
+    nw4: "Anmeldungen, die halten",
+    nw4tag: "Getestet auf PS4",
+    nw4t: "Starte den Server neu und spiel weiter: Das Spiel bleibt angemeldet. Hast du das Spiel vor dem Server gestartet? Es meldet sich an, sobald der Server läuft.",
+    nw5: "Crossplay-Crews wieder da",
+    nw5tag: "Getestet auf PS4 und PC",
+    nw5t: "Ein PC-Spieler kann wieder einen PS4-Spieler einladen, auch mit VPN auf dem PC. Spieler bleiben auch nach einem Neustart des Servers füreinander sichtbar.",
+    nw6: "Textchat am PC",
+    nw6tag: "Getestet auf PS4 und PC",
+    nw6t: "Eine Einstellung schaltet den Textchat des Spiels ein. Nur die PC-Version hat einen; er bleibt aus, bis du ihn einschaltest.",
+    nw7: "Bestenlisten",
+    nw7tag: "Wartet auf den ersten Test",
+    nw7t: "Jede Mission und jede Aktivität speichert die beste Punktzahl jedes Spielers auf deinem Server, für die Bestenliste auf dem Ergebnisbildschirm.",
+    nw8: "Skill-Geister und PC-Einstellungen",
+    nw8tag: "Geister-Upload auf PS4 getestet",
+    nw8t: "Der Server speichert deine Skill-Geister und die Einstellungen des PC-Spiels, damit sie dir beim nächsten Start folgen.",
+    nw9: "Bonus-Autos und -Gegenstände",
+    nw9tag: "Wartet auf den ersten Test",
+    nw9t: "Die Belohnungspakete, die Spieler früher über ihr Konto freigeschaltet haben, stehen in jeder Garage, dazu einmalig 50.000 Crew Credits. Eine Einstellung schaltet sie ab.",
     crossTitle: "Crossplay, Cross-Save, Cross-Progression",
     crossText: "Ein Server für PS4 und PC. Spiele plattformübergreifend mit anderen zusammen und nimm deinen Fortschritt von der Konsole an den PC mit und wieder zurück.",
     cp1: "Crossplay",
@@ -96,7 +106,7 @@
     here: "Aktuell",
     mpre: "Pre-Release: herunterladen und ausprobieren",
     now: "Jetzt verfügbar",
-    mpret: "Der Server ist Open Source und läuft unter Windows, macOS und Linux; Konsolen-Patch und PC-Datei sind dabei. Alle Aktivitäten und die komplette Story sind gebaut, aber noch nicht alles ist getestet. Es kann daher noch zu Fehlern kommen. Bitte melde sie auf GitHub.",
+    mpret: "Der Server ist Open Source und läuft unter Windows, macOS, Linux und Android; Konsolen-Patch und PC-Datei sind dabei. Alle Aktivitäten und die komplette Story sind gebaut, aber noch nicht alles ist getestet. Es kann daher noch zu Fehlern kommen. Bitte melde sie auf GitHub.",
     download: "0.1.0 herunterladen",
     reportBug: "Fehler melden",
     reportBug2: "Fehler melden",
@@ -120,6 +130,9 @@
     mmpProofAlt: "Eine PS4 auf dem Fernseher und darunter ein PC, beide zeigen das Auto des anderen Spielers in derselben Straße",
     m6: "Release 1.0",
     m6t: "Die komplette Story einmal von Anfang bis Ende durchgespielt, alle Aktivitäten getestet und eine Schritt-für-Schritt-Anleitung.",
+    mandroid: "Server auf einem Android-Handy",
+    mandroidtag: "Getestet mit einer PS4",
+    mandroidt: "Seit 0.2.0 läuft der Server auch als App auf einem Android-Handy, mit eingebauter Verwaltungsseite. Eine PS4 hat sich an einem Server auf dem Handy angemeldet, auch nach einem Neustart des Spiels bei ausgeschaltetem Handy-Bildschirm.",
     m7: "Server direkt auf der Konsole",
     m7t: "Später läuft alles auf der PS4 selbst, ganz ohne zweites Gerät.",
     worksTitle: "Funktioniert bereits",
@@ -151,6 +164,13 @@
     t8: "Perkpunkte kaufen",
     t9: "Sammelobjekte bleiben erhalten, komplette Sets schalten Teile frei, ein Auto für die Sehenswürdigkeiten jeder Region",
     t11: "Ein Server im Internet: auf einem Linux-Server oder zu Hause mit Portfreigabe",
+    w26: "Der Server auf einem Android-Handy",
+    w27: "Anmeldungen überstehen einen Neustart des Servers, und das Spiel darf vor dem Server starten",
+    w28: "Belohnungsteile für Skill-Medaillen, angezeigt auf dem Ergebnisbildschirm",
+    w29: "Textchat am PC, als Einstellung",
+    t17: "Bestenlisten mit der besten Punktzahl jedes Spielers auf deinem Server",
+    t18: "Bonus-Autos und -Gegenstände aus den Belohnungspaketen des Kontos",
+    t19: "Einstellungen des PC-Spiels auf dem Server gespeichert",
     t10: "Belohnungsteile: Eine Medaille in einer Mission bringt ein Leistungsteil für das gefahrene Auto",
     t12: "Belohnungen für jeden Missionstyp, berechnet nach der Formel des Spiels: Story, Fraktionen, Summit, Trainingsläufe, Wild Run, Polizeimissionen und Instant Challenges",
     t13: "Perks und Summit-Boosts, die Missionsbelohnungen erhöhen",
@@ -158,8 +178,7 @@
     t15: "Polizeimissionen: Kisten, Fragmente und die Autos, die sie freischalten",
     t16: "Das Summit-Glücksrad: Boosts, Crew Credits, das Summit-Auto, Teile und Tokens",
     benchTitle: "In Arbeit",
-    b1: "Belohnungsteile aus Skills und Aktivitäten",
-    b8: "Ranglisten mit deinen persönlichen Bestzeiten",
+    b1: "Belohnungsteile aus Aktivitäten außer Skills",
     b6: "Rivalen in den Ranglisten, mit Zeiten im Rahmen der Medaillen",
     b11: "Crews: erneut beitreten nach einem Verbindungsabbruch",
     vcTitle: "Zwei Spiele in einem: 1.00 und 1.21",
@@ -197,6 +216,9 @@
     ad6: "Protokoll, Neustart, Passwort",
     ad6t: "Das Serverprotokoll mit Filter, Knöpfe zum Neustarten und Beenden des Servers und auf Wunsch ein Passwort für die Seite.",
     dlYours: "Dein System",
+    dlApk: "App (APK)",
+    dlAndroidTitle: "Auf einem Android-Handy:",
+    dlAndroid: "Öffne die APK und erlaube die Installation von Apps aus dieser Quelle. Die App lässt den Server im Hintergrund laufen und zeigt seine Verwaltungsseite. Das Handy muss im selben WLAN sein wie deine Konsole oder dein PC.",
     dlYoursMaybe: "Vermutlich dein System",
     shotsTitle: "Screenshots",
     shotsText: "Szenen, aufgenommen auf einer PS4, die auf dem Reborn-Server spielt.",
@@ -407,7 +429,7 @@
       nodes.forEach((n) => { if (VERSIONED.has(n.dataset.i18n) && dict[n.dataset.i18n]) n.textContent = versioned(n.dataset.i18n, dict[n.dataset.i18n]); });
     }
     document.querySelectorAll("[data-platform]").forEach((a) => {
-      const re = new RegExp("^TheCrewReborn-Server-.+-" + a.dataset.platform + "\\.zip$");
+      const re = new RegExp("^TheCrewReborn-Server-.+-" + a.dataset.platform + "\\.(zip|apk)$");
       const asset = r.assets.find((x) => re.test(x.name));
       if (!asset) return;
       a.href = asset.browser_download_url;
@@ -423,12 +445,14 @@
   }
 
   // The visitor's system, to mark the matching server download: the OS from the browser, the CPU where the browser
-  // tells it (Chromium's client hints; aarch64 or x86_64 in a Linux user agent). Phones and tablets get no mark.
+  // tells it (Chromium's client hints; aarch64 or x86_64 in a Linux user agent). Android gets the app; iPhones, iPads
+  // and Chromebooks get no mark.
   // Without a CPU hint Windows and Linux fall back to x64, marked as a guess; macOS needs none (one universal build).
   async function detectPlatform() {
     const nav = navigator, ua = nav.userAgent || "";
     const uad = nav.userAgentData;
-    if ((uad && uad.mobile) || /Android|iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && nav.maxTouchPoints > 1)) return null;
+    if (/Android/i.test(ua) || (uad && uad.platform === "Android")) return { platform: "android", sure: true };
+    if ((uad && uad.mobile) || /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && nav.maxTouchPoints > 1)) return null;
     const os = (uad && uad.platform) || nav.platform || ua;
     let arch = null;
     if (uad && uad.getHighEntropyValues) {
@@ -451,7 +475,7 @@
       if (!hit && tag) tag.remove();
       if (hit) tag.textContent = (lang === "de" ? DE : EN)[yours.sure ? "dlYours" : "dlYoursMaybe"];
     });
-    const box = document.querySelector(".dl-btns");
+    const box = document.querySelector(".dl-os");
     if (box) box.classList.toggle("has-match", !!yours);
   }
   detectPlatform().then((p) => { yours = p; markYours(); }).catch(() => {});

@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/style.css?v=39">
+<link rel="stylesheet" href="assets/style.css?v=40">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
       <a class="btn btn-ghost" href="#status" data-i18n="ctaStatus">See the progress</a>
       <a class="btn btn-ghost" href="why/" data-i18n="ctaWhy">Why this project</a>
     </div>
-    <a class="news" href="#download"><b data-i18n="newsTag">New</b> <span data-i18n="news">Pre-release 0.1.1: every mission pays, plus summit prizes, factions and police chases</span></a>
+    <a class="news" href="#download"><b data-i18n="newsTag">New</b> <span data-i18n="news">Pre-release 0.2.0: the server now runs on an Android phone</span></a>
     <a class="bug-link" href="https://github.com/thecrewreborn/server/issues" data-i18n="bugLink">Found a bug? Report it on GitHub</a>
   </div>
 
@@ -53,23 +53,33 @@
       <p class="lede" data-i18n="dlLede">Everyone needs the server. Add the patch for the platform you play on.</p>
       <p class="dl-meta" id="dlMeta">Version 0.1.0 · Pre-release</p>
       <ul class="dl-grid">
-        <li class="panel dl-card">
+        <li class="panel dl-card dl-server">
           <span class="dl-kicker" data-i18n="dlForAll">For everyone</span>
           <strong data-i18n="dlServer">Server</strong>
-          <span class="dl-sys">Windows · macOS · Linux</span>
-          <div class="dl-btns">
-            <a class="btn btn-primary dl-btn" data-platform="windows-x64" data-goatcounter-click="download-server-windows-x64" data-goatcounter-title="Download Server Windows x64" href="https://github.com/thecrewreborn/server/releases"><span>Windows x64</span><small class="dl-size"></small></a>
-            <a class="btn btn-primary dl-btn" data-platform="windows-arm64" data-goatcounter-click="download-server-windows-arm64" data-goatcounter-title="Download Server Windows ARM64" href="https://github.com/thecrewreborn/server/releases"><span>Windows ARM64</span><small class="dl-size"></small></a>
-            <a class="btn btn-primary dl-btn" data-platform="macos-universal" data-goatcounter-click="download-server-macos-universal" data-goatcounter-title="Download Server macOS" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlMac">macOS (Apple and Intel)</span><small class="dl-size"></small></a>
-            <a class="btn btn-primary dl-btn" data-platform="linux-x64" data-goatcounter-click="download-server-linux-x64" data-goatcounter-title="Download Server Linux x64" href="https://github.com/thecrewreborn/server/releases"><span>Linux x64</span><small class="dl-size"></small></a>
-            <a class="btn btn-primary dl-btn" data-platform="linux-arm64" data-goatcounter-click="download-server-linux-arm64" data-goatcounter-title="Download Server Linux ARM64" href="https://github.com/thecrewreborn/server/releases"><span>Linux ARM64</span><small class="dl-size"></small></a>
+          <span class="dl-sys">Windows · macOS · Linux · Android</span>
+          <div class="dl-os">
+            <div class="dl-group"><span class="dl-osname">Windows</span>
+              <a class="btn btn-primary dl-btn" data-platform="windows-x64" data-goatcounter-click="download-server-windows-x64" data-goatcounter-title="Download Server Windows x64" href="https://github.com/thecrewreborn/server/releases"><span>x64</span><small class="dl-size"></small></a>
+              <a class="btn btn-primary dl-btn" data-platform="windows-arm64" data-goatcounter-click="download-server-windows-arm64" data-goatcounter-title="Download Server Windows ARM64" href="https://github.com/thecrewreborn/server/releases"><span>ARM64</span><small class="dl-size"></small></a>
+            </div>
+            <div class="dl-group"><span class="dl-osname">macOS</span>
+              <a class="btn btn-primary dl-btn" data-platform="macos-universal" data-goatcounter-click="download-server-macos-universal" data-goatcounter-title="Download Server macOS" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlMac">Apple and Intel</span><small class="dl-size"></small></a>
+            </div>
+            <div class="dl-group"><span class="dl-osname">Linux</span>
+              <a class="btn btn-primary dl-btn" data-platform="linux-x64" data-goatcounter-click="download-server-linux-x64" data-goatcounter-title="Download Server Linux x64" href="https://github.com/thecrewreborn/server/releases"><span>x64</span><small class="dl-size"></small></a>
+              <a class="btn btn-primary dl-btn" data-platform="linux-arm64" data-goatcounter-click="download-server-linux-arm64" data-goatcounter-title="Download Server Linux ARM64" href="https://github.com/thecrewreborn/server/releases"><span>ARM64</span><small class="dl-size"></small></a>
+            </div>
+            <div class="dl-group"><span class="dl-osname">Android</span>
+              <a class="btn btn-primary dl-btn" data-platform="android" data-goatcounter-click="download-server-android" data-goatcounter-title="Download Server Android" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlApk">App (APK)</span><small class="dl-size"></small></a>
+            </div>
           </div>
-          <ol class="dl-steps">
+          <ol class="dl-steps dl-steps-wide">
             <li data-i18n="dlS1">Unpack the zip on a computer in your home network or on a server on the internet.</li>
             <li data-i18n="dlS2">Start TheCrewReborn-Server (on Windows: TheCrewReborn-Server.exe).</li>
             <li data-i18n="dlS3">Allow it on the first start. Windows: confirm SmartScreen and the firewall prompt. macOS: allow the unsigned program once in the system settings.</li>
             <li data-i18n="dlS4">Keep it running while you play.</li>
           </ol>
+          <p class="dl-note"><b data-i18n="dlAndroidTitle">On an Android phone:</b> <span data-i18n="dlAndroid">open the APK and allow installing apps from this source. The app runs the server in the background and shows its admin page. Keep the phone in the same Wi-Fi as your console or PC.</span></p>
         </li>
         <li class="panel dl-card">
           <span class="dl-kicker">PS4 · PS5</span>
@@ -101,16 +111,25 @@
 
   <section id="new" class="band whatsnew">
     <div class="wrap">
-      <h2 data-i18n="newTitle">New in 0.1.1</h2>
-      <p class="lede" data-i18n="newText">Every mission pays again. The server reads each of the game's 630 missions from the game's own data and pays with the game's own formula: the amount the game shows before the start, plus the bonus for your medal.</p>
+      <div class="new-lead">
+        <div>
+          <h2 data-i18n="newTitle">New in 0.2.0</h2>
+          <p class="lede" data-i18n="newText">The server now runs on an Android phone, too. Start the app and play on your PS4 or PC as usual, with the server's admin page in your hand. Plus a player view on that page, and fixes for logins and crossplay.</p>
+        </div>
+        <figure class="new-pic"><img src="assets/shots/tv-phone.webp" width="1800" height="1013" alt="The game on a TV, the server app with its admin page on a phone next to it" data-i18n-alt="newPicAlt"></figure>
+      </div>
       <ul class="needs cross-grid">
-        <li class="panel"><strong data-i18n="nw1">Every mission pays</strong><em class="tag-ok" data-i18n="nw1tag">Tested on PS4</em><span data-i18n="nw1t">Story, faction, summit and police missions, practice runs and Wild Run trials pay XP and bucks. A medal adds its bonus, and a medal also brings a performance part for the car you drove.</span></li>
-        <li class="panel"><strong data-i18n="nw2">The summit prize wheel</strong><em class="tag-new" data-i18n="nw2tag">Waiting for its first test</em><span data-i18n="nw2t">After a summit you played, the wheel turns: a speed boost for every reward, crew credits, the summit car, parts or an ESK token. The ESK gauge fills as in the game.</span></li>
-        <li class="panel"><strong data-i18n="nw3">Factions</strong><em class="tag-new" data-i18n="nw3tag">Waiting for its first test</em><span data-i18n="nw3t">Faction missions earn reputation. Your rank follows your faction's standing, your daily salary follows your rank, and every month ends with a result.</span></li>
-        <li class="panel"><strong data-i18n="nw4">Calling All Units</strong><em class="tag-ok" data-i18n="nw4tag">Crate payout tested on PS4</em><span data-i18n="nw4t">Escape with a crate and it pays out and may drop a car fragment. Ten fragments put the car in your garage.</span></li>
-        <li class="panel"><strong data-i18n="nw5">Instant challenges</strong><em class="tag-new" data-i18n="nw5tag">Waiting for its first test</em><span data-i18n="nw5t">The short routes and speed traps you start while driving pay out when you finish them.</span></li>
-        <li class="panel" id="new-idle"><strong data-i18n="nw6">No idle kick</strong><em class="tag-ok" data-i18n="nw6tag">Tested on PS4</em><span data-i18n="nw6t">Put the controller down as long as you like: the game no longer sends you back to the login after 20 minutes in the open world.</span></li>
+        <li class="panel"><strong data-i18n="nw1">The server on an Android phone</strong><em class="tag-ok" data-i18n="nw1tag">Tested with a PS4</em><span data-i18n="nw1t">Install the app, press start, and your PS4 or PC finds the server in your Wi-Fi like any other. The app keeps it running in the background and shows the admin page.</span></li>
+        <li class="panel"><strong data-i18n="nw2">A player view on the admin page</strong><span data-i18n="nw2t">Cars and specs by name, missions by type, every skill with its best medal and score, collectibles and landmarks per region. The page now fits a phone, too.</span></li>
+        <li class="panel"><strong data-i18n="nw3">Reward parts on the result screen</strong><em class="tag-ok" data-i18n="nw3tag">Tested on PS4</em><span data-i18n="nw3t">A skill medal brings a performance part for the car you drove, and the result screen shows which one. A better medal later brings another.</span></li>
+        <li class="panel"><strong data-i18n="nw4">Logins that hold</strong><em class="tag-ok" data-i18n="nw4tag">Tested on PS4</em><span data-i18n="nw4t">Restart the server and keep playing: the game stays logged in. Started the game before the server? It logs in as soon as the server is up.</span></li>
+        <li class="panel"><strong data-i18n="nw5">Crossplay crews again</strong><em class="tag-ok" data-i18n="nw5tag">Tested on PS4 and PC</em><span data-i18n="nw5t">A PC player can invite a PS4 player again, also with a VPN running on the PC. Players stay listed for each other across a server restart.</span></li>
+        <li class="panel"><strong data-i18n="nw6">Text chat on PC</strong><em class="tag-ok" data-i18n="nw6tag">Tested on PS4 and PC</em><span data-i18n="nw6t">A setting turns on the game's text chat. Only the PC version has one; it stays off until you switch it on.</span></li>
+        <li class="panel"><strong data-i18n="nw7">Leaderboards</strong><em class="tag-new" data-i18n="nw7tag">Waiting for its first test</em><span data-i18n="nw7t">Every mission and activity keeps the best score of each player on your server, for the result screen's leaderboard.</span></li>
+        <li class="panel"><strong data-i18n="nw8">Skill ghosts and PC settings</strong><em class="tag-ok" data-i18n="nw8tag">Ghost upload tested on PS4</em><span data-i18n="nw8t">The server keeps your skill ghosts and the PC game's settings, so they follow you to the next start.</span></li>
+        <li class="panel"><strong data-i18n="nw9">Bonus cars and items</strong><em class="tag-new" data-i18n="nw9tag">Waiting for its first test</em><span data-i18n="nw9t">The reward packs that players once unlocked through their account are in every garage, plus 50,000 crew credits once. A setting turns them off.</span></li>
       </ul>
+      <p class="new-foot" data-i18n="newFoot">Also new: the server guide names the Windows firewall rule a PC needs so that PS4 players can join its crew session.</p>
     </div>
   </section>
 
@@ -230,18 +249,20 @@
             </defs>
             <image href="assets/shots/map.jpg" width="1600" height="900"/>
             <rect class="map-tint" width="1600" height="900"/>
-            <path class="route-done" d="M1128 243 L992 270 L1264 387 L1328 720 L1008 612 L820 560"/>
-            <path class="route-ahead" d="M820 560 L640 495 L448 414 L256 558 L180 390"/>
+            <path class="route-done" d="M1128 243 L992 270 L1264 387 L1328 720 L1008 612 L820 560 L640 495 L520 430 L448 414 L256 558"/>
+            <path class="route-ahead" d="M256 558 L300 330 L170 420"/>
             <g class="node done"><circle cx="1128" cy="243" r="14"/><text x="1128" y="249">1</text></g>
             <g class="node done"><circle cx="992" cy="270" r="14"/><text x="992" y="276">2</text></g>
             <g class="node done"><circle cx="1264" cy="387" r="14"/><text x="1264" y="393">3</text></g>
             <g class="node done"><circle cx="1328" cy="720" r="14"/><text x="1328" y="726">4</text></g>
             <g class="node done"><circle cx="1008" cy="612" r="14"/><text x="1008" y="618">5</text></g>
             <g class="node done"><circle cx="820" cy="560" r="14"/><text x="820" y="566">6</text></g>
-            <g class="node here"><circle class="ping" cx="640" cy="495" r="14"/><circle cx="640" cy="495" r="16"/><text x="640" y="501">7</text></g>
-            <g class="node"><circle cx="448" cy="414" r="14"/><text x="448" y="420">8</text></g>
-            <g class="node"><circle cx="256" cy="558" r="14"/><text x="256" y="564">9</text></g>
-            <g class="node"><circle cx="180" cy="390" r="14"/><text x="180" y="396">10</text></g>
+            <g class="node done"><circle cx="640" cy="495" r="14"/><text x="640" y="501">7</text></g>
+            <g class="node done"><circle cx="520" cy="430" r="14"/><text x="520" y="436">8</text></g>
+            <g class="node done"><circle cx="448" cy="414" r="14"/><text x="448" y="420">9</text></g>
+            <g class="node here"><circle class="ping" cx="256" cy="558" r="14"/><circle cx="256" cy="558" r="16"/><text x="256" y="564">10</text></g>
+            <g class="node"><circle cx="290" cy="420" r="14"/><text x="290" y="426">11</text></g>
+            <g class="node"><circle cx="340" cy="300" r="14"/><text x="340" y="306">12</text></g>
           </svg>
         </div>
 
@@ -256,11 +277,11 @@
           <li class="done" id="v100"><h3><span data-i18n="mv100">PS4 base game 1.00</span> <em class="ok" data-i18n="mv100tag">Tested on PS4</em></h3><p data-i18n="mv100t">The game without any update runs on the same server, on its own port and with its own saves. Tested from the start of the story to the first tuning shop; experimental.</p>
             <p class="leg-links"><a class="btn btn-ghost btn-small" href="#versions-compare" data-i18n="mv100cmp">Compare 1.00 and 1.21</a></p></li>
           <li class="done" id="names"><h3><span data-i18n="mnames">Protected player names</span> <em class="ok" data-i18n="tested">Tested on PS4 and PC</em></h3><p data-i18n="mnamest">Every PS4 and every PC creates its own key, and a player name belongs only to its player's devices. Nobody from outside the home network can take over someone else's name or save, so the server can run on the internet too. At home your PS4 and PC still join your name by themselves.</p></li>
-          <li class="here" id="prerelease"><h3><span data-i18n="mpre">Pre-release: download and try it</span> <em data-i18n="now">Out now</em></h3><p data-i18n="mpret">The server is open source and runs on Windows, macOS and Linux; the console patch and the PC file come with it. Every activity and the whole story are built, but not all of it is tested yet. Expect bugs, and please report them.</p>
+          <li class="done" id="android"><h3><span data-i18n="mandroid">Server on an Android phone</span> <em class="ok" data-i18n="mandroidtag">Tested with a PS4</em></h3><p data-i18n="mandroidt">Since 0.2.0 the server also runs as an app on an Android phone, with the admin page built in. A PS4 logged in to a server on a phone, also after a game restart with the phone's screen off.</p></li>
+          <li class="here" id="prerelease"><h3><span data-i18n="mpre">Pre-release: download and try it</span> <em data-i18n="now">Out now</em></h3><p data-i18n="mpret">The server is open source and runs on Windows, macOS, Linux and Android; the console patch and the PC file come with it. Every activity and the whole story are built, but not all of it is tested yet. Expect bugs, and please report them.</p>
             <p class="leg-links"><a class="btn btn-primary btn-small" href="#download" data-i18n="download">Download 0.1.0</a> <a class="btn btn-ghost btn-small" href="https://github.com/thecrewreborn/server/issues" data-i18n="reportBug">Report a bug</a></p></li>
           <li><h3 data-i18n="m5">Every activity, tested</h3><p data-i18n="m5t">Summit events, police chases, factions and the parts shops calculate like the original server. Each one gets tested on PS4 and PC.</p></li>
           <li><h3 data-i18n="m6">Release 1.0</h3><p data-i18n="m6t">The whole story played from start to finish, every activity tested, and a step-by-step guide.</p></li>
-          <li><h3 data-i18n="m7">Server on the console</h3><p data-i18n="m7t">Later: everything runs on the PS4 itself, no second device needed.</p></li>
         </ol>
       </div>
 
@@ -295,6 +316,10 @@
             <li data-i18n="w25">Rewards for practice runs and skills, calculated as in the game</li>
             <li data-i18n="t1">No more kick for standing still</li>
             <li data-i18n="t5">Police chases: rewards for escaping, fines for getting caught</li>
+            <li data-i18n="w26">The server on an Android phone</li>
+            <li data-i18n="w27">Logins survive a server restart, and the game may start before the server</li>
+            <li data-i18n="w28">Reward parts from skill medals, shown on the result screen</li>
+            <li data-i18n="w29">Text chat on PC, as a setting</li>
           </ul>
         </div>
         <div class="panel">
@@ -313,11 +338,13 @@
             <li data-i18n="t14">Faction reputation, rank, daily salary and the monthly result</li>
             <li data-i18n="t15">Police missions: crates, fragments and the cars they unlock</li>
             <li data-i18n="t16">The summit prize wheel: boosts, crew credits, the summit car, parts and tokens</li>
+            <li data-i18n="t17">Leaderboards with every player's best score on your server</li>
+            <li data-i18n="t18">Bonus cars and items from the account reward packs</li>
+            <li data-i18n="t19">PC game settings kept on the server</li>
           </ul>
           <h3 data-i18n="benchTitle">In the garage</h3>
           <ul class="checks ahead">
-            <li data-i18n="b1">Reward parts from skills and activities</li>
-            <li data-i18n="b8">Leaderboards with your personal bests</li>
+            <li data-i18n="b1">Reward parts from activities other than skills</li>
             <li data-i18n="b6">Rivals on the leaderboards, with times no better than the medals allow</li>
             <li data-i18n="b11">Crews: joining again after a lost connection</li>
           </ul>
@@ -334,6 +361,7 @@
           <li class="panel"><strong data-i18n="r5">Multiplayer over the internet</strong><span data-i18n="r5t">The server already runs on the internet with protected names. Next, players from different networks will see each other and drive together.</span></li>
           <li class="panel"><strong data-i18n="r6">Friends and chat</strong><span data-i18n="r6t">A friends list and the in-game chat, on your own server.</span></li>
           <li class="panel"><strong data-i18n="r7">Community challenges and news</strong><span data-i18n="r7t">Weekly challenges for everyone on the server, and news in the game's menu.</span></li>
+          <li class="panel"><strong data-i18n="m7">Server on the console</strong><span data-i18n="m7t">Later: everything runs on the PS4 itself, no second device needed.</span></li>
           <li class="panel"><strong data-i18n="r9">Own error messages on PC</strong><span data-i18n="r9t">Clear messages that name the server and this site, like on the PS4.</span></li>
         </ul>
       </div>
@@ -457,6 +485,6 @@
 
 <script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="assets/content.js?v=27"></script>
-<script src="assets/site.js?v=60"></script>
+<script src="assets/site.js?v=61"></script>
 </body>
 </html>
