@@ -14,122 +14,157 @@
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/style.css?v=40">
+<link rel="stylesheet" href="assets/style.css?v=43">
 </head>
 <body>
 
-<header class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="streaks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-
-  <div class="topbar">
+<nav class="sitenav" aria-label="Main">
+  <div class="sitenav-in">
     <a class="mark" href="./" aria-label="The Crew Reborn: Home">TCR</a>
+    <div class="navlinks">
+      <a href="#download" data-i18n="navDownload">Download</a>
+      <a href="#video" data-i18n="navVideo">Videos</a>
+      <a href="#server" data-i18n="navServer">Server app</a>
+      <a href="#status" data-i18n="navStatus">Status</a>
+      <a href="why/" data-i18n="navWhy">Why this project</a>
+    </div>
     <button class="lang" id="lang" type="button" aria-label="Sprache wechseln / switch language">
       <span data-lang="en">EN</span><span data-lang="de">DE</span>
     </button>
   </div>
+</nav>
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="streaks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
-  <div class="hero-copy">
-    <ul class="platforms" aria-label="Platforms"><li>PS4</li><li>PS5</li><li>PC</li></ul>
-    <h1><span class="h1-a">The Crew</span><span class="h1-b">Reborn</span></h1>
-    <p class="tagline" data-i18n="tagline">The first The Crew runs again on PS4, PS5 and PC. No Ubisoft servers, no PS Plus: the game connects to your own server, at home or on the internet.</p>
-    <div class="ctas">
-      <a class="btn btn-primary" href="#download" data-i18n="ctaDownload">Download</a>
-      <a class="btn btn-ghost" href="#video" data-i18n="ctaVideo">Watch it run</a>
-      <a class="btn btn-ghost" href="#status" data-i18n="ctaStatus">See the progress</a>
-      <a class="btn btn-ghost" href="why/" data-i18n="ctaWhy">Why this project</a>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <ul class="platforms" aria-label="Platforms"><li>PS4</li><li>PS5</li><li>PC</li></ul>
+      <h1><span class="h1-a">The Crew</span><span class="h1-b">Reborn</span></h1>
+      <p class="tagline" data-i18n="tagline">The first The Crew runs again on PS4, PS5 and PC. The game connects to your own server: on a computer or an Android phone, at home or on the internet.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#download" data-i18n="ctaDownload">Download</a>
+        <a class="btn btn-ghost" href="#video" data-i18n="ctaVideo">Watch it run</a>
+      </div>
+      <a class="news" href="#whatsnew"><b data-i18n="newsTag">New</b> <span data-i18n="news">Pre-release 0.2.0: the server now runs on an Android phone</span></a>
     </div>
-    <a class="news" href="#download"><b data-i18n="newsTag">New</b> <span data-i18n="news">Pre-release 0.2.0: the server now runs on an Android phone</span></a>
-    <a class="bug-link" href="https://github.com/thecrewreborn/server/issues" data-i18n="bugLink">Found a bug? Report it on GitHub</a>
+    <figure class="hero-art"><img src="assets/shots/hero-art.webp" width="1400" height="1000" alt="The game on a TV, the server app with its settings on a phone in front of it" data-i18n-alt="heroAlt"></figure>
   </div>
 
   <p class="disclaimer" data-i18n="fan">Fan project. Not affiliated with or endorsed by Ubisoft.</p>
 </header>
 
 <main>
-  <section id="download" class="band download">
+  <section id="special" class="band special">
     <div class="wrap">
-      <h2 data-i18n="dlTitle">Download</h2>
-      <p class="lede" data-i18n="dlLede">Everyone needs the server. Add the patch for the platform you play on.</p>
-      <p class="dl-meta" id="dlMeta">Version 0.1.0 · Pre-release</p>
-      <ul class="dl-grid">
-        <li class="panel dl-card dl-server">
-          <span class="dl-kicker" data-i18n="dlForAll">For everyone</span>
-          <strong data-i18n="dlServer">Server</strong>
-          <span class="dl-sys">Windows · macOS · Linux · Android</span>
-          <div class="dl-os">
-            <div class="dl-group"><span class="dl-osname">Windows</span>
-              <a class="btn btn-primary dl-btn" data-platform="windows-x64" data-goatcounter-click="download-server-windows-x64" data-goatcounter-title="Download Server Windows x64" href="https://github.com/thecrewreborn/server/releases"><span>x64</span><small class="dl-size"></small></a>
-              <a class="btn btn-primary dl-btn" data-platform="windows-arm64" data-goatcounter-click="download-server-windows-arm64" data-goatcounter-title="Download Server Windows ARM64" href="https://github.com/thecrewreborn/server/releases"><span>ARM64</span><small class="dl-size"></small></a>
-            </div>
-            <div class="dl-group"><span class="dl-osname">macOS</span>
-              <a class="btn btn-primary dl-btn" data-platform="macos-universal" data-goatcounter-click="download-server-macos-universal" data-goatcounter-title="Download Server macOS" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlMac">Apple and Intel</span><small class="dl-size"></small></a>
-            </div>
-            <div class="dl-group"><span class="dl-osname">Linux</span>
-              <a class="btn btn-primary dl-btn" data-platform="linux-x64" data-goatcounter-click="download-server-linux-x64" data-goatcounter-title="Download Server Linux x64" href="https://github.com/thecrewreborn/server/releases"><span>x64</span><small class="dl-size"></small></a>
-              <a class="btn btn-primary dl-btn" data-platform="linux-arm64" data-goatcounter-click="download-server-linux-arm64" data-goatcounter-title="Download Server Linux ARM64" href="https://github.com/thecrewreborn/server/releases"><span>ARM64</span><small class="dl-size"></small></a>
-            </div>
-            <div class="dl-group"><span class="dl-osname">Android</span>
-              <a class="btn btn-primary dl-btn" data-platform="android" data-goatcounter-click="download-server-android" data-goatcounter-title="Download Server Android" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlApk">App (APK)</span><small class="dl-size"></small></a>
-            </div>
-          </div>
-          <ol class="dl-steps dl-steps-wide">
-            <li data-i18n="dlS1">Unpack the zip on a computer in your home network or on a server on the internet.</li>
-            <li data-i18n="dlS2">Start TheCrewReborn-Server (on Windows: TheCrewReborn-Server.exe).</li>
-            <li data-i18n="dlS3">Allow it on the first start. Windows: confirm SmartScreen and the firewall prompt. macOS: allow the unsigned program once in the system settings.</li>
-            <li data-i18n="dlS4">Keep it running while you play.</li>
-          </ol>
-          <p class="dl-note"><b data-i18n="dlAndroidTitle">On an Android phone:</b> <span data-i18n="dlAndroid">open the APK and allow installing apps from this source. The app runs the server in the background and shows its admin page. Keep the phone in the same Wi-Fi as your console or PC.</span></p>
-        </li>
-        <li class="panel dl-card">
-          <span class="dl-kicker">PS4 · PS5</span>
-          <strong data-i18n="dlPs4">Console patch</strong>
-          <span class="dl-sys">GoldHEN · CUSA00161 1.00 / 1.21</span>
-          <a class="btn btn-primary dl-btn" data-asset="PS4" data-goatcounter-click="download-ps4" data-goatcounter-title="Download PS4" href="https://github.com/thecrewreborn/server/releases/download/v0.1.0/TheCrewReborn-PS4-0.1.0.zip"><span data-i18n="dlGet2">Download</span><small class="dl-size"></small></a>
-          <ol class="dl-steps">
-            <li data-i18n="dlP1">Copy CUSA00161.xml to /data/GoldHEN/patches/xml/ on the console.</li>
-            <li data-i18n="dlP2">Switch on “Offline server redirect” in GoldHEN's patch menu.</li>
-            <li data-i18n="dlP3">Start the server first, then the game.</li>
-          </ol>
-        </li>
-        <li class="panel dl-card">
-          <span class="dl-kicker">PC</span>
-          <strong data-i18n="dlPc">PC patch</strong>
-          <span class="dl-sys">Ubisoft Connect / Steam · TheCrew.exe 1.2.0.0</span>
-          <a class="btn btn-primary dl-btn" data-asset="PC" data-goatcounter-click="download-pc" data-goatcounter-title="Download PC" href="https://github.com/thecrewreborn/server/releases/download/v0.1.0/TheCrewReborn-PC-0.1.0.zip"><span data-i18n="dlGet3">Download</span><small class="dl-size"></small></a>
-          <ol class="dl-steps">
-            <li data-i18n="dlC1">Copy dinput8.dll and reborn.ini into the game folder, next to TheCrew.exe.</li>
-            <li data-i18n="dlC2">Start the server first, then the game.</li>
-            <li data-i18n="dlC3">To continue your PS4 progress, set Name in reborn.ini to your PS4 user name.</li>
-          </ol>
-        </li>
+      <ul class="pillars">
+        <li><strong data-i18n="sp1">Your own server</strong><span data-i18n="sp1t">The game talks to a server you run, not to the official one. No PS Plus, no account with anyone.</span></li>
+        <li><strong data-i18n="sp2">A computer or a phone</strong><span data-i18n="sp2t">Windows, macOS and Linux, or an Android phone in your Wi-Fi. The server takes a few megabytes.</span></li>
+        <li><strong data-i18n="sp3">PS4, PS5 and PC together</strong><span data-i18n="sp3t">Console and PC players meet in the same world and drive in one crew.</span></li>
+        <li><strong data-i18n="sp4">One save everywhere</strong><span data-i18n="sp4t">Your progress lives on your server: start on the console, carry on at the PC.</span></li>
       </ul>
-      <p class="panel dl-other"><strong data-i18n="dlOtherTitle">Playing on a server outside your home?</strong> <span data-i18n="dlOther">The game finds a server in your home network by itself. For any other server, ask its owner for the address and enter it exactly as given: on the PS4 in the file /data/TheCrew/server.txt (copy it to the console over FTP), on the PC after Host= in reborn.ini. The README in the server download explains every step.</span></p>
-      <p class="dl-foot"><a href="#new" data-i18n="dlNew">What's new</a><a href="#versions" data-i18n="dlReq">Supported versions</a><a href="https://github.com/thecrewreborn/server/releases" id="dlNotes" data-i18n="dlNotes">Release notes and all files</a><a href="https://github.com/thecrewreborn/server/issues" data-i18n="dlBug">Report a bug</a><span data-i18n="dlFree">Free of charge. The server is open source (GPL 3).</span></p>
     </div>
   </section>
 
-  <section id="new" class="band whatsnew">
+  <section id="download" class="band download">
     <div class="wrap">
-      <div class="new-lead">
-        <div>
-          <h2 data-i18n="newTitle">New in 0.2.0</h2>
-          <p class="lede" data-i18n="newText">The server now runs on an Android phone, too. Start the app and play on your PS4 or PC as usual, with the server's admin page in your hand. Plus a player view on that page, and fixes for logins and crossplay.</p>
+      <h2 data-i18n="dlTitle">Download</h2>
+      <p class="dl-meta" id="dlMeta">Version 0.1.0 · Pre-release</p>
+      <div class="dl-box">
+        <div class="dl-server">
+          <h3 data-i18n="dlServer">Server</h3>
+          <p class="dl-what" data-i18n="dlServerText">Everyone needs it. It runs while you play, on a computer or an Android phone in your network.</p>
+          <a class="btn btn-primary dl-primary" id="dlPrimary" href="https://github.com/thecrewreborn/server/releases" hidden><small class="dl-you" data-i18n="dlYoursLabel">For your system</small><span id="dlPrimaryName">Download</span><small class="dl-size" id="dlPrimarySize"></small></a>
+          <p class="dl-pick" data-i18n="dlPick">All systems:</p>
+          <div class="dl-links">
+            <a class="dl-link" data-platform="windows-x64" data-goatcounter-click="download-server-windows-x64" data-goatcounter-title="Download Server windows-x64" href="https://github.com/thecrewreborn/server/releases"><span>Windows x64</span><small class="dl-size"></small></a>
+            <a class="dl-link" data-platform="windows-arm64" data-goatcounter-click="download-server-windows-arm64" data-goatcounter-title="Download Server windows-arm64" href="https://github.com/thecrewreborn/server/releases"><span>Windows ARM64</span><small class="dl-size"></small></a>
+            <a class="dl-link" data-platform="macos-universal" data-goatcounter-click="download-server-macos-universal" data-goatcounter-title="Download Server macos-universal" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlMac">macOS (Apple and Intel)</span><small class="dl-size"></small></a>
+            <a class="dl-link" data-platform="linux-x64" data-goatcounter-click="download-server-linux-x64" data-goatcounter-title="Download Server linux-x64" href="https://github.com/thecrewreborn/server/releases"><span>Linux x64</span><small class="dl-size"></small></a>
+            <a class="dl-link" data-platform="linux-arm64" data-goatcounter-click="download-server-linux-arm64" data-goatcounter-title="Download Server linux-arm64" href="https://github.com/thecrewreborn/server/releases"><span>Linux ARM64</span><small class="dl-size"></small></a>
+            <a class="dl-link" data-platform="android" data-goatcounter-click="download-server-android" data-goatcounter-title="Download Server android" href="https://github.com/thecrewreborn/server/releases"><span data-i18n="dlApk">Android phone (APK)</span><small class="dl-size"></small></a>
+          </div>
         </div>
-        <figure class="new-pic"><img src="assets/shots/tv-phone.webp" width="1800" height="1013" alt="The game on a TV, the server app with its admin page on a phone next to it" data-i18n-alt="newPicAlt"></figure>
+        <div class="dl-clients">
+          <div class="dl-client">
+            <h3><span data-i18n="dlPs4">Console patch</span> <small>PS4 · PS5</small></h3>
+            <p class="dl-what" data-i18n="dlPs4Text">For GoldHEN, CUSA00161 with update 1.21 or the base game 1.00.</p>
+            <a class="btn btn-ghost dl-btn" data-asset="PS4" data-goatcounter-click="download-ps4" data-goatcounter-title="Download PS4" href="https://github.com/thecrewreborn/server/releases/download/v0.1.0/TheCrewReborn-PS4-0.1.0.zip"><span data-i18n="dlGet2">Download</span><small class="dl-size"></small></a>
+          </div>
+          <div class="dl-client">
+            <h3><span data-i18n="dlPc">PC patch</span> <small>PC</small></h3>
+            <p class="dl-what" data-i18n="dlPcText">For TheCrew.exe 1.2.0.0, the Ubisoft Connect and the Steam version.</p>
+            <a class="btn btn-ghost dl-btn" data-asset="PC" data-goatcounter-click="download-pc" data-goatcounter-title="Download PC" href="https://github.com/thecrewreborn/server/releases/download/v0.1.0/TheCrewReborn-PC-0.1.0.zip"><span data-i18n="dlGet3">Download</span><small class="dl-size"></small></a>
+          </div>
+        </div>
       </div>
-      <ul class="needs cross-grid">
-        <li class="panel"><strong data-i18n="nw1">The server on an Android phone</strong><em class="tag-ok" data-i18n="nw1tag">Tested with a PS4</em><span data-i18n="nw1t">Install the app, press start, and your PS4 or PC finds the server in your Wi-Fi like any other. The app keeps it running in the background and shows the admin page.</span></li>
-        <li class="panel"><strong data-i18n="nw2">A player view on the admin page</strong><span data-i18n="nw2t">Cars and specs by name, missions by type, every skill with its best medal and score, collectibles and landmarks per region. The page now fits a phone, too.</span></li>
-        <li class="panel"><strong data-i18n="nw3">Reward parts on the result screen</strong><em class="tag-ok" data-i18n="nw3tag">Tested on PS4</em><span data-i18n="nw3t">A skill medal brings a performance part for the car you drove, and the result screen shows which one. A better medal later brings another.</span></li>
-        <li class="panel"><strong data-i18n="nw4">Logins that hold</strong><em class="tag-ok" data-i18n="nw4tag">Tested on PS4</em><span data-i18n="nw4t">Restart the server and keep playing: the game stays logged in. Started the game before the server? It logs in as soon as the server is up.</span></li>
-        <li class="panel"><strong data-i18n="nw5">Crossplay crews again</strong><em class="tag-ok" data-i18n="nw5tag">Tested on PS4 and PC</em><span data-i18n="nw5t">A PC player can invite a PS4 player again, also with a VPN running on the PC. Players stay listed for each other across a server restart.</span></li>
-        <li class="panel"><strong data-i18n="nw6">Text chat on PC</strong><em class="tag-ok" data-i18n="nw6tag">Tested on PS4 and PC</em><span data-i18n="nw6t">A setting turns on the game's text chat. Only the PC version has one; it stays off until you switch it on.</span></li>
-        <li class="panel"><strong data-i18n="nw7">Leaderboards</strong><em class="tag-new" data-i18n="nw7tag">Waiting for its first test</em><span data-i18n="nw7t">Every mission and activity keeps the best score of each player on your server, for the result screen's leaderboard.</span></li>
-        <li class="panel"><strong data-i18n="nw8">Skill ghosts and PC settings</strong><em class="tag-ok" data-i18n="nw8tag">Ghost upload tested on PS4</em><span data-i18n="nw8t">The server keeps your skill ghosts and the PC game's settings, so they follow you to the next start.</span></li>
-        <li class="panel"><strong data-i18n="nw9">Bonus cars and items</strong><em class="tag-new" data-i18n="nw9tag">Waiting for its first test</em><span data-i18n="nw9t">The reward packs that players once unlocked through their account are in every garage, plus 50,000 crew credits once. A setting turns them off.</span></li>
-      </ul>
-      <p class="new-foot" data-i18n="newFoot">Also new: the server guide names the Windows firewall rule a PC needs so that PS4 players can join its crew session.</p>
+      <details class="dl-how">
+        <summary data-i18n="dlHow">How to set it up</summary>
+        <div class="dl-how-grid">
+          <div><h4 data-i18n="dlServer2">Server on a computer</h4><ol>
+            <li data-i18n="dlS1">Unpack the zip on a computer in your home network or on a server on the internet.</li>
+            <li data-i18n="dlS2">Start TheCrewReborn-Server (on Windows: TheCrewReborn-Server.exe).</li>
+            <li data-i18n="dlS3">Allow it on the first start. Windows: confirm SmartScreen and the firewall prompt. macOS: allow the unsigned program once in the system settings.</li>
+            <li data-i18n="dlS4">Keep it running while you play.</li></ol></div>
+          <div><h4 data-i18n="dlAndroidTitle2">Server on an Android phone</h4><ol>
+            <li data-i18n="dlA1">Open the APK on the phone and allow installing apps from this source.</li>
+            <li data-i18n="dlA2">Start the app. It runs the server in the background and shows its admin page.</li>
+            <li data-i18n="dlA3">Keep the phone in the same Wi-Fi as your console or PC.</li></ol></div>
+          <div><h4 data-i18n="dlPs4b">On PS4 or PS5</h4><ol>
+            <li data-i18n="dlP1">Copy CUSA00161.xml to /data/GoldHEN/patches/xml/ on the console.</li>
+            <li data-i18n="dlP2">Switch on "Offline server redirect" in GoldHEN's patch menu.</li>
+            <li data-i18n="dlP3">Start the server first, then the game.</li></ol></div>
+          <div><h4 data-i18n="dlPcb">On PC</h4><ol>
+            <li data-i18n="dlC1">Copy dinput8.dll and reborn.ini into the game folder, next to TheCrew.exe.</li>
+            <li data-i18n="dlC2">Start the server first, then the game.</li>
+            <li data-i18n="dlC3">To continue your PS4 progress, set Name in reborn.ini to your PS4 user name.</li></ol></div>
+        </div>
+        <p class="dl-other"><strong data-i18n="dlOtherTitle">Playing on a server outside your home?</strong> <span data-i18n="dlOther">The game finds a server in your home network by itself. For any other server, ask its owner for the address and enter it exactly as given: on the PS4 in the file /data/TheCrew/server.txt (copy it to the console over FTP), on the PC after Host= in reborn.ini. The README in the server download explains every step.</span></p>
+      </details>
+      <div class="dl-new" id="whatsnew">
+        <h3 data-i18n="newTitle">What's new in 0.2.0</h3>
+        <ul class="changes">
+          <li data-i18n="ch1">The server runs on Android phones: an app with the admin page built in.</li>
+          <li data-i18n="ch2">Admin page: a player view with cars, missions, skills and medals; the page fits a phone.</li>
+          <li data-i18n="ch3">A skill medal gives a performance part for your car, shown on the result screen.</li>
+          <li data-i18n="ch4">Logins survive a server restart, and the game may start before the server.</li>
+          <li data-i18n="ch5">PC: crew invites to PS4 players work again, also with a VPN on the PC.</li>
+          <li data-i18n="ch6">Players stay visible to each other after a server restart.</li>
+          <li data-i18n="ch7">Optional text chat on PC, off by default.</li>
+          <li data-i18n="ch8">Leaderboards keep every player's best score.</li>
+          <li data-i18n="ch9">Skill ghosts and the PC game's settings are kept on the server.</li>
+          <li data-i18n="ch10">Optional bonus cars and items from the account reward packs.</li>
+          <li data-i18n="ch11">The guide names the Windows firewall rule a PC needs to host a crew session.</li>
+        </ul>
+      </div>
+      <p class="dl-foot"><a href="#versions" data-i18n="dlReq">Supported versions</a><a href="https://github.com/thecrewreborn/server/releases" id="dlNotes" data-i18n="dlNotes">Release notes and all files</a><a href="https://github.com/thecrewreborn/server/issues" data-i18n="dlBug">Report a bug</a><span data-i18n="dlFree">Free of charge. The server is open source (GPL 3).</span></p>
+    </div>
+  </section>
+
+  <section id="server" class="band server">
+    <div class="wrap">
+      <h2 data-i18n="srvTitle">The server in your pocket</h2>
+      <p class="lede" data-i18n="srvText">Put the server on an Android phone and leave it in your Wi-Fi: the app keeps it running in the background. The same admin page opens on a computer in the browser. It shows who is online, every player's progress and all settings.</p>
+      <div class="ui-show">
+        <div class="ui-group ui-mobile">
+          <h3 data-i18n="srvMobile">On the phone</h3>
+          <div class="ui-phones">
+            <button type="button" class="ui-shot phone" data-shot="0"><img src="assets/shots/app-clients.webp" width="540" height="1123" loading="lazy" alt="The server app: connected games" data-i18n-alt="srvAlt1"><span data-i18n="srvCap1">Connected games</span></button>
+            <button type="button" class="ui-shot phone" data-shot="1"><img src="assets/shots/admin-phone-skills-dark.webp?v=2" data-src-de="assets/shots/admin-phone-skills-dark-de.webp?v=2" width="780" height="1688" loading="lazy" alt="A player's skills with medal and score" data-i18n-alt="srvAlt2"><span data-i18n="srvCap2">A player's medals</span></button>
+            <button type="button" class="ui-shot phone" data-shot="2"><img src="assets/shots/app-settings.webp" width="540" height="1123" loading="lazy" alt="The server app: settings" data-i18n-alt="srvAlt3"><span data-i18n="srvCap3">Settings</span></button>
+          </div>
+        </div>
+        <div class="ui-group ui-desktop">
+          <h3 data-i18n="srvDesktop">On the computer</h3>
+          <button type="button" class="ui-shot desk" data-shot="3"><img src="assets/shots/admin-overview-dark.webp" data-src-de="assets/shots/admin-overview-dark-de.webp" width="1600" height="1000" loading="lazy" alt="The admin page in a browser: the server at a glance" data-i18n-alt="srvAlt4"><span data-i18n="srvCap4">The server at a glance</span></button>
+          <ul class="ui-points">
+            <li data-i18n="srvP1">See which games are connected and who is playing</li>
+            <li data-i18n="srvP2">Look into every save: cars, missions, skills with medals</li>
+            <li data-i18n="srvP3">Change settings; they are saved into config.ini</li>
+            <li data-i18n="srvP4">Read the log, restart or stop the server</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -196,43 +231,6 @@
     </div>
   </section>
 
-  <section id="cross" class="band cross">
-    <div class="wrap">
-      <h2 data-i18n="crossTitle">Crossplay, cross-save, cross-progression</h2>
-      <p class="lede" data-i18n="crossText">One server for PS4 and PC. Play together across platforms, and take your progress from the console to the PC and back.</p>
-      <ul class="needs cross-grid">
-        <li class="panel"><strong data-i18n="cp1">Crossplay</strong><em class="tag-ok" data-i18n="cp1tag">Tested on PS4 and PC</em><span data-i18n="cp1t">PS4 and PC players meet in the same world, see each other and drive in one crew.</span></li>
-        <li class="panel"><strong data-i18n="cp2">Cross-save</strong><em class="tag-ok" data-i18n="cp2tag">Tested from PS4 to PC</em><span data-i18n="cp2t">Your save lives on your server, not on the console: level, money, cars and missions. Start on the PS4, carry on at the PC.</span></li>
-        <li class="panel"><strong data-i18n="cp3">Cross-progression</strong><span data-i18n="cp3t">What you earn on one platform counts on the other, because both play the very same save.</span></li>
-      </ul>
-      <div class="panel howto">
-        <h3 data-i18n="howTitle">One save on PS4 and PC: how it works</h3>
-        <ol>
-          <li data-i18n="how1">Play on the PS4 as usual. The server keeps your save under your PS4 user name.</li>
-          <li data-i18n="how2">On the PC, open reborn.ini next to TheCrew.exe and set Name= to that PS4 user name, spelled exactly the same.</li>
-          <li data-i18n="how3">Start the game on the PC. It loads the same level, money, cars and missions. Works the other way round too.</li>
-        </ol>
-        <p class="ver-note" data-i18n="howNote">One name plays on one device at a time: the server refuses a second game with the same name (it shows error #0_35), so two games never write the same save.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="admin" class="band">
-    <div class="wrap">
-      <h2 data-i18n="adminTitle">Your server in the browser</h2>
-      <p class="lede" data-i18n="adminText">The server comes with its own admin page. Open it in your home network on a computer or a phone: see who is playing, look into the saves and change the settings without opening a file.</p>
-      <ul class="needs cross-grid">
-        <li class="panel"><strong data-i18n="ad1">Live overview</strong><span data-i18n="ad1t">Address, ports, version and uptime at a glance, and every game connected right now, PS4 and PC.</span></li>
-        <li class="panel"><strong data-i18n="ad2">Player details</strong><em class="tag-new" data-i18n="ad2tag">Next release</em><span data-i18n="ad2t">Cars by name, missions by type, every skill with its best medal and score, collectibles and landmarks per region.</span></li>
-        <li class="panel"><strong data-i18n="ad3">Saves</strong><span data-i18n="ad3t">Every save file with size and date: view it, download it as a backup or open its folder.</span></li>
-        <li class="panel"><strong data-i18n="ad4">Player names</strong><span data-i18n="ad4t">Claimed names and their devices. Open a link window to add a new device, or free a name.</span></li>
-        <li class="panel"><strong data-i18n="ad5">Settings</strong><span data-i18n="ad5t">Every value of config.ini with its default, and whether it applies at once or after a restart. Saving changes only that one line; your comments stay.</span></li>
-        <li class="panel"><strong data-i18n="ad6">Log, restart, password</strong><span data-i18n="ad6t">The server log with a filter, buttons to restart or stop the server, and an optional password for the page.</span></li>
-      </ul>
-    </div>
-    <div class="gallery admin-gallery" id="adminGallery"></div>
-  </section>
-
   <section id="status" class="band status">
     <div class="wrap">
       <h2 data-i18n="statusTitle">Where the trip stands</h2>
@@ -272,13 +270,13 @@
           <li class="done"><h3 data-i18n="m3">Missions and rewards</h3><p data-i18n="m3t">Every mission type pays XP and bucks, calculated with the game's own formula. You level up and unlock perks.</p></li>
           <li class="done"><h3 data-i18n="m4">Cars and tuning</h3><p data-i18n="m4t">Dealers, tuner specs and the garage work, and every car loads again after a restart.</p></li>
           <li class="done"><h3 data-i18n="mpc">PC version</h3><p data-i18n="mpct">The PC game runs on the same server as the PS4: a small file in the game folder points it there. Login, the prologue and the open world work.</p></li>
-          <li class="done" id="crossplay"><h3><span data-i18n="mmp">Online multiplayer and crossplay</span> <em class="ok" data-i18n="tested">Tested on PS4 and PC</em></h3><p data-i18n="mmpt">PS4 and PC players meet on your own server, see each other and drive together. Since 5 November crews work across platforms too: a PS4 player invites a PC player, the invite goes through and the crew lead changes hands.</p>
+          <li class="done" id="crossplay"><h3><span data-i18n="mmp">Online multiplayer and crossplay</span></h3><p data-i18n="mmpt">PS4 and PC players meet on your own server, see each other and drive together. Since 5 November crews work across platforms too: a PS4 player invites a PC player, the invite goes through and the crew lead changes hands.</p>
             <figure class="proof"><img src="assets/shots/crossplay.webp" width="900" height="1200" loading="lazy" alt="A PS4 on the TV and a PC below it, each showing the other player's car in the same street" data-i18n-alt="mmpProofAlt"><figcaption data-i18n="mmpProof">First crossplay test: the PS4 (top) and the PC (bottom) see each other.</figcaption><a class="proof-video" href="#video" data-play="Ra0fcutVQ1Y" data-i18n="mmpCrew">Watch the crossplay crew video</a> <a class="proof-video" href="https://www.youtube.com/shorts/k7NOHK2vMmA" target="_blank" rel="noopener" data-i18n="mmpVideo">Watch the first clip on YouTube</a></figure></li>
-          <li class="done" id="v100"><h3><span data-i18n="mv100">PS4 base game 1.00</span> <em class="ok" data-i18n="mv100tag">Tested on PS4</em></h3><p data-i18n="mv100t">The game without any update runs on the same server, on its own port and with its own saves. Tested from the start of the story to the first tuning shop; experimental.</p>
+          <li class="done" id="v100"><h3><span data-i18n="mv100">PS4 base game 1.00</span></h3><p data-i18n="mv100t">The game without any update runs on the same server, on its own port and with its own saves. Tested from the start of the story to the first tuning shop; experimental.</p>
             <p class="leg-links"><a class="btn btn-ghost btn-small" href="#versions-compare" data-i18n="mv100cmp">Compare 1.00 and 1.21</a></p></li>
-          <li class="done" id="names"><h3><span data-i18n="mnames">Protected player names</span> <em class="ok" data-i18n="tested">Tested on PS4 and PC</em></h3><p data-i18n="mnamest">Every PS4 and every PC creates its own key, and a player name belongs only to its player's devices. Nobody from outside the home network can take over someone else's name or save, so the server can run on the internet too. At home your PS4 and PC still join your name by themselves.</p></li>
-          <li class="done" id="android"><h3><span data-i18n="mandroid">Server on an Android phone</span> <em class="ok" data-i18n="mandroidtag">Tested with a PS4</em></h3><p data-i18n="mandroidt">Since 0.2.0 the server also runs as an app on an Android phone, with the admin page built in. A PS4 logged in to a server on a phone, also after a game restart with the phone's screen off.</p></li>
-          <li class="here" id="prerelease"><h3><span data-i18n="mpre">Pre-release: download and try it</span> <em data-i18n="now">Out now</em></h3><p data-i18n="mpret">The server is open source and runs on Windows, macOS, Linux and Android; the console patch and the PC file come with it. Every activity and the whole story are built, but not all of it is tested yet. Expect bugs, and please report them.</p>
+          <li class="done" id="names"><h3><span data-i18n="mnames">Protected player names</span></h3><p data-i18n="mnamest">Every PS4 and every PC creates its own key, and a player name belongs only to its player's devices. Nobody from outside the home network can take over someone else's name or save, so the server can run on the internet too. At home your PS4 and PC still join your name by themselves.</p></li>
+          <li class="done" id="android"><h3><span data-i18n="mandroid">Server on an Android phone</span></h3><p data-i18n="mandroidt">Since 0.2.0 the server also runs as an app on an Android phone, with the admin page built in. A PS4 logged in to a server on a phone, also after a game restart with the phone's screen off.</p></li>
+          <li class="here" id="prerelease"><h3><span data-i18n="mpre">Pre-release: download and try it</span></h3><p data-i18n="mpret">The server is open source and runs on Windows, macOS, Linux and Android; the console patch and the PC file come with it. Every activity and the whole story are built, but not all of it is tested yet. Expect bugs, and please report them.</p>
             <p class="leg-links"><a class="btn btn-primary btn-small" href="#download" data-i18n="download">Download 0.1.0</a> <a class="btn btn-ghost btn-small" href="https://github.com/thecrewreborn/server/issues" data-i18n="reportBug">Report a bug</a></p></li>
           <li><h3 data-i18n="m5">Every activity, tested</h3><p data-i18n="m5t">Summit events, police chases, factions and the parts shops calculate like the original server. Each one gets tested on PS4 and PC.</p></li>
           <li><h3 data-i18n="m6">Release 1.0</h3><p data-i18n="m6t">The whole story played from start to finish, every activity tested, and a step-by-step guide.</p></li>
@@ -382,14 +380,14 @@
       <ul class="needs">
         <li class="panel"><strong data-i18n="n1">Your own copy of The Crew for PS4 or PC</strong><span data-i18n="n1t">PS4: disc or download, the European version, with update 1.21 or as the base game 1.00. PC: the Ubisoft Connect or the Steam version. The exact versions are listed below.</span></li>
         <li class="panel"><strong data-i18n="n2">On console: a PS4 or PS5 that runs homebrew game patches</strong><span data-i18n="n2t">The patch points the game at your server. On PC a small file in the game folder does the same.</span></li>
-        <li class="panel"><strong data-i18n="n3">A computer on the same network</strong><span data-i18n="n3t">Windows, macOS or Linux. It runs the server while you play.</span></li>
+        <li class="panel"><strong data-i18n="n3">A computer or an Android phone on the same network</strong><span data-i18n="n3t">Windows, macOS, Linux or Android. It runs the server while you play.</span></li>
       </ul>
       <div class="panel versions" id="versions">
         <h3 data-i18n="verTitle">Supported versions</h3>
         <dl class="ver">
           <dt>PS4</dt><dd data-i18n="verPs4">The Crew, European version CUSA00161, with update 1.21 installed (the game info shows 01.21), or the base game without any update (01.00, experimental). Tested on a PS4 with firmware 11.50 and GoldHEN.</dd>
           <dt>PC</dt><dd data-i18n="verPc">Ubisoft Connect or Steam version: TheCrew.exe 1.2.0.0, build 502193, the last update. Tested on Windows 11, also Windows 11 on ARM (in a virtual machine).</dd>
-          <dt data-i18n="verSrvName">Server</dt><dd data-i18n="verSrv">Windows (x64 and ARM64), macOS (Apple and Intel) and Linux (x64 and ARM64). One program, nothing else to install.</dd>
+          <dt data-i18n="verSrvName">Server</dt><dd data-i18n="verSrv">Windows (x64 and ARM64), macOS (Apple and Intel), Linux (x64 and ARM64) and Android 9 or later as an app. One program, nothing else to install.</dd>
         </dl>
         <p class="ver-note" data-i18n="verUntested">Might work, not tested yet: the PS5 through backwards compatibility. Not yet: other PS4 regions and game versions, because the patch fits only CUSA00161 1.00 and 1.21.</p>
       </div>
@@ -438,7 +436,7 @@
       </details>
       <details>
         <summary data-i18n="q4">When can I download it?</summary>
-        <p data-i18n="a4">Now: pre-release 0.1.0 is in the download section at the top of this page, with the server for Windows, macOS and Linux, the PS4 patch and the PC patch. Not everything is tested yet; release 1.0 follows once the whole story is played through.</p>
+        <p data-i18n="a4">Now: pre-release 0.1.0 is in the download section at the top of this page, with the server for Windows, macOS, Linux and Android phones, the PS4 patch and the PC patch. Not everything is tested yet; release 1.0 follows once the whole story is played through.</p>
       </details>
       <details>
         <summary data-i18n="q6">Can I support the project?</summary>
@@ -484,7 +482,7 @@
 </div>
 
 <script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script src="assets/content.js?v=27"></script>
-<script src="assets/site.js?v=61"></script>
+<script src="assets/content.js?v=28"></script>
+<script src="assets/site.js?v=62"></script>
 </body>
 </html>

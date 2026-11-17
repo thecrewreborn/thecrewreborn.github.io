@@ -1,6 +1,60 @@
 (function () {
   const DE = {
-    tagline: "Das erste The Crew läuft wieder auf PS4, PS5 und PC. Ohne Ubisoft-Server und ohne PS Plus: Das Spiel verbindet sich mit deinem eigenen Server, zu Hause oder im Internet.",
+    navDownload: "Download",
+    navVideo: "Videos",
+    navServer: "Server-App",
+    navStatus: "Stand",
+    navWhy: "Warum dieses Projekt",
+    heroAlt: "Das Spiel auf einem Fernseher, davor die Server-App mit ihren Einstellungen auf einem Handy",
+    sp1: "Dein eigener Server",
+    sp1t: "Das Spiel spricht mit einem Server, den du betreibst, nicht mit dem offiziellen. Kein PS Plus, kein Konto bei irgendwem.",
+    sp2: "Ein Rechner oder ein Handy",
+    sp2t: "Windows, macOS und Linux oder ein Android-Handy in deinem WLAN. Der Server braucht nur ein paar Megabyte.",
+    sp3: "PS4, PS5 und PC zusammen",
+    sp3t: "Konsolen- und PC-Spieler treffen sich in derselben Welt und fahren in einer Crew.",
+    sp4: "Ein Spielstand überall",
+    sp4t: "Dein Fortschritt liegt auf deinem Server: Fang auf der Konsole an und spiel am PC weiter.",
+    dlServerText: "Den brauchen alle. Er läuft, während du spielst, auf einem Rechner oder einem Android-Handy in deinem Netzwerk.",
+    dlYoursLabel: "Für dein System",
+    dlPick: "Alle Systeme:",
+    dlPs4Text: "Für GoldHEN, CUSA00161 mit Update 1.21 oder das Basisspiel 1.00.",
+    dlPcText: "Für TheCrew.exe 1.2.0.0, die Ubisoft-Connect- und die Steam-Version.",
+    dlHow: "So richtest du es ein",
+    dlServer2: "Server auf einem Rechner",
+    dlAndroidTitle2: "Server auf einem Android-Handy",
+    dlA1: "Öffne die APK auf dem Handy und erlaube die Installation von Apps aus dieser Quelle.",
+    dlA2: "Starte die App. Sie lässt den Server im Hintergrund laufen und zeigt seine Verwaltungsseite.",
+    dlA3: "Das Handy muss im selben WLAN sein wie deine Konsole oder dein PC.",
+    dlPs4b: "Auf PS4 oder PS5",
+    dlPcb: "Am PC",
+    ch1: "Der Server läuft auf Android-Handys: eine App mit eingebauter Verwaltungsseite.",
+    ch2: "Verwaltungsseite: eine Spieleransicht mit Autos, Missionen, Skills und Medaillen; die Seite passt aufs Handy.",
+    ch3: "Eine Skill-Medaille bringt ein Leistungsteil für dein Auto, angezeigt auf dem Ergebnisbildschirm.",
+    ch4: "Anmeldungen überstehen einen Neustart des Servers, und das Spiel darf vor dem Server starten.",
+    ch5: "PC: Crew-Einladungen an PS4-Spieler funktionieren wieder, auch mit VPN auf dem PC.",
+    ch6: "Spieler bleiben nach einem Neustart des Servers füreinander sichtbar.",
+    ch7: "Textchat am PC als Einstellung, standardmäßig aus.",
+    ch8: "Bestenlisten speichern die beste Punktzahl jedes Spielers.",
+    ch9: "Skill-Geister und die Einstellungen des PC-Spiels liegen auf dem Server.",
+    ch10: "Bonus-Autos und -Gegenstände aus den Belohnungspaketen des Kontos, abschaltbar.",
+    ch11: "Die Anleitung nennt die Regel für die Windows-Firewall, die ein PC als Gastgeber einer Crew-Sitzung braucht.",
+    srvTitle: "Der Server in der Hosentasche",
+    srvText: "Leg den Server auf ein Android-Handy und lass es im WLAN: Die App hält ihn im Hintergrund am Laufen. Dieselbe Verwaltungsseite öffnet sich am Rechner im Browser. Sie zeigt, wer online ist, den Fortschritt jedes Spielers und alle Einstellungen.",
+    srvMobile: "Auf dem Handy",
+    srvDesktop: "Am Rechner",
+    srvAlt1: "Die Server-App: verbundene Spiele",
+    srvAlt2: "Die Skills eines Spielers mit Medaille und Punktzahl",
+    srvAlt3: "Die Server-App: Einstellungen",
+    srvAlt4: "Die Verwaltungsseite im Browser: der Server auf einen Blick",
+    srvCap1: "Verbundene Spiele",
+    srvCap2: "Medaillen eines Spielers",
+    srvCap3: "Einstellungen",
+    srvCap4: "Der Server auf einen Blick",
+    srvP1: "Sieh, welche Spiele verbunden sind und wer spielt",
+    srvP2: "Schau in jeden Spielstand: Autos, Missionen, Skills mit Medaillen",
+    srvP3: "Ändere Einstellungen; sie landen in config.ini",
+    srvP4: "Lies das Protokoll, starte den Server neu oder beende ihn",
+    tagline: "Das erste The Crew läuft wieder auf PS4, PS5 und PC. Das Spiel verbindet sich mit deinem eigenen Server: auf einem Rechner oder einem Android-Handy, zu Hause oder im Internet.",
     ctaDownload: "Herunterladen",
     dlTitle: "Download",
     dlLede: "Den Server brauchen alle. Dazu kommt der Patch für die Plattform, auf der du spielst.",
@@ -215,8 +269,7 @@
     ad5t: "Jeder Wert aus config.ini mit seinem Standardwert und dem Hinweis, ob er sofort oder erst nach einem Neustart gilt. Beim Speichern ändert sich nur diese eine Zeile, deine Kommentare bleiben erhalten.",
     ad6: "Protokoll, Neustart, Passwort",
     ad6t: "Das Serverprotokoll mit Filter, Knöpfe zum Neustarten und Beenden des Servers und auf Wunsch ein Passwort für die Seite.",
-    dlYours: "Dein System",
-    dlApk: "App (APK)",
+    dlApk: "Android-Handy (APK)",
     dlAndroidTitle: "Auf einem Android-Handy:",
     dlAndroid: "Öffne die APK und erlaube die Installation von Apps aus dieser Quelle. Die App lässt den Server im Hintergrund laufen und zeigt seine Verwaltungsseite. Das Handy muss im selben WLAN sein wie deine Konsole oder dein PC.",
     dlYoursMaybe: "Vermutlich dein System",
@@ -229,12 +282,12 @@
     verPs4: "The Crew, europäische Version CUSA00161, mit installiertem Update 1.21 (die Spielinfo zeigt 01.21) oder als Basisspiel ohne Update (01.00, experimentell). Getestet auf einer PS4 mit Firmware 11.50 und GoldHEN.",
     verPc: "Ubisoft-Connect- oder Steam-Version: TheCrew.exe 1.2.0.0, Build 502193, das letzte Update. Getestet unter Windows 11, auch unter Windows 11 für ARM (in einer virtuellen Maschine).",
     verSrvName: "Server",
-    verSrv: "Windows (x64 und ARM64), macOS (Apple und Intel) und Linux (x64 und ARM64). Ein einzelnes Programm, du musst nichts weiter installieren.",
+    verSrv: "Windows (x64 und ARM64), macOS (Apple und Intel), Linux (x64 und ARM64) und Android ab Version 9 als App. Ein einzelnes Programm, du musst nichts weiter installieren.",
     verUntested: "Möglicherweise lauffähig, aber noch nicht getestet: die PS5 per Abwärtskompatibilität. Noch nicht unterstützt: andere PS4-Regionen und Spielversionen, denn der Patch passt nur auf CUSA00161 1.00 und 1.21.",
     n2: "Auf der Konsole: eine PS4 oder PS5, die Homebrew-Patches laden kann",
     n2t: "Der Patch leitet das Spiel auf deinen Server um. Auf dem PC übernimmt das eine kleine Datei im Spielordner.",
-    n3: "Einen Rechner im selben Netzwerk",
-    n3t: "Windows, macOS oder Linux. Darauf läuft der Server, während du spielst.",
+    n3: "Einen Rechner oder ein Android-Handy im selben Netzwerk",
+    n3t: "Windows, macOS, Linux oder Android. Darauf läuft der Server, während du spielst.",
     needNote: "Spieldateien gibt es hier nicht. Du brauchst dein eigenes Exemplar; das Projekt enthält ausschließlich eigenen Code. Die DLCs sind im Server ausgeschaltet: Schalte sie in seiner config.ini nur ein, wenn du sie besitzt. Die README im Download erklärt die Einrichtung.",
     faqTitle: "Häufige Fragen",
     laterTitle: "Was noch kommt",
@@ -271,7 +324,7 @@
     q7: "Gibt es eine PC-Version?",
     a7: "Ja. Die PC-Version läuft auf demselben Server wie die PS4-Fassung: Eine kleine Datei im Spielordner leitet sie dorthin um. Anmeldung, Prolog und offene Welt funktionieren schon; die Datei ist im PC-Download des Pre-Releases enthalten. Du brauchst dein eigenes Exemplar des PC-Spiels: Die Ubisoft-Connect- und die Steam-Version funktionieren beide.",
     q4: "Wann kann ich es herunterladen?",
-    a4: "Jetzt: Das Pre-Release 0.1.0 steht oben auf dieser Seite im Download-Bereich bereit, mit dem Server für Windows, macOS und Linux, dem PS4-Patch und dem PC-Patch. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
+    a4: "Jetzt: Das Pre-Release 0.1.0 steht oben auf dieser Seite im Download-Bereich bereit, mit dem Server für Windows, macOS, Linux und Android-Handys, dem PS4-Patch und dem PC-Patch. Noch ist nicht alles getestet; Release 1.0 folgt, sobald die komplette Story durchgespielt ist.",
     q6: "Kann ich das Projekt unterstützen?",
     a6: "Ja, mit einem freiwilligen Beitrag auf Ko-fi. Das Projekt bleibt in jedem Fall kostenlos, und eine Unterstützung schaltet keine zusätzlichen Inhalte frei.",
     kofi: "Auf Ko-fi unterstützen",
@@ -287,7 +340,7 @@
   };
 
   const nodes = Array.from(document.querySelectorAll("[data-i18n]"));
-  const EN = { dlYours: "Your system", dlYoursMaybe: "Probably your system" };
+  const EN = { dlYoursMaybe: "Probably your system" };
   nodes.forEach((n) => (EN[n.dataset.i18n] = n.textContent));
   const altNodes = Array.from(document.querySelectorAll("[data-i18n-alt]"));
   altNodes.forEach((n) => (EN[n.dataset.i18nAlt] = n.alt));
@@ -318,6 +371,10 @@
     });
     renderGallery();
     markYours();
+    document.querySelectorAll("img[data-src-de]").forEach((im) => {
+      if (!im.dataset.srcEn) im.dataset.srcEn = im.getAttribute("src");
+      im.src = lang === "de" ? im.dataset.srcDe : im.dataset.srcEn;
+    });
     renderPlaylist();
     renderDownloads();
     renderCompare();
@@ -466,23 +523,32 @@
     if (/Linux|X11/i.test(os) && !/CrOS/.test(ua)) return { platform: arch === "arm" ? "linux-arm64" : "linux-x64", sure: sure };
     return null;
   }
+  // The big download button: the server build for the visitor's system, taken from its link in the system list.
   function markYours() {
+    let hit = null;
     document.querySelectorAll("[data-platform]").forEach((a) => {
-      const hit = !!yours && a.dataset.platform === yours.platform;
-      a.classList.toggle("dl-match", hit);
-      let tag = a.querySelector(".dl-you");
-      if (hit && !tag) { tag = document.createElement("em"); tag.className = "dl-you"; a.prepend(tag); }
-      if (!hit && tag) tag.remove();
-      if (hit) tag.textContent = (lang === "de" ? DE : EN)[yours.sure ? "dlYours" : "dlYoursMaybe"];
+      const on = !!yours && a.dataset.platform === yours.platform;
+      a.classList.toggle("dl-match", on);
+      if (on) hit = a;
     });
-    const box = document.querySelector(".dl-os");
-    if (box) box.classList.toggle("has-match", !!yours);
+    const btn = document.getElementById("dlPrimary");
+    if (!btn) return;
+    btn.hidden = !hit;
+    if (!hit) return;
+    const dict = lang === "de" ? DE : EN;
+    btn.href = hit.href;
+    btn.querySelector(".dl-you").textContent = dict[yours.sure ? "dlYoursLabel" : "dlYoursMaybe"] || EN.dlYoursLabel;
+    document.getElementById("dlPrimaryName").textContent = (lang === "de" ? "Herunterladen: " : "Download: ") + hit.querySelector("span").textContent;
+    document.getElementById("dlPrimarySize").textContent = hit.querySelector(".dl-size").textContent;
+    btn.dataset.goatcounterClick = hit.dataset.goatcounterClick;
+    btn.dataset.goatcounterTitle = hit.dataset.goatcounterTitle;
   }
   detectPlatform().then((p) => { yours = p; markYours(); }).catch(() => {});
 
   fetch(RELEASES).then((r) => (r.ok ? r.json() : [])).then((list) => {
     release = list.find((r) => !r.draft && r.assets.length) || null;
     renderDownloads();
+    markYours();
   }).catch(() => {});
 
   // Lightbox: arrows, arrow keys and a swipe step through the screenshots, wrapping around at both ends
@@ -524,6 +590,17 @@
     const dx = e.changedTouches[0].clientX - touchX;
     touchX = null;
     if (Math.abs(dx) > 50) showShot(dx < 0 ? shot + 1 : shot - 1);
+  });
+
+  // The server screenshots (phones and the desktop page) open in the lightbox, captions in the page's language.
+  document.querySelectorAll(".ui-shot").forEach((b, i, all) => {
+    b.addEventListener("click", () => {
+      const list = Array.from(all).map((x) => {
+        const cap = x.querySelector("span").textContent;
+        return { src: x.querySelector("img").currentSrc || x.querySelector("img").src, en: cap, de: cap };
+      });
+      openShot(i, list);
+    });
   });
 
   function renderGallery() {
