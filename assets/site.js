@@ -196,6 +196,8 @@
     ad5t: "Jeder Wert aus config.ini mit seinem Standardwert und dem Hinweis, ob er sofort oder erst nach einem Neustart gilt. Beim Speichern ändert sich nur diese eine Zeile, deine Kommentare bleiben erhalten.",
     ad6: "Protokoll, Neustart, Passwort",
     ad6t: "Das Serverprotokoll mit Filter, Knöpfe zum Neustarten und Beenden des Servers und auf Wunsch ein Passwort für die Seite.",
+    dlYours: "Dein System",
+    dlYoursMaybe: "Vermutlich dein System",
     shotsTitle: "Screenshots",
     shotsText: "Szenen, aufgenommen auf einer PS4, die auf dem Reborn-Server spielt.",
     needTitle: "Das brauchst du",
@@ -263,12 +265,13 @@
   };
 
   const nodes = Array.from(document.querySelectorAll("[data-i18n]"));
-  const EN = {};
+  const EN = { dlYours: "Your system", dlYoursMaybe: "Probably your system" };
   nodes.forEach((n) => (EN[n.dataset.i18n] = n.textContent));
   const altNodes = Array.from(document.querySelectorAll("[data-i18n-alt]"));
   altNodes.forEach((n) => (EN[n.dataset.i18nAlt] = n.alt));
   const C = window.CONTENT || { videos: [], screenshots: [] };
   let lang = "en";
+  let yours = null;  // the visitor's server download (detectPlatform), or null
   // texts that name the current release: their version number follows the latest release on GitHub
   const VERSIONED = new Set(["download", "a4"]);
   let shownVersion = null;
@@ -292,6 +295,7 @@
       if (dict[n.dataset.i18nAria]) n.setAttribute("aria-label", dict[n.dataset.i18nAria]);
     });
     renderGallery();
+    markYours();
     renderPlaylist();
     renderDownloads();
     renderCompare();
@@ -417,6 +421,40 @@
     });
     if (release) document.getElementById("dlNotes").href = release.html_url;
   }
+
+  // The visitor's system, to mark the matching server download: the OS from the browser, the CPU where the browser
+  // tells it (Chromium's client hints; aarch64 or x86_64 in a Linux user agent). Phones and tablets get no mark.
+  // Without a CPU hint Windows and Linux fall back to x64, marked as a guess; macOS needs none (one universal build).
+  async function detectPlatform() {
+    const nav = navigator, ua = nav.userAgent || "";
+    const uad = nav.userAgentData;
+    if ((uad && uad.mobile) || /Android|iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && nav.maxTouchPoints > 1)) return null;
+    const os = (uad && uad.platform) || nav.platform || ua;
+    let arch = null;
+    if (uad && uad.getHighEntropyValues) {
+      try { arch = (await uad.getHighEntropyValues(["architecture"])).architecture || null; } catch (e) { arch = null; }
+    }
+    if (!arch && /aarch64|arm64/i.test(ua)) arch = "arm";
+    if (!arch && /Linux/.test(ua) && /x86_64|amd64/i.test(ua)) arch = "x86";  // Windows user agents say x64 on ARM too
+    const sure = arch === "arm" || arch === "x86";
+    if (/Mac/i.test(os)) return { platform: "macos-universal", sure: true };
+    if (/Win/i.test(os)) return { platform: arch === "arm" ? "windows-arm64" : "windows-x64", sure: sure };
+    if (/Linux|X11/i.test(os) && !/CrOS/.test(ua)) return { platform: arch === "arm" ? "linux-arm64" : "linux-x64", sure: sure };
+    return null;
+  }
+  function markYours() {
+    document.querySelectorAll("[data-platform]").forEach((a) => {
+      const hit = !!yours && a.dataset.platform === yours.platform;
+      a.classList.toggle("dl-match", hit);
+      let tag = a.querySelector(".dl-you");
+      if (hit && !tag) { tag = document.createElement("em"); tag.className = "dl-you"; a.prepend(tag); }
+      if (!hit && tag) tag.remove();
+      if (hit) tag.textContent = (lang === "de" ? DE : EN)[yours.sure ? "dlYours" : "dlYoursMaybe"];
+    });
+    const box = document.querySelector(".dl-btns");
+    if (box) box.classList.toggle("has-match", !!yours);
+  }
+  detectPlatform().then((p) => { yours = p; markYours(); }).catch(() => {});
 
   fetch(RELEASES).then((r) => (r.ok ? r.json() : [])).then((list) => {
     release = list.find((r) => !r.draft && r.assets.length) || null;

@@ -734,7 +734,26 @@ h2::before {
 .dl-btn { margin: 1.2rem 0 1.1rem; text-align: center; }
 .dl-btns { display: flex; flex-direction: column; gap: 8px; margin: 1.2rem 0 1.1rem; }
 .dl-btns .dl-btn { margin: 0; }
-.dl-size { margin-left: .5em; font-style: normal; font-weight: 600; font-size: .8em; opacity: .75; }
+/* the server download that matches the visitor's system (site.js markYours): a running frame, the others step back */
+@property --dl-a { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes dl-spin { to { --dl-a: 360deg; } }
+.dl-btns.has-match .dl-btn:not(.dl-match) { background: rgba(255, 255, 255, .09); color: var(--ice); }
+.dl-btns.has-match .dl-btn:not(.dl-match):hover { background: rgba(255, 255, 255, .16); }
+.dl-btn.dl-match {
+  padding: 10px 27px 8px;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(var(--cyan), var(--cyan)) padding-box,
+    conic-gradient(from var(--dl-a), #fff, var(--cyan) 20%, #0a4a66 45%, var(--cyan) 70%, #fff) border-box;
+  animation: dl-spin 2.6s linear infinite;
+}
+.dl-btn.dl-match:hover {
+  background:
+    linear-gradient(#7fdcff, #7fdcff) padding-box,
+    conic-gradient(from var(--dl-a), #fff, var(--cyan) 20%, #0a4a66 45%, var(--cyan) 70%, #fff) border-box;
+}
+.dl-you { display: block; margin-bottom: 1px; font: 800 italic .78rem/1.2 "Barlow Condensed", sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+.dl-size { white-space: nowrap; margin-left: .5em; font-style: normal; font-weight: 600; font-size: .8em; opacity: .75; }
 .dl-steps { margin: 0; padding-left: 1.25em; color: var(--ice); font-size: .95rem; }
 .dl-steps li { margin: .35em 0; }
 .dl-other { margin: 1.3rem 0 0; padding: 16px 20px; color: var(--ice); font-size: .95rem; border-left: 3px solid var(--cyan); }
@@ -882,6 +901,7 @@ details p { margin: 0 0 20px; max-width: var(--measure); color: var(--steel); }
   .hero-bg, h1, .tagline, .ctas, .news, .platforms, .node.here .ping { animation: none; }
   .streaks { display: none; }
   .shot img, .play, summary::after, .btn, .episode, .episode img { transition: none; }
+  .dl-btn.dl-match { animation: none; }
 }
 
 /* 1.00 vs 1.21 comparison */
