@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/style.css?v=37">
+<link rel="stylesheet" href="assets/style.css?v=38">
 </head>
 <body>
 
@@ -196,6 +196,22 @@
         <p class="ver-note" data-i18n="howNote">One name plays on one device at a time: the server refuses a second game with the same name (it shows error #0_35), so two games never write the same save.</p>
       </div>
     </div>
+  </section>
+
+  <section id="admin" class="band">
+    <div class="wrap">
+      <h2 data-i18n="adminTitle">Your server in the browser</h2>
+      <p class="lede" data-i18n="adminText">The server comes with its own admin page. Open it in your home network on a computer or a phone: see who is playing, look into the saves and change the settings without opening a file.</p>
+      <ul class="needs cross-grid">
+        <li class="panel"><strong data-i18n="ad1">Live overview</strong><span data-i18n="ad1t">Address, ports, version and uptime at a glance, and every game connected right now, PS4 and PC.</span></li>
+        <li class="panel"><strong data-i18n="ad2">Player details</strong><em class="tag-new" data-i18n="ad2tag">Next release</em><span data-i18n="ad2t">Cars by name, missions by type, every skill with its best medal and score, collectibles and landmarks per region.</span></li>
+        <li class="panel"><strong data-i18n="ad3">Saves</strong><span data-i18n="ad3t">Every save file with size and date: view it, download it as a backup or open its folder.</span></li>
+        <li class="panel"><strong data-i18n="ad4">Player names</strong><span data-i18n="ad4t">Claimed names and their devices. Open a link window to add a new device, or free a name.</span></li>
+        <li class="panel"><strong data-i18n="ad5">Settings</strong><span data-i18n="ad5t">Every value of config.ini with its default, and whether it applies at once or after a restart. Saving changes only that one line; your comments stay.</span></li>
+        <li class="panel"><strong data-i18n="ad6">Log, restart, password</strong><span data-i18n="ad6t">The server log with a filter, buttons to restart or stop the server, and an optional password for the page.</span></li>
+      </ul>
+    </div>
+    <div class="gallery admin-gallery" id="adminGallery"></div>
   </section>
 
   <section id="status" class="band status">
@@ -440,7 +456,7 @@
 </div>
 
 <script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script src="assets/content.js?v=23"></script>
-<script src="assets/site.js?v=57"></script>
+<script src="assets/content.js?v=24"></script>
+<script src="assets/site.js?v=58"></script>
 </body>
 </html>

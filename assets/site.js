@@ -181,6 +181,21 @@
     vcTaste: "Welche Version besser aussieht, ist Geschmackssache. Die Presse lobte 2015 die neue Grafik, manche Spieler vermissen die wärmeren Farben vom Start. Jetzt fährst du beide und entscheidest selbst.",
     vcVideo: "Den Prolog in 1.00 ansehen",
     vcSources: "Quellen zu den Änderungen:",
+    adminTitle: "Dein Server im Browser",
+    adminText: "Der Server bringt eine eigene Verwaltungsseite mit. Öffne sie im Heimnetz am Computer oder am Handy: Sieh, wer gerade spielt, schau in die Spielstände und ändere Einstellungen, ohne eine Datei zu öffnen.",
+    ad1: "Live-Übersicht",
+    ad1t: "Adresse, Ports, Version und Laufzeit auf einen Blick, dazu jedes gerade verbundene Spiel, PS4 und PC.",
+    ad2: "Spielerdetails",
+    ad2tag: "Nächste Version",
+    ad2t: "Autos mit Namen, Missionen nach Art, jeder Skill mit bester Medaille und Punktzahl, Sammelobjekte und Wahrzeichen pro Region.",
+    ad3: "Spielstände",
+    ad3t: "Jede Spielstanddatei mit Größe und Datum: ansehen, als Sicherung herunterladen oder ihren Ordner öffnen.",
+    ad4: "Spielernamen",
+    ad4t: "Vergebene Namen und ihre Geräte. Öffne ein Zeitfenster, um ein neues Gerät hinzuzufügen, oder gib einen Namen frei.",
+    ad5: "Einstellungen",
+    ad5t: "Jeder Wert aus config.ini mit seinem Standardwert und dem Hinweis, ob er sofort oder erst nach einem Neustart gilt. Beim Speichern ändert sich nur diese eine Zeile, deine Kommentare bleiben erhalten.",
+    ad6: "Protokoll, Neustart, Passwort",
+    ad6t: "Das Serverprotokoll mit Filter, Knöpfe zum Neustarten und Beenden des Servers und auf Wunsch ein Passwort für die Seite.",
     shotsTitle: "Screenshots",
     shotsText: "Szenen, aufgenommen auf einer PS4, die auf dem Reborn-Server spielt.",
     needTitle: "Das brauchst du",
@@ -411,17 +426,19 @@
   // Lightbox: arrows, arrow keys and a swipe step through the screenshots, wrapping around at both ends
   const lb = document.getElementById("lightbox");
   let shot = 0;
+  let shots = C.screenshots;  // the list the lightbox steps through: the game screenshots or the admin page's
   function showShot(i) {
-    const n = C.screenshots.length;
+    const n = shots.length;
     shot = (i + n) % n;
-    const s = C.screenshots[shot];
+    const s = shots[shot];
     document.getElementById("lbImg").src = s.src;
     document.getElementById("lbImg").alt = s[lang] || s.en;
     document.getElementById("lbCap").textContent = s[lang] || s.en;
     document.getElementById("lbCount").textContent = (shot + 1) + " / " + n;
-    [shot - 1, shot + 1].forEach((k) => { new Image().src = C.screenshots[(k + n) % n].src; });
+    [shot - 1, shot + 1].forEach((k) => { new Image().src = shots[(k + n) % n].src; });
   }
-  function openShot(i) {
+  function openShot(i, list) {
+    shots = list || C.screenshots;
     showShot(i);
     lb.hidden = false;
     document.getElementById("lbNext").focus();
@@ -448,10 +465,15 @@
   });
 
   function renderGallery() {
-    const g = document.getElementById("gallery");
-    g.replaceChildren();
+    fillGallery("gallery", C.screenshots);
     document.getElementById("shots").hidden = C.screenshots.length === 0;
-    C.screenshots.forEach((s, i) => {
+    fillGallery("adminGallery", C.admin || []);
+  }
+  function fillGallery(id, list) {
+    const g = document.getElementById(id);
+    if (!g) return;
+    g.replaceChildren();
+    list.forEach((s, i) => {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "shot";
@@ -462,7 +484,7 @@
       const cap = document.createElement("span");
       cap.textContent = s[lang] || s.en || "";
       b.append(img, cap);
-      b.onclick = () => openShot(i);
+      b.onclick = () => openShot(i, list);
       g.append(b);
     });
   }

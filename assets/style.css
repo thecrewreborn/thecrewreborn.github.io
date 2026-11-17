@@ -662,6 +662,9 @@ h2::before {
   bottom: 12px;
   font: 700 italic 1.15rem/1.2 "Barlow Condensed", sans-serif;
 }
+.admin-gallery { margin-top: 2rem; }
+.admin-gallery .shot img { object-position: top left; filter: none; }
+.admin-gallery .shot:hover img { filter: none; }
 .shot:hover img { transform: scale(1.05); filter: saturate(1) contrast(1.06) brightness(.95); }
 
 .lightbox {
