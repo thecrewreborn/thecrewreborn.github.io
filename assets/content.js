@@ -38,16 +38,17 @@ window.CONTENT = {
     { name: "overpass", en: "Under the overpass", de: "Unter der Hochstraße" },
     { name: "clay", en: "Cutscene: Clay Industrial Center", de: "Zwischensequenz: Clay Industrial Center" },
   ],
-  // The server's admin page (assets/shots/admin-*.webp, test data with example addresses). The first one is shown large.
+  // The server's admin page (assets/shots/admin-*.webp in English, *-de.webp in German; test data with example
+  // addresses). src_<lang> is the picture for that page language, src the fallback. The first one is shown large.
   admin: [
-    { src: "assets/shots/admin-overview-dark.webp", en: "Overview: the server at a glance", de: "Übersicht: der Server auf einen Blick" },
-    { src: "assets/shots/admin-player-skills-dark.webp", en: "Skills with best medal and score (next release)", de: "Skills mit bester Medaille und Punktzahl (nächste Version)" },
-    { src: "assets/shots/admin-player-cars-dark.webp", en: "A player's cars by name (next release)", de: "Die Autos eines Spielers mit Namen (nächste Version)" },
-    { src: "assets/shots/admin-settings-player-light.webp", en: "Settings, saved straight into config.ini", de: "Einstellungen, direkt in config.ini gespeichert" },
-    { src: "assets/shots/admin-phone-overview-dark.webp", en: "On the phone", de: "Auf dem Handy" },
-    { src: "assets/shots/admin-log-dark.webp", en: "The server log with a filter", de: "Das Serverprotokoll mit Filter" },
-    { src: "assets/shots/admin-clients-light.webp", en: "Connected games, PS4 and PC", de: "Verbundene Spiele, PS4 und PC" },
-    { src: "assets/shots/admin-phone-skills-dark.webp", en: "Skills on the phone (next release)", de: "Skills auf dem Handy (nächste Version)" },
+    { src: "assets/shots/admin-overview-dark.webp", src_de: "assets/shots/admin-overview-dark-de.webp", en: "Overview: the server at a glance", de: "Übersicht: der Server auf einen Blick" },
+    { src: "assets/shots/admin-player-skills-dark.webp", src_de: "assets/shots/admin-player-skills-dark-de.webp", en: "Skills with best medal and score (next release)", de: "Skills mit bester Medaille und Punktzahl (nächste Version)" },
+    { src: "assets/shots/admin-player-cars-dark.webp", src_de: "assets/shots/admin-player-cars-dark-de.webp", en: "A player's cars by name (next release)", de: "Die Autos eines Spielers mit Namen (nächste Version)" },
+    { src: "assets/shots/admin-settings-player-light.webp", src_de: "assets/shots/admin-settings-player-light-de.webp", en: "Settings, saved straight into config.ini", de: "Einstellungen, direkt in config.ini gespeichert" },
+    { src: "assets/shots/admin-phone-overview-dark.webp", src_de: "assets/shots/admin-phone-overview-dark-de.webp", en: "On the phone", de: "Auf dem Handy" },
+    { src: "assets/shots/admin-log-dark.webp", src_de: "assets/shots/admin-log-dark-de.webp", en: "The server log with a filter", de: "Das Serverprotokoll mit Filter" },
+    { src: "assets/shots/admin-clients-light.webp", src_de: "assets/shots/admin-clients-light-de.webp", en: "Connected games, PS4 and PC", de: "Verbundene Spiele, PS4 und PC" },
+    { src: "assets/shots/admin-phone-skills-dark.webp", src_de: "assets/shots/admin-phone-skills-dark-de.webp", en: "Skills on the phone (next release)", de: "Skills auf dem Handy (nächste Version)" },
   ],
   // Screenshots live in assets/shots/ (stills from the project's own PS4 recordings). The first one is shown large.
   screenshots: [

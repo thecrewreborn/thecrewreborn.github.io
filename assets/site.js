@@ -431,11 +431,11 @@
     const n = shots.length;
     shot = (i + n) % n;
     const s = shots[shot];
-    document.getElementById("lbImg").src = s.src;
+    document.getElementById("lbImg").src = s["src_" + lang] || s.src;
     document.getElementById("lbImg").alt = s[lang] || s.en;
     document.getElementById("lbCap").textContent = s[lang] || s.en;
     document.getElementById("lbCount").textContent = (shot + 1) + " / " + n;
-    [shot - 1, shot + 1].forEach((k) => { new Image().src = shots[(k + n) % n].src; });
+    [shot - 1, shot + 1].forEach((k) => { const q = shots[(k + n) % n]; new Image().src = q["src_" + lang] || q.src; });
   }
   function openShot(i, list) {
     shots = list || C.screenshots;
@@ -478,7 +478,7 @@
       b.type = "button";
       b.className = "shot";
       const img = document.createElement("img");
-      img.src = s.src;
+      img.src = s["src_" + lang] || s.src;
       img.alt = s[lang] || s.en || "";
       img.loading = "lazy";
       const cap = document.createElement("span");
