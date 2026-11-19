@@ -335,7 +335,7 @@
     whyText: "Ubisoft hat The Crew im März 2024 abgeschaltet, und seitdem startet das Spiel nicht mehr. Ein Fanprojekt hat die PC-Version zurückgebracht, aber ohne Konsolen, ohne Multiplayer und ohne offenen Code. Deshalb gibt es dieses Projekt.",
     whyBtn: "Die Geschichte lesen",
     disclaimer: "The Crew Reborn steht in keiner Verbindung zu Ubisoft oder Ivory Tower. Das Projekt stellt keine Spieldateien bereit, verbreitet keine und unterstützt keine Raubkopien; du benötigst dein eigenes Exemplar des Spiels und jedes DLCs, das du einschaltest.",
-    privacy: "Datenschutz: Diese Seite wird über GitHub Pages bereitgestellt; GitHub kann dabei technische Zugriffsdaten wie IP-Adressen protokollieren. Besuche werden mit GoatCounter gezählt, ohne Cookies und ohne Speicherung von IP-Adressen. Die Schriften werden von dieser Seite geladen. Videos werden erst nach einem Klick von YouTube geladen.",
+    privacy: "Datenschutz: Diese Seite wird über GitHub Pages bereitgestellt; GitHub kann dabei technische Zugriffsdaten wie IP-Adressen protokollieren. Seitenaufrufe und Klicks auf Downloads zählt ein eigener Zähler des Projekts bei Cloudflare, ohne Cookies und ohne Speicherung von IP-Adressen; er speichert nur das Land, die Seite, die Sprache der Seite, die verweisende Website und eine grobe Geräteart (Smartphone oder PC, Betriebssystem). Die Schriften werden von dieser Seite geladen. Videos werden erst nach einem Klick von YouTube geladen.",
     legal: "The Crew Reborn ist ein Fanprojekt von Knutwurst. The Crew ist eine Marke von Ubisoft Entertainment, PlayStation und PS4 sind Marken von Sony Interactive Entertainment. Die Spielbilder sind Standbilder aus eigenen PS4-Aufnahmen des Projekts; das Spiel und seine Inhalte © Ubisoft Entertainment. Diese Seite steht in keiner Verbindung zu Ubisoft oder Sony.",
   };
 
@@ -540,8 +540,7 @@
     btn.querySelector(".dl-you").textContent = dict[yours.sure ? "dlYoursLabel" : "dlYoursMaybe"] || EN.dlYoursLabel;
     document.getElementById("dlPrimaryName").textContent = (lang === "de" ? "Herunterladen: " : "Download: ") + hit.querySelector("span").textContent;
     document.getElementById("dlPrimarySize").textContent = hit.querySelector(".dl-size").textContent;
-    btn.dataset.goatcounterClick = hit.dataset.goatcounterClick;
-    btn.dataset.goatcounterTitle = hit.dataset.goatcounterTitle;
+    btn.dataset.click = hit.dataset.click;
   }
   detectPlatform().then((p) => { yours = p; markYours(); }).catch(() => {});
 

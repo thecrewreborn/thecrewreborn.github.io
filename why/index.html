@@ -168,7 +168,48 @@
   </div>
 </footer>
 
-<script data-goatcounter="https://knutwurst.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+/* Counts page views and download clicks (data-click) with the project's own counter: no cookies, no ids, no IP
+   stored. Opening the page with #toggle-stats switches counting off or on for this browser. */
+(function () {
+  var ENDPOINT = "https://crewreborn-stats.knutwurst.workers.dev/hit";
+  var skip = false;
+  try {
+    if (location.hash === "#toggle-stats") {
+      var off = localStorage.getItem("skipstats") === "t" || localStorage.getItem("skipgc") === "t";
+      if (off) { localStorage.removeItem("skipstats"); localStorage.removeItem("skipgc"); } else { localStorage.setItem("skipstats", "t"); }
+      alert(off ? "Statistics: this browser is counted again." : "Statistics: this browser is no longer counted.");
+    }
+    skip = localStorage.getItem("skipstats") === "t" || localStorage.getItem("skipgc") === "t";
+  } catch (e) { /* storage blocked: count */ }
+  if (skip || location.hostname !== "thecrewreborn.github.io") return;
+  function send(type, event) {
+    var hit = { type: type, page: location.pathname, lang: document.documentElement.lang || undefined, event: event || undefined };
+    if (type === "view" && document.referrer) {
+      var a = document.createElement("a");
+      a.href = document.referrer;
+      if (a.hostname && a.hostname !== location.hostname) hit.referrer = a.hostname;
+    }
+    var body = JSON.stringify(hit);
+    try {
+      if (navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, body)) return;
+      var x = new XMLHttpRequest();
+      x.open("POST", ENDPOINT, true);
+      x.send(body);
+    } catch (e) { /* counting never breaks the page */ }
+  }
+  function onClick(e) {
+    if (e.type === "auxclick" && e.button !== 1) return;
+    for (var el = e.target; el && el.getAttribute; el = el.parentNode) {
+      var name = el.getAttribute("data-click");
+      if (name) { send("click", name); return; }
+    }
+  }
+  document.addEventListener("click", onClick, true);
+  document.addEventListener("auxclick", onClick, true);
+  if (document.readyState === "complete") send("view"); else window.addEventListener("load", function () { send("view"); });
+})();
+</script>
 <script>
 (function () {
   const DE = {
