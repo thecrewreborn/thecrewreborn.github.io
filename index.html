@@ -467,7 +467,7 @@
       <a href="https://ko-fi.com/knutwurst">Ko-fi</a>
     </p>
     <p data-i18n="disclaimer">The Crew Reborn is not affiliated with Ubisoft or Ivory Tower. The project does not host or distribute any game files and does not support piracy; you need your own copy of the game and of any DLC you switch on.</p>
-    <p data-i18n="privacy">Privacy: this site is hosted on GitHub Pages, where GitHub may log technical access data such as IP addresses. Page views and download clicks are counted by the project's own counter on Cloudflare, without cookies and without storing IP addresses; it keeps only the country, the page, the site language, the referring website and a rough device type (phone or PC, operating system). Fonts are served from this site. Videos load from YouTube only after you click them.</p>
+    <p data-i18n="privacy">Privacy: this site is hosted on GitHub Pages, where GitHub may log technical access data such as IP addresses. The project's own counter on Cloudflare counts page views without cookies, without storing anything on your device and without your IP address or any id that would recognise you on a later visit. Per page view it keeps: the page, the referring website and campaign tag, the page and browser language, country, region and city as Cloudflare derives them from the connection, device type, operating system and browser, a rough window width, light or dark mode, how long the page was visible and how far it was scrolled, which sections came into view, and clicks on downloads, outside links, videos and the language switch. Fonts are served from this site. Videos load from YouTube only after you click them.</p>
     <p data-i18n="legal">The Crew Reborn is a fan project by Knutwurst. The Crew is a trademark of Ubisoft Entertainment. PlayStation and PS4 are trademarks of Sony Interactive Entertainment. The game images are stills from the project's own PS4 recordings; the game and its content &copy; Ubisoft Entertainment. This site is not affiliated with or endorsed by Ubisoft or Sony.</p>
   </div>
 </footer>
@@ -481,49 +481,8 @@
   <span class="lb-count" id="lbCount"></span>
 </div>
 
-<script>
-/* Counts page views and download clicks (data-click) with the project's own counter: no cookies, no ids, no IP
-   stored. Opening the page with #toggle-stats switches counting off or on for this browser. */
-(function () {
-  var ENDPOINT = "https://crewreborn-stats.knutwurst.workers.dev/hit";
-  var skip = false;
-  try {
-    if (location.hash === "#toggle-stats") {
-      var off = localStorage.getItem("skipstats") === "t" || localStorage.getItem("skipgc") === "t";
-      if (off) { localStorage.removeItem("skipstats"); localStorage.removeItem("skipgc"); } else { localStorage.setItem("skipstats", "t"); }
-      alert(off ? "Statistics: this browser is counted again." : "Statistics: this browser is no longer counted.");
-    }
-    skip = localStorage.getItem("skipstats") === "t" || localStorage.getItem("skipgc") === "t";
-  } catch (e) { /* storage blocked: count */ }
-  if (skip || location.hostname !== "thecrewreborn.github.io") return;
-  function send(type, event) {
-    var hit = { type: type, page: location.pathname, lang: document.documentElement.lang || undefined, event: event || undefined };
-    if (type === "view" && document.referrer) {
-      var a = document.createElement("a");
-      a.href = document.referrer;
-      if (a.hostname && a.hostname !== location.hostname) hit.referrer = a.hostname;
-    }
-    var body = JSON.stringify(hit);
-    try {
-      if (navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, body)) return;
-      var x = new XMLHttpRequest();
-      x.open("POST", ENDPOINT, true);
-      x.send(body);
-    } catch (e) { /* counting never breaks the page */ }
-  }
-  function onClick(e) {
-    if (e.type === "auxclick" && e.button !== 1) return;
-    for (var el = e.target; el && el.getAttribute; el = el.parentNode) {
-      var name = el.getAttribute("data-click");
-      if (name) { send("click", name); return; }
-    }
-  }
-  document.addEventListener("click", onClick, true);
-  document.addEventListener("auxclick", onClick, true);
-  if (document.readyState === "complete") send("view"); else window.addEventListener("load", function () { send("view"); });
-})();
-</script>
+<script src="assets/stats.js?v=1" defer></script>
 <script src="assets/content.js?v=29"></script>
-<script src="assets/site.js?v=65"></script>
+<script src="assets/site.js?v=66"></script>
 </body>
 </html>

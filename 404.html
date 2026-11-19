@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-stats="404">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Crew Reborn – Page not found</title>
+<meta name="theme-color" content="#070b12">
+<!-- GitHub Pages serves this file for every missing address, at any depth: all paths are absolute. -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/style.css?v=43">
+<style>
+  .nf { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; padding: 48px 0; }
+  .nf p { color: var(--steel); max-width: 36em; }
+</style>
+</head>
+<body>
+<main class="wrap nf">
+  <h2 id="t">Page not found</h2>
+  <p id="x">This address does not exist (any more). Everything about The Crew Reborn starts on the home page.</p>
+  <p><a class="btn btn-primary" href="/" id="b">To the home page</a></p>
+</main>
+<script>
+(function () {
+  // Same language choice as the other pages, without storing anything.
+  if ((navigator.language || "").toLowerCase().indexOf("de") !== 0) return;
+  document.documentElement.lang = "de";
+  document.title = "The Crew Reborn – Seite nicht gefunden";
+  document.getElementById("t").textContent = "Seite nicht gefunden";
+  document.getElementById("x").textContent = "Diese Adresse gibt es nicht (mehr). Alles zu The Crew Reborn beginnt auf der Startseite.";
+  document.getElementById("b").textContent = "Zur Startseite";
+})();
+</script>
+<script src="/assets/stats.js?v=1" defer></script>
+</body>
+</html>
